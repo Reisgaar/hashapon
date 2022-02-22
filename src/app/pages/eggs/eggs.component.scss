@@ -5,6 +5,8 @@
   .egg {
     position: absolute;
     transform: translate(-50%, -50%);
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
 
     &.egg-1 {
       top: 65%;
@@ -14,6 +16,7 @@
         animation: egg-move 10s ease-in-out infinite;
       }
     }
+
     &.egg-2 {
       top: 70%;
       left: 35%;
@@ -23,6 +26,7 @@
         animation-delay: 3s;
       }
     }
+
     &.egg-3 {
         top: 70%;
         left: 65%;
