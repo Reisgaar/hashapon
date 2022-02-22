@@ -1,0 +1,41 @@
+<div class="nav-topleft" *ngIf="!walletIsConnected" (click)="connectWallet()">
+  <div class="nav-button">
+    <mat-icon class="nav-button-icon">account_balance_wallet</mat-icon>
+  </div>
+</div>
+
+<div class="nav-topleft" *ngIf="walletIsConnected">
+  <div class="nav-button" routerLink="/pages/gachapon">
+    <mat-icon class="nav-button-icon">home</mat-icon>
+  </div>
+  <div class="nav-button">
+    <mat-icon class="nav-button-icon">people</mat-icon>
+  </div>
+</div>
+
+<div class="nav-topright">
+  <div class="nav-button" routerLink="/pages/eggs">
+    <mat-icon class="nav-button-icon">vignette</mat-icon>
+  </div>
+  <div class="nav-button" routerLink="/pages/incubators">
+    <mat-icon class="nav-button-icon">stay_primary_portrait</mat-icon>
+  </div>
+</div>
+
+<div class="nav-bottomleft">
+  <div class="nav-button" routerLink="/pages/playground">
+    <mat-icon class="nav-button-icon">child_care</mat-icon>
+  </div>
+  <div class="nav-button" routerLink="/pages/school">
+    <mat-icon class="nav-button-icon">school</mat-icon>
+  </div>
+  <div class="nav-button" routerLink="/pages/gym">
+    <mat-icon class="nav-button-icon">fitness_center</mat-icon>
+  </div>
+</div>
+
+<div class="nav-bottomright">
+  <div class="nav-button" routerLink="/pages/playground">
+    <mat-icon class="nav-button-icon">local_dining</mat-icon>
+  </div>
+</div>

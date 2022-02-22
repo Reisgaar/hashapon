@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+}
+
+// Background images style
+
+.gamescreen,
+.background {
+  margin: auto;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  min-width: 300px;
+  max-width: 1500px;
+  min-height: 500px;
+  max-height: 1200px;
+}
+
+.gamescreen {
+  position: relative;
+}
+
+.background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &.gachapon { background-image: url('./assets/images/backgrounds/gachapon.jpg'); }
+  &.eggs { background-image: url('./assets/images/backgrounds/eggs.png'); }
+  &.incubators { background-image: url('./assets/images/backgrounds/incubators.jpg'); }
+  &.playground { background-image: url('./assets/images/backgrounds/playground.jpg'); }
+  &.school { background-image: url('./assets/images/backgrounds/school.jpg'); }
+  &.gym { background-image: url('./assets/images/backgrounds/gym.jpg'); }
+}
+
+
+
+
+@media(max-width: 600px) {
+
+}

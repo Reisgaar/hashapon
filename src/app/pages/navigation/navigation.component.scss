@@ -1,0 +1,141 @@
+@import '../../../style-variables.scss';
+
+.nav-topleft {
+  position: absolute;
+  left: 0%;
+  z-index: 10;
+
+  .nav-button {
+    background-color: $button-yellow;
+    margin: 20px 5px 5px 0;
+    border-radius: 0 15px 15px 0;
+
+    &.active {
+      background-color: $button-yellow-active;
+    }
+
+    &:hover {
+      background-color: $button-yellow-active;
+    }
+  }
+}
+
+.nav-topright {
+  position: absolute;
+  right: 0%;
+  z-index: 10;
+
+  .nav-button {
+    background-color: $button-green;
+    margin: 20px 0 5px 5px;
+    border-radius: 15px 0 0 15px;
+
+    &.active {
+      background-color: $button-green-active;
+    }
+
+    &:hover {
+      background-color: $button-green-active;
+    }
+  }
+}
+
+.nav-bottomleft {
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  z-index: 10;
+
+  .nav-button {
+    background-color: $button-blue;
+    display: inline-block;
+    margin: 5px 5px 0 20px;
+    border-radius: 15px 15px 0 0;
+
+    &.active {
+      background-color: $button-blue-active;
+    }
+
+    &:hover {
+      background-color: $button-blue-active;
+    }
+  }
+}
+
+.nav-bottomright {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  z-index: 10;
+
+  .nav-button {
+    background-color: $button-red;
+    display: inline-block;
+    margin: 5px 0 0 5px;
+    border-radius: 15px 0 0 0;
+
+    &.active {
+      background-color: $button-red-active;
+    }
+
+    &:hover {
+      background-color: $button-red-active;
+    }
+  }
+}
+
+.nav-button {
+  cursor: pointer;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 5px 0px #000000;
+  box-shadow: 0px 0px 5px 0px #000000;
+  padding: 5px;
+
+  &-icon {
+    font-size: 4rem;
+    height: unset;
+    width: unset;
+    margin: 10px 10px;
+  }
+}
+
+
+
+
+@media(max-width: 600px) {
+
+
+  .nav-bottomleft {
+    width: 100vw;
+    margin: 0;
+
+    .nav-button {
+      background-color: rgb(73, 121, 255);
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      border-radius: 15px 15px 0 0;
+      width: 33.33%;
+    }
+  }
+
+  .nav-bottomright {
+    position: absolute;
+    bottom: 10%;
+    right: unset;
+    width: 100vw;
+    text-align: center;
+
+    .nav-button {
+      width: 80vw;
+      border-radius: 15px;
+    }
+  }
+
+  .nav-button {
+
+    &-icon {
+      font-size: 2rem;
+    }
+  }
+}
