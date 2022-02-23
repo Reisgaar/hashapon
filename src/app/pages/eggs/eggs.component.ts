@@ -43,7 +43,7 @@ export class EggsComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    const firstEgg = document.getElementById("egg-0") as HTMLElement;
+    const firstEgg = document.getElementById('egg-0') as HTMLElement;
     // Set actual position
     if (next) {
       this.actualPosition = this.actualPosition - 90;
