@@ -9,24 +9,28 @@
 
   <div class="list-category eggs" id="cat-eggs">
     <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
+      <h2>{{e.type + " egg"}}</h2>
       <img src="../../../assets/images/eggs/{{e.type}}.png" >
     </div>
   </div>
 
   <div class="list-category babies hidden" id="cat-babies">
     <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}">
+      <h2>Lazy Panda</h2>
       <img src="../../../assets/images/panda/{{b.type}}.png" >
     </div>
   </div>
 
   <div class="list-category youngs hidden" id="cat-youngs">
     <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}">
+      <h2>Lazy Panda</h2>
       <img src="../../../assets/images/panda/{{y.type}}.png" >
     </div>
   </div>
 
   <div class="list-category adults hidden" id="cat-adults">
     <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}">
+      <h2>Lazy Panda</h2>
       <img src="../../../assets/images/panda/{{a.type}}.png" >
     </div>
   </div>
