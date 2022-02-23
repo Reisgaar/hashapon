@@ -19,6 +19,7 @@ import { GymComponent } from './pages/gym/gym.component';
 import { IncubatorsComponent } from './pages/incubators/incubators.component';
 import { EggsComponent } from './pages/eggs/eggs.component';
 import { NavigationComponent } from './pages/navigation/navigation.component';
+import { AnimalListComponent } from './pages/animal-list/animal-list.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { NavigationComponent } from './pages/navigation/navigation.component';
     IncubatorsComponent,
     EggsComponent,
     NavigationComponent,
+    AnimalListComponent,
   ],
   imports: [
     BrowserModule,
