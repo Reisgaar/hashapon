@@ -2,6 +2,14 @@ body {
   margin: 0;
 }
 
+// List container
+.custom-dialog-container .mat-dialog-container {
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent !important;
+  box-shadow: unset;
+}
+
 // Background images style
 
 .gamescreen,

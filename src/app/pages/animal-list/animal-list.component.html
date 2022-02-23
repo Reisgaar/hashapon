@@ -1,24 +1,31 @@
 <div class="list">
 
-  <div class="list-category eggs">
+  <div class="tabs">
+    <div class="tab tab-1 active" id="tab-eggs" (click)="changeTab($event)">Egg</div>
+    <div class="tab tab-2" id="tab-babies" (click)="changeTab($event)">Baby</div>
+    <div class="tab tab-3" id="tab-youngs" (click)="changeTab($event)">Young</div>
+    <div class="tab tab-4" id="tab-adults" (click)="changeTab($event)">Adult</div>
+  </div>
+
+  <div class="list-category eggs" id="cat-eggs">
     <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
       <img src="../../../assets/images/eggs/{{e.type}}.png" >
     </div>
   </div>
 
-  <div class="list-category babies">
+  <div class="list-category babies hidden" id="cat-babies">
     <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}">
       <img src="../../../assets/images/panda/{{b.type}}.png" >
     </div>
   </div>
 
-  <div class="list-category youngs">
+  <div class="list-category youngs hidden" id="cat-youngs">
     <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}">
       <img src="../../../assets/images/panda/{{y.type}}.png" >
     </div>
   </div>
 
-  <div class="list-category adults">
+  <div class="list-category adults hidden" id="cat-adults">
     <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}">
       <img src="../../../assets/images/panda/{{a.type}}.png" >
     </div>

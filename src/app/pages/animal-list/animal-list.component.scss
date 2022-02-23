@@ -1,12 +1,34 @@
 @import '../../../style-variables.scss';
 
+
 .list {
   height: 70vw;
   width: 70vw;
   border-radius: 15px;
 
+  .tabs{
+
+    .tab{
+      display: inline-block;
+      cursor: pointer;
+      background-color: lightgrey;
+      text-align: center;
+      width: 25%;
+      border-radius: 15px 15px 0 0;
+      font-size: 1.5rem;
+      padding: 1% 0 2%;
+      text-transform: uppercase;
+
+      &.active {
+        background-color: $white;
+      }
+    }
+  }
+
   &-category {
-    height: 100%;
+    overflow: auto;
+    height: 94%;
+    background-color: white;
 
     .item {
       display: inline-block;
@@ -16,7 +38,12 @@
 
       img {
         width: 60%;
+        margin-top: 5%;
       }
+    }
+
+    &.hidden {
+      display: none;
     }
   }
 }
