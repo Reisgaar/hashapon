@@ -43,10 +43,10 @@ export class AnimalListComponent implements OnInit {
   }
 
   public openStats(): void {
-    console.log('open stats');
 
     const dialogRef = this.dialog.open(AnimalStatsComponent, {
-      panelClass: 'stat-dialog-container'
+      panelClass: 'stat-dialog-container',
+      data: 'A436GT73JV6'
     });
 
     dialogRef.afterClosed().subscribe(result => {
