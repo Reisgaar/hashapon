@@ -11,7 +11,7 @@ body {
   width: 100vw;
   height: 100vh;
   min-width: 300px;
-  max-width: 1500px;
+  max-width: 2000px;
   min-height: 500px;
   max-height: 1200px;
 }
@@ -26,7 +26,7 @@ body {
   background-size: cover;
 
   &.gachapon { background-image: url('./assets/images/backgrounds/gachapon.jpg'); }
-  &.eggs { background-image: url('./assets/images/backgrounds/eggs.png'); }
+  &.eggs { background-image: url('./assets/images/backgrounds/eggspanoramix.jpg'); }
   &.incubators { background-image: url('./assets/images/backgrounds/incubators.jpg'); }
   &.playground { background-image: url('./assets/images/backgrounds/playground.jpg'); }
   &.school { background-image: url('./assets/images/backgrounds/school.jpg'); }
