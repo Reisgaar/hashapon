@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-eggs',
@@ -20,12 +20,22 @@ export class EggsComponent implements OnInit {
     {type: 'ursids'}
   ];
 
+  @HostListener('window:resize', ['$event'])
+
+  handleResize(event: any) {
+    if (event.target.innerWidth > 600) {
+      const firstEgg = document.getElementById('egg-0') as HTMLElement;
+      this.actualPosition = 0;
+      firstEgg.style.marginLeft = this.actualPosition + 'vw';
+    }
+  }
+
+
   constructor() { }
 
   ngOnInit(): void {
     this.data = this.shuffleArray(this.data);
   }
-
 
   public shuffleArray(array: Array<any>): any {
     let currentIndex = array.length;
