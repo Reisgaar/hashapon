@@ -20,6 +20,7 @@ import { IncubatorsComponent } from './pages/incubators/incubators.component';
 import { EggsComponent } from './pages/eggs/eggs.component';
 import { NavigationComponent } from './pages/navigation/navigation.component';
 import { AnimalListComponent } from './pages/animal-list/animal-list.component';
+import { AnimalStatsComponent } from './pages/animal-stats/animal-stats.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AnimalListComponent } from './pages/animal-list/animal-list.component';
     EggsComponent,
     NavigationComponent,
     AnimalListComponent,
+    AnimalStatsComponent,
   ],
   imports: [
     BrowserModule,
