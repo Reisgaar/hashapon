@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 
 @Component({
   selector: 'app-animal-list',
@@ -16,6 +17,7 @@ export class AnimalListComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<AnimalListComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -38,6 +40,18 @@ export class AnimalListComponent implements OnInit {
 
     document.getElementById(event.target.id).classList.add('active');
     document.getElementById(event.target.id.replace('tab-', 'cat-')).classList.remove('hidden');
+  }
+
+  public openStats(): void {
+    console.log('open stats');
+
+    const dialogRef = this.dialog.open(AnimalStatsComponent, {
+      panelClass: 'stat-dialog-container'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

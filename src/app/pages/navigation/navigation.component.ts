@@ -23,7 +23,7 @@ export class NavigationComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(AnimalListComponent, { panelClass: 'custom-dialog-container' });
+    const dialogRef = this.dialog.open(AnimalListComponent, { panelClass: 'list-dialog-container' });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
