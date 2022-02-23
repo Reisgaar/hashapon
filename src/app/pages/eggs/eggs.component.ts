@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class EggsComponent implements OnInit {
 
-  data: any = [
+  actualPosition: number = 0;
+  data: Array<any> = [
     {type: 'birds'},
     {type: 'canines'},
     {type: 'felines'},
@@ -23,10 +24,10 @@ export class EggsComponent implements OnInit {
 
   ngOnInit(): void {
     this.data = this.shuffleArray(this.data);
-    console.log(this.data);
   }
 
-  public shuffleArray(array): any {
+
+  public shuffleArray(array: Array<any>): any {
     let currentIndex = array.length;
     let randomIndex: any;
 
@@ -39,6 +40,24 @@ export class EggsComponent implements OnInit {
       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
     return array;
+  }
+
+  public moveSlider(next: boolean): void {
+    const firstEgg = document.getElementById("egg-0") as HTMLElement;
+    // Set actual position
+    if (next) {
+      this.actualPosition = this.actualPosition - 90;
+    } else {
+      this.actualPosition = this.actualPosition + 90;
+    }
+    // Check if first or last
+    if (this.actualPosition === (-90 * this.data.length)) {
+      this.actualPosition = 0;
+    } else if (this.actualPosition === 90) {
+      this.actualPosition = -90 * (this.data.length - 1);
+    }
+    // Update position
+    firstEgg.style.marginLeft = this.actualPosition + 'vw';
   }
 
 }
