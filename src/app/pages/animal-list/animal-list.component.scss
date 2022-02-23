@@ -1,0 +1,22 @@
+@import '../../../style-variables.scss';
+
+.list {
+  height: 70vw;
+  width: 70vw;
+  border-radius: 15px;
+
+  &-category {
+    height: 100%;
+
+    .item {
+      display: inline-block;
+      text-align: center;
+      width: 33%;
+      height: 33%;
+
+      img {
+        width: 60%;
+      }
+    }
+  }
+}
