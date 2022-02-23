@@ -10,7 +10,7 @@ export class AnimalListComponent implements OnInit {
 
   egg: Array<any> = [ {type: 'birds'}, {type: 'canines'}, {type: 'felines'}, {type: 'marsupials'}, {type: 'primates'}, {type: 'reptiles'}, {type: 'rodents'}, {type: 'ursids'} ];
   baby: Array<any> = [ {type: 'baby'}, {type: 'baby'}, {type: 'baby'}, {type: 'baby'} ];
-  young: Array<any> = [ {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'} ];
+  young: Array<any> = [ {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'}, {type: 'young'} ];
   adult: Array<any> = [ {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'}, {type: 'adult'} ];
 
   constructor(
