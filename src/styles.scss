@@ -8,6 +8,10 @@ body {
   overflow: hidden;
   background-color: transparent !important;
   box-shadow: unset;
+  height: 80vh;
+  width: 80vw;
+  max-width: 700px;
+  max-height: 700px;
 }
 
 // Background images style
@@ -36,7 +40,7 @@ body {
   &.gachapon { background-image: url('./assets/images/backgrounds/gachapon.jpg'); }
   &.eggs { background-image: url('./assets/images/backgrounds/eggs.png'); }
   &.incubators { background-image: url('./assets/images/backgrounds/incubators.jpg'); }
-  &.playground { background-image: url('./assets/images/backgrounds/playground.jpg'); }
+  &.playground { background-image: url('./assets/images/backgrounds/playground.png'); }
   &.school { background-image: url('./assets/images/backgrounds/school.jpg'); }
   &.gym { background-image: url('./assets/images/backgrounds/gym.jpg'); }
 }
