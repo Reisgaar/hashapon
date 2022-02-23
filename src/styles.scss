@@ -1,12 +1,25 @@
 body {
   margin: 0;
+  font-family: 'Neucha', cursive !important;
 }
 
 // List container
-.custom-dialog-container .mat-dialog-container {
+.list-dialog-container .mat-dialog-container {
   padding: 0;
   overflow: hidden;
   background-color: transparent !important;
+  box-shadow: unset;
+  height: 80vh;
+  width: 80vw;
+  max-width: 700px;
+  max-height: 700px;
+}
+
+.stat-dialog-container .mat-dialog-container {
+  background-color: tomato !important;
+  padding: 0;
+  overflow: hidden;
+  // background-color: transparent !important;
   box-shadow: unset;
   height: 80vh;
   width: 80vw;
