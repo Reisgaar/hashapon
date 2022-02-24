@@ -12,6 +12,7 @@
 
       .baby {
         display: none;
+        padding: 10px;
         -webkit-filter: drop-shadow(5px 5px 5px #222);
         filter: drop-shadow(5px 5px 5px #222);
 
@@ -46,7 +47,8 @@
         }
 
         img {
-          width: 160px;
+          cursor: pointer;
+          width: 140px;
 
           @keyframes baby-move {
             0%   { transform: rotate(0)      translateX(0px);   }
@@ -108,6 +110,7 @@
         width: 80vw;
 
         .baby {
+          padding: 0;
           display: inline-block !important;
           text-align: center;
           transform: translate(0,0) !important;
