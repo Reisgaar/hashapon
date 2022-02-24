@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { egg } from 'src/app/shared/data/animal-list';
 
 @Component({
   selector: 'app-eggs',
@@ -9,16 +10,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class EggsComponent implements OnInit {
 
   actualPosition: number = 0;
-  data: Array<any> = [
-    {type: 'birds'},
-    {type: 'canines'},
-    {type: 'felines'},
-    {type: 'marsupials'},
-    {type: 'primates'},
-    {type: 'reptiles'},
-    {type: 'rodents'},
-    {type: 'ursids'}
-  ];
+  data: Array<any> = egg;
 
   @HostListener('window:resize', ['$event'])
 
