@@ -1,4 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { baby } from 'src/app/shared/data/animal-list';
 
 @Component({
@@ -22,7 +24,11 @@ export class PlaygroundComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(
+    public dialogRef: MatDialogRef<PlaygroundComponent>,
+    @Inject(MAT_DIALOG_DATA) public sentData: any,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
     this.data = this.shuffleArray(this.data);
@@ -59,6 +65,14 @@ export class PlaygroundComponent implements OnInit {
     }
     // Update position
     firstBaby.style.marginLeft = this.actualPosition + 'vw';
+  }
+
+  public openStats(ref: string, nam: string, sta: Array<any>): void {
+    const dialogRef = this.dialog.open(AnimalStatsComponent, {
+      panelClass: 'stat-dialog-container',
+      data: { reference: ref, name: nam, stats: sta}
+    });
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 
 }
