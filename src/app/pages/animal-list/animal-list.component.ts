@@ -50,9 +50,7 @@ export class AnimalListComponent implements OnInit {
       data: { reference: ref, name: nam, stats: sta}
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 
   public upgrade(event: any, category: string): void {
