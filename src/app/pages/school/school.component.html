@@ -1,3 +1,12 @@
 <div class="school background">
-  <p>school works!</p>
+  <div class="youngs-shown">
+    <div *ngFor="let young of data; let i = index" class="young" id="young-{{i}}">
+      <img src="../../../assets/images/panda/{{young.type}}.png" (click)="openStats(young.type, young.name, young.stats)">
+    </div>
+  </div>
+
+  <div class="swiper-arrows">
+    <mat-icon class="prev" (click)="moveSlider(false)">navigate_before</mat-icon>
+    <mat-icon class="next" (click)="moveSlider(true)">navigate_next</mat-icon>
+  </div>
 </div>

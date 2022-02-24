@@ -1,0 +1,133 @@
+@import '../../../style-variables.scss';
+
+.school{
+  .youngs {
+
+    &-shown{
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 60%;
+      left: 50%;
+      width: 480px;
+
+      .young {
+        display: none;
+        padding: 10px;
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+
+        &#young-0 {
+          display: inline-block;
+          transform: translate(-25px, 70px);
+          margin-left: 0vw;
+          transition: margin-left 0.5s ease-in-out;
+
+          img {
+            animation: young-move 10s ease-in-out infinite;
+          }
+        }
+
+        &#young-1 {
+          display: inline-block;
+
+          img {
+            animation: young-move 10s ease-in-out infinite;
+            animation-delay: 3s;
+          }
+        }
+
+        &#young-2 {
+          display: inline-block;
+          transform: translate(25px, 70px);
+
+          img {
+            animation: young-move 10s ease-in-out infinite;
+            animation-delay: 7s;
+          }
+        }
+
+        img {
+          cursor: pointer;
+          width: 140px;
+
+          @keyframes young-move {
+            0%   { transform: rotate(0)      translateX(0px);   }
+            10%  { transform: rotate(0)      translateX(0px);   }
+            15%  { transform: rotate(10deg)  translateX(10px);  }
+            20%  { transform: rotate(-10deg) translateX(-10px); }
+            25%  { transform: rotate(0)      translateX(0px);   }
+            50%  { transform: rotate(0)      translateX(0px);   }
+            53%  { transform: rotate(5deg)   translateX(5px);   }
+            55%  { transform: rotate(-5deg)  translateX(-5px);  }
+            57%  { transform: rotate(0)      translateX(0px);   }
+            100% { transform: rotate(0)      translateX(0px);   }
+
+            }
+        }
+      }
+    }
+  }
+
+  .swiper-arrows {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .prev {
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      height: 100px;
+      width: 100px;
+      font-size: 100px;
+    }
+
+    .next {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      height: 100px;
+      width: 100px;
+      font-size: 100px;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 600px) {
+
+  .school {
+    .youngs {
+      overflow: hidden;
+
+      &-shown{
+        top: 55%;
+        white-space: nowrap;
+        width: 80vw;
+
+        .young {
+          padding: 0;
+          display: inline-block !important;
+          text-align: center;
+          transform: translate(0,0) !important;
+          filter: drop-shadow(5px 5px 5px #222);
+          width: 100%;
+          margin-right: 10vw;
+
+          img {
+            width: 70%;
+            animation: young-move 10s ease-in-out infinite;
+          }
+        }
+      }
+    }
+
+    .swiper-arrows {
+      display: block;
+    }
+  }
+}
