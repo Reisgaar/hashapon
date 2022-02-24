@@ -1,3 +1,12 @@
 <div class="playground background">
-  <p>playground works!</p>
+  <div class="babies-shown">
+    <div *ngFor="let baby of data; let i = index" class="baby" id="baby-{{i}}">
+      <img src="../../../assets/images/panda/{{baby.type}}.png" >
+    </div>
+  </div>
+
+  <div class="swiper-arrows">
+    <mat-icon class="prev" (click)="moveSlider(false)">navigate_before</mat-icon>
+    <mat-icon class="next" (click)="moveSlider(true)">navigate_next</mat-icon>
+  </div>
 </div>
