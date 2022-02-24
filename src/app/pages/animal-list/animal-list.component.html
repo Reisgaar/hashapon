@@ -13,7 +13,7 @@
       <img src="../../../assets/images/eggs/{{e.type}}.png" >
 
       <div class="eggs-button">
-        <p class="upgrade">INCUBATE</p>
+        <p class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</p>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
       <img src="../../../assets/images/panda/{{b.type}}.png" >
 
       <div class="eggs-button">
-        <p class="upgrade">TO SCHOOL</p>
+        <p class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</p>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
       <img src="../../../assets/images/panda/{{y.type}}.png" >
 
       <div class="eggs-button">
-        <p class="upgrade">STUDY</p>
+        <p class="upgrade" (click)="upgrade($event, 'young')">STUDY</p>
       </div>
     </div>
   </div>

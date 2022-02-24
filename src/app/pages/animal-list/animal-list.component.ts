@@ -54,4 +54,20 @@ export class AnimalListComponent implements OnInit {
     });
   }
 
+  public upgrade(event: any, category: string): void {
+
+    if (category === 'egg') {
+      console.log('upgrading ' + category);
+      event.stopPropagation();
+    } else if (category === 'baby') {
+      console.log('upgrading ' + category);
+      event.stopPropagation();
+    } else if (category === 'young') {
+      console.log('upgrading ' + category);
+      event.stopPropagation();
+    } else {
+      console.log('error');
+    }
+  }
+
 }
