@@ -11,6 +11,10 @@
     <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
       <h2>{{e.type + " egg"}}</h2>
       <img src="../../../assets/images/eggs/{{e.type}}.png" >
+
+      <div class="eggs-button">
+        <p class="upgrade">INCUBATE</p>
+      </div>
     </div>
   </div>
 
@@ -18,6 +22,10 @@
     <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="openStats(b.type, b.name, b.stats)">
       <h2>{{b.name}}</h2>
       <img src="../../../assets/images/panda/{{b.type}}.png" >
+
+      <div class="eggs-button">
+        <p class="upgrade">TO SCHOOL</p>
+      </div>
     </div>
   </div>
 
@@ -25,6 +33,10 @@
     <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="openStats(y.type, y.name, {atk: 12, def: 10, vit: 11})">
       <h2>{{y.name}}</h2>
       <img src="../../../assets/images/panda/{{y.type}}.png" >
+
+      <div class="eggs-button">
+        <p class="upgrade">STUDY</p>
+      </div>
     </div>
   </div>
 
