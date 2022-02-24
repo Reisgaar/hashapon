@@ -10,28 +10,35 @@
     .tab{
       display: inline-block;
       cursor: pointer;
-      background-color: $lightgrey;
       text-align: center;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-color: $lightgrey;
+      box-sizing: border-box;
+      border: 2px solid black;
       width: 25%;
       border-radius: 15px 15px 0 0;
       font-size: 1.5rem;
-      padding: 1% 0 2%;
-      text-transform: uppercase;
+      padding: 1% 0 1%;
 
       &.active {
         background-color: $white;
+        border-bottom-width: 0;
+        padding: calc(1% + 2px) 0 calc(1% + 2px);
       }
     }
   }
 
   &-category {
     overflow: auto;
-    max-height: 94%;
+    max-height: calc(93% - 6px);
     background-color: $white;
-    border-right: 3px solid $white;
     border-radius: 0 0 15px 15px;
+    border: 2px solid black;
+    border-top-width: 0;
 
     .item {
+      position: relative;
       display: inline-block;
       text-align: center;
       border-radius: 10px;
@@ -45,8 +52,9 @@
 
       h2 {
         font-family: 'Neucha', cursive !important;
-        margin: 0;
         text-transform: capitalize;
+        font-weight: bold;
+        margin: 0;
       }
 
       img {
@@ -89,6 +97,33 @@
         rgba(251, 7, 217, 1) 90%,
         rgba(255, 0, 0, 1) 100%
       );
+    }
+
+    .eggs-button {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .upgrade {
+        cursor: pointer;
+        font-weight: bold;
+        white-space: nowrap;
+        text-shadow: 1px 1px 4px $black;
+        color: $white;
+        background-color: $button-blue;
+        border: 3px solid $button-blue-border;
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size: 1.2rem;
+
+        &:hover {
+          text-shadow: 1px 1px 4px $white;
+          background-color: $button-blue-active;
+          border: 3px solid $button-blue-active-border;
+          color: $black;
+        }
+      }
     }
   }
 }
