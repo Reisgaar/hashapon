@@ -42,7 +42,7 @@ const routes: Routes = [
       {
         path: 'gym',
         component: GymComponent
-      },,
+      },
       {
         path: 'lobby',
         component: LobbyComponent
