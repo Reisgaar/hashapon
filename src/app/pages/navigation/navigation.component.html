@@ -1,6 +1,7 @@
 <div class="nav-title" routerLink="/pages/gachapon">
   <h1>GACHAPON</h1>
   <h2>ガシャポン</h2>
+  <p >{{account}}</p>
 </div>
 
 <div class="nav-topleft" *ngIf="!walletIsConnected" (click)="connectWallet()">

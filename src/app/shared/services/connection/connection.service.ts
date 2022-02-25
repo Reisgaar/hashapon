@@ -97,6 +97,7 @@ export class ConnectionService {
         this.accounts = await this.web3js.eth.getAccounts();
         window.location.reload();
       });
+      return this.accounts;
     } catch (error) {
     }
   }

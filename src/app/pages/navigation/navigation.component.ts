@@ -11,6 +11,7 @@ import { ConnectionService } from 'src/app/shared/services/connection/connection
 export class NavigationComponent implements OnInit {
 
   walletIsConnected: boolean = false;
+  account: string;
   animal: string;
   name: string;
 
@@ -23,8 +24,9 @@ export class NavigationComponent implements OnInit {
   }
 
   public connectWallet(): void {
-    this.connectionService.connectAccount().then( () => {
+    this.connectionService.connectAccount().then( (res) => {
       this.walletIsConnected = true;
+      this.account = res[0].substring(0, 4) + '...' + res[0].substring(res[0].length - 4);
     });
   }
 
