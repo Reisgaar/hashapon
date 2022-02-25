@@ -21,6 +21,8 @@ import { EggsComponent } from './pages/eggs/eggs.component';
 import { NavigationComponent } from './pages/navigation/navigation.component';
 import { AnimalListComponent } from './pages/animal-list/animal-list.component';
 import { AnimalStatsComponent } from './pages/animal-stats/animal-stats.component';
+import { LobbyComponent } from './pages/lobby/lobby.component';
+import { BattleComponent } from './pages/battle/battle.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { AnimalStatsComponent } from './pages/animal-stats/animal-stats.componen
     NavigationComponent,
     AnimalListComponent,
     AnimalStatsComponent,
+    LobbyComponent,
+    BattleComponent,
   ],
   imports: [
     BrowserModule,
