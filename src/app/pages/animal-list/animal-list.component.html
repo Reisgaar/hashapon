@@ -1,4 +1,4 @@
-<div class="list">
+<div class="lists">
 
   <div class="tabs">
     <div class="tab tab-1 active" id="tab-eggs" (click)="changeTab($event)">Egg</div>
@@ -7,43 +7,45 @@
     <div class="tab tab-4" id="tab-adults" (click)="changeTab($event)">Adult</div>
   </div>
 
-  <div class="list-category eggs" id="cat-eggs">
-    <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
-      <h2>{{e.type + " egg"}}</h2>
-      <img src="../../../assets/images/eggs/{{e.type}}.png" >
+  <div class="list">
+    <div class="list-category eggs" id="cat-eggs">
+      <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
+        <h2>{{e.type + " egg"}}</h2>
+        <img src="../../../assets/images/eggs/{{e.type}}.png" >
 
-      <div class="eggs-button">
-        <p class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</p>
+        <div class="eggs-button">
+          <p class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="list-category babies hidden" id="cat-babies">
-    <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="openStats(b.type, b.name, b.stats)">
-      <h2>{{b.name}}</h2>
-      <img src="../../../assets/images/panda/{{b.type}}.png" >
+    <div class="list-category babies hidden" id="cat-babies">
+      <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="openStats(b.type, b.name, b.stats)">
+        <h2>{{b.name}}</h2>
+        <img src="../../../assets/images/panda/{{b.type}}.png" >
 
-      <div class="eggs-button">
-        <p class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</p>
+        <div class="eggs-button">
+          <p class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="list-category youngs hidden" id="cat-youngs">
-    <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="openStats(y.type, y.name, {atk: 12, def: 10, vit: 11})">
-      <h2>{{y.name}}</h2>
-      <img src="../../../assets/images/panda/{{y.type}}.png" >
+    <div class="list-category youngs hidden" id="cat-youngs">
+      <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="openStats(y.type, y.name, {atk: 12, def: 10, vit: 11})">
+        <h2>{{y.name}}</h2>
+        <img src="../../../assets/images/panda/{{y.type}}.png" >
 
-      <div class="eggs-button">
-        <p class="upgrade" (click)="upgrade($event, 'young')">STUDY</p>
+        <div class="eggs-button">
+          <p class="upgrade" (click)="upgrade($event, 'young')">STUDY</p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="list-category adults hidden" id="cat-adults">
-    <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}" (click)="openStats(a.type, a.name, {atk: 12, def: 10, vit: 11})">
-      <h2>{{a.name}}</h2>
-      <img src="../../../assets/images/panda/{{a.type}}.png" >
+    <div class="list-category adults hidden" id="cat-adults">
+      <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}" (click)="openStats(a.type, a.name, {atk: 12, def: 10, vit: 11})">
+        <h2>{{a.name}}</h2>
+        <img src="../../../assets/images/panda/{{a.type}}.png" >
+      </div>
     </div>
   </div>
 
