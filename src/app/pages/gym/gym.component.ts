@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { adult } from 'src/app/shared/data/animal-data';
+import { SliderService } from 'src/app/shared/services/slider.service';
 
 @Component({
   selector: 'app-gym',
@@ -23,7 +24,7 @@ export class GymComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private sliderService: SliderService) { }
 
   ngOnInit(): void {
     this.getMachineAnimals();
@@ -33,21 +34,7 @@ export class GymComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    const firstBaby = document.getElementById('first-machine') as HTMLElement;
-    // Set actual position
-    if (next) {
-      this.actualPosition = this.actualPosition - 100;
-    } else {
-      this.actualPosition = this.actualPosition + 100;
-    }
-    // Check if first or last
-    if (this.actualPosition === (-295)) {
-      this.actualPosition = 5;
-    } else if (this.actualPosition === 105) {
-      this.actualPosition = -195;
-    }
-    // Update position
-    firstBaby.style.marginLeft = this.actualPosition + 'vw';
+    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-machine');
   }
 
   public getMachineAnimals(): void {

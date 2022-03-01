@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { SliderService } from 'src/app/shared/services/slider.service';
 
 @Component({
   selector: 'app-incubators',
@@ -22,27 +23,13 @@ export class IncubatorsComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor(private sliderService: SliderService) { }
 
   ngOnInit(): void {
   }
 
   public moveSlider(next: boolean): void {
-    const firstBaby = document.getElementById('first-incubator') as HTMLElement;
-    // Set actual position
-    if (next) {
-      this.actualPosition = this.actualPosition - 100;
-    } else {
-      this.actualPosition = this.actualPosition + 100;
-    }
-    // Check if first or last
-    if (this.actualPosition === (-295)) {
-      this.actualPosition = 5;
-    } else if (this.actualPosition === 105) {
-      this.actualPosition = -195;
-    }
-    // Update position
-    firstBaby.style.marginLeft = this.actualPosition + 'vw';
+    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-incubator');
   }
 
 }
