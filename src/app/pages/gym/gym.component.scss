@@ -14,19 +14,18 @@
 
       &#first-machine {
         margin-left: unset;
-        transition: margin-left 0.5s ease-in-out;
       }
 
-      &-left {
+      &-height {
         position: absolute;
-        left: 5%;
+        left: 0%;
       }
 
-      &-center {}
+      &-boxing {}
 
-      &-right {
+      &-running {
         position: absolute;
-        right: 5%;
+        right: 0%;
       }
 
       img {
@@ -67,6 +66,33 @@
         &:hover {
           background-color: aqua;
           color: black;
+        }
+      }
+
+      .working-animal {
+        position: absolute;
+        z-index: 5;
+        transform: translate(-50%, -50%);
+
+        &.height-animal {
+          top: 73%;
+          left: 62%;
+          transform: translate(-50%, -50%) rotate(-50deg);
+        }
+
+        &.boxing-animal {
+          top: 50%;
+          left: 70%;
+          z-index: 0;
+        }
+
+        &.running-animal {
+          top: 60%;
+          left: 42%;
+        }
+
+        img {
+          height: 250px;
         }
       }
     }
@@ -112,20 +138,21 @@
 
         &#first-machine {
           margin-left: 5vw;
+          transition: margin-left 0.5s ease-in-out;
         }
 
-        &-left {
+        &-height {
           position: relative;
           left: unset;
         }
 
-        &-center {
+        &-boxing {
           position: relative;
           left: unset;
           right: unset;
         }
 
-        &-right {
+        &-running {
           position: relative;
           right: unset;
         }
@@ -142,6 +169,30 @@
 
           &.running {
             transform: unset;
+          }
+        }
+
+        .working-animal {
+
+          &.height-animal {
+            top: 55%;
+            left: 57%;
+            transform: translate(-50%, -50%) rotate(-50deg);
+          }
+
+          &.boxing-animal {
+            top: 70%;
+            left: 60%;
+            z-index: -1;
+          }
+
+          &.running-animal {
+            top: 40%;
+            left: 42%;
+          }
+
+          img {
+            height: 250px;
           }
         }
       }
