@@ -11,6 +11,7 @@
 
     &#first-machine {
       margin-left: unset;
+      transition: margin-left 0.5s ease-in-out;
     }
 
     &-left {
