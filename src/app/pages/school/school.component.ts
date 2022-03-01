@@ -1,7 +1,7 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
-import { young } from 'src/app/shared/data/animal-list';
+import { young } from 'src/app/shared/data/animal-data';
 
 @Component({
   selector: 'app-school',

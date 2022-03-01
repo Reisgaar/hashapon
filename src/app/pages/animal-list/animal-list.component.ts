@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
-import { egg, baby, young, adult } from '../../shared/data/animal-list';
+import { egg, baby, young, adult } from '../../shared/data/animal-data';
 
 @Component({
   selector: 'app-animal-list',

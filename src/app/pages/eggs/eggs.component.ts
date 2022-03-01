@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { egg } from 'src/app/shared/data/animal-list';
+import { egg } from 'src/app/shared/data/animal-data';
 
 @Component({
   selector: 'app-eggs',
