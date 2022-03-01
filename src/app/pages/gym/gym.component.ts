@@ -34,7 +34,7 @@ export class GymComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-machine');
+    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-machine', 3);
   }
 
   public getMachineAnimals(): void {

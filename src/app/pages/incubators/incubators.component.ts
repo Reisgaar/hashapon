@@ -29,7 +29,7 @@ export class IncubatorsComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-incubator');
+    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-incubator', 3);
   }
 
 }

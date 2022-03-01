@@ -7,7 +7,7 @@ export class SliderService {
 
   constructor() { }
 
-  public moveSlider(next: boolean, actualPosition: number, element: string): number {
+  public moveSlider(next: boolean, actualPosition: number, element: string, items: number): number {
     const firstBaby = document.getElementById(element) as HTMLElement;
     let position: number;
     // Set actual position
@@ -17,10 +17,10 @@ export class SliderService {
       position = actualPosition + 100;
     }
     // Check if first or last
-    if (position === (-295)) {
+    if (position === ((items * -100) + 5)) {
       position = 5;
     } else if (position === 105) {
-      position = -195;
+      position = (((items - 1) * -100) + 5);
     }
     // Update position
     firstBaby.style.marginLeft = position + 'vw';

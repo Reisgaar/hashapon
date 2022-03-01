@@ -2,6 +2,7 @@ import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { young } from 'src/app/shared/data/animal-data';
+import { SliderService } from 'src/app/shared/services/slider.service';
 
 @Component({
   selector: 'app-school',
@@ -10,7 +11,7 @@ import { young } from 'src/app/shared/data/animal-data';
 })
 export class SchoolComponent implements OnInit {
 
-  actualPosition: number = 0;
+  actualPosition: number = 5;
   data: Array<any> = young;
 
   @HostListener('window:resize', ['$event'])
@@ -18,7 +19,7 @@ export class SchoolComponent implements OnInit {
   handleResize(event: any): void {
     if (event.target.innerWidth > 600) {
       const firstYoung = document.getElementById('young-0') as HTMLElement;
-      this.actualPosition = 0;
+      this.actualPosition = 5;
       firstYoung.style.marginLeft = this.actualPosition + 'vw';
     }
   }
@@ -26,7 +27,8 @@ export class SchoolComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<SchoolComponent>,
     @Inject(MAT_DIALOG_DATA) public sentData: any,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private sliderService: SliderService
     ) { }
 
   ngOnInit(): void {
@@ -49,21 +51,7 @@ export class SchoolComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    const firstYoung = document.getElementById('young-0') as HTMLElement;
-    // Set actual position
-    if (next) {
-      this.actualPosition = this.actualPosition - 90;
-    } else {
-      this.actualPosition = this.actualPosition + 90;
-    }
-    // Check if first or last
-    if (this.actualPosition === (-90 * this.data.length)) {
-      this.actualPosition = 0;
-    } else if (this.actualPosition === 90) {
-      this.actualPosition = -90 * (this.data.length - 1);
-    }
-    // Update position
-    firstYoung.style.marginLeft = this.actualPosition + 'vw';
+    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'young-0', this.data.length);
   }
 
   public openStats(ref: string, nam: string, sta: Array<any>): void {
