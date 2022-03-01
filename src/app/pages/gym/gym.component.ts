@@ -38,8 +38,8 @@ export class GymComponent implements OnInit {
     // Check if first or last
     if (this.actualPosition === (-295)) {
       this.actualPosition = 5;
-    } else if (this.actualPosition === 100) {
-      this.actualPosition = -100 * (2 - 1);
+    } else if (this.actualPosition === 105) {
+      this.actualPosition = -195;
     }
     // Update position
     firstBaby.style.marginLeft = this.actualPosition + 'vw';
