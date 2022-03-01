@@ -1,7 +1,7 @@
 <div class="playground background">
   <div class="babies-shown">
     <div *ngFor="let baby of data; let i = index" class="baby" id="baby-{{i}}">
-      <img src="../../../assets/images/panda/{{baby.type}}.png" (click)="openStats(baby.type, baby.name, baby.stats)">
+      <img src="../../../assets/images/panda/{{baby.type}}.png" (click)="openStats(baby)">
     </div>
   </div>
 

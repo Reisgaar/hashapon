@@ -1,7 +1,7 @@
 <div class="school background">
   <div class="youngs-shown">
     <div *ngFor="let young of data; let i = index" class="young" id="young-{{i}}">
-      <img src="../../../assets/images/panda/{{young.type}}.png" (click)="openStats(young.type, young.name, young.stats)">
+      <img src="../../../assets/images/panda/{{young.type}}.png" (click)="openStats(young)">
     </div>
   </div>
 

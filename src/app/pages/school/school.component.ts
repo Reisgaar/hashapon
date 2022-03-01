@@ -54,10 +54,10 @@ export class SchoolComponent implements OnInit {
     this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'young-0', this.data.length);
   }
 
-  public openStats(ref: string, nam: string, sta: Array<any>): void {
+  public openStats(young: any): void {
     const dialogRef = this.dialog.open(AnimalStatsComponent, {
       panelClass: 'stat-dialog-container',
-      data: { reference: ref, name: nam, stats: sta}
+      data: young
     });
     dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
