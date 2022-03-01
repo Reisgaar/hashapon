@@ -4,13 +4,18 @@
 
   <div class="data">
     <div class="image">
-      <img src="../../../assets/images/panda/{{data.reference}}.png" >
+      <img src="../../../assets/images/panda/{{data.type}}.png" >
     </div>
 
     <div class="stats">
       <p>{{'ATK: ' + data.stats.atk}}</p>
       <p>{{'DEF: ' + data.stats.def}}</p>
       <p>{{'VIT: ' + data.stats.vit}}</p>
+    </div>
+
+    <div *ngIf="data.stage === 3" class="info">
+      <p>{{'EXP: ' + data.experience + ' (total exp: ' + data.experienceTotal + ')'}}</p>
+      <p>{{'Battles: ' + data.battleTotal + ' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</p>
     </div>
   </div>
 
