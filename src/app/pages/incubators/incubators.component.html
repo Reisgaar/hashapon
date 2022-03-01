@@ -1,3 +1,20 @@
 <div class="incubators background">
-  <p>incubators works!</p>
+
+  <div class="incubators-container">
+    <div class="incubator" id="first-incubator">
+      <img src="../../../assets/images/incubator.png" /><span>1</span>
+    </div>
+    <div class="incubator">
+      <img src="../../../assets/images/incubator.png" /><span>2</span>
+    </div>
+    <div class="incubator">
+      <img src="../../../assets/images/incubator.png" /><span>3</span>
+    </div>
+
+    <div class="swiper-arrows">
+      <mat-icon class="prev" (click)="moveSlider(false)">navigate_before</mat-icon>
+      <mat-icon class="next" (click)="moveSlider(true)">navigate_next</mat-icon>
+    </div>
+  </div>
+
 </div>

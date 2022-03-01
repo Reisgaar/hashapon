@@ -1,0 +1,70 @@
+.incubators {
+
+  &-container {
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .first-incubator {
+      margin: 2%;
+    }
+
+    .incubator {
+      display: inline-block;
+      margin: 2%;
+
+      img {
+        height: 300px;
+      }
+    }
+
+    .swiper-arrows {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 40%;
+
+      .prev {
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        height: 100px;
+        width: 100px;
+        font-size: 100px;
+      }
+
+      .next {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        height: 100px;
+        width: 100px;
+        font-size: 100px;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .incubators {
+
+    &-container {
+
+      .first-incubator {
+        margin: 5vw;
+      }
+
+      .incubator {
+        margin: 5vw;
+        width: 90vw;
+      }
+
+      .swiper-arrows {
+        display: block;
+      }
+    }
+  }
+}
