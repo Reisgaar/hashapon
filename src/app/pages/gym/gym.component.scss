@@ -1,0 +1,151 @@
+.gym {
+  text-align: center;
+  white-space: nowrap;
+
+  .machine {
+    display: inline-block;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &#first-machine {
+      margin-left: unset;
+    }
+
+    &-left {
+      position: absolute;
+      left: 5%;
+    }
+
+    &-center {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+
+    &-right {
+      position: absolute;
+      right: 5%;
+    }
+
+    img {
+      height: 300px;
+      margin: 25px;
+
+      &.height {
+        transform: translateY(75px);
+      }
+
+      &.boxing {
+        transform: translateY(-75px);
+      }
+
+      &.running {
+        transform: translateY(75px);
+      }
+    }
+
+    .add-button {
+      cursor: pointer;
+      position: absolute;
+      margin: auto;
+      background-color: limegreen;
+      color: white;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+      z-index: 5;
+      padding: 15px;
+      border-radius: 10px;
+
+      p {
+        margin: 0;
+      }
+
+      &:hover {
+        background-color: aqua;
+        color: black;
+      }
+    }
+  }
+
+  .swiper-arrows {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    .prev {
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      height: 100px;
+      width: 100px;
+      font-size: 100px;
+    }
+
+    .next {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      height: 100px;
+      width: 100px;
+      font-size: 100px;
+    }
+  }
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .gym {
+
+    .machine {
+      width: 90vw;
+      margin: 5vw;
+
+      &#first-machine {
+        margin-left: 5vw;
+      }
+
+      &-left {
+        position: relative;
+        left: unset;
+      }
+
+      &-center {
+        position: relative;
+        left: unset;
+        right: unset;
+      }
+
+      &-right {
+        position: relative;
+        right: unset;
+      }
+
+      img {
+
+        &.height {
+          transform: unset;
+        }
+
+        &.boxing {
+          transform: unset;
+        }
+
+        &.running {
+          transform: unset;
+        }
+      }
+    }
+
+    .swiper-arrows {
+      display: block;
+    }
+  }
+}

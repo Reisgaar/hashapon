@@ -1,3 +1,33 @@
 <div class="gym background">
-  <p>gym works!</p>
+
+  <div class="machine machine-left" id="first-machine">
+    <div *ngIf="!machineHeightIsOccupied" class="add-button">
+      <p>+</p>
+    </div>
+    <img src="../../../assets/images/height.png" class="height" />
+  </div>
+
+  <div class="machine machine-center">
+    <div *ngIf="!machineBoxingIsOccupied" class="add-button">
+      <p>+</p>
+    </div>
+    <img src="../../../assets/images/boxing.png" class="boxing" />
+  </div>
+
+  <div class="machine machine-right">
+    <div *ngIf="!machineRunningIsOccupied" class="add-button">
+      <p>+</p>
+    </div>
+    <img src="../../../assets/images/running.png" class="running" />
+  </div>
+
+  <div class="swiper-arrows">
+    <mat-icon class="prev" (click)="moveSlider(false)">navigate_before</mat-icon>
+    <mat-icon class="next" (click)="moveSlider(true)">navigate_next</mat-icon>
+  </div>
+
 </div>
+
+
+
+
