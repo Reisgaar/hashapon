@@ -43,11 +43,11 @@ export class AnimalListComponent implements OnInit {
     document.getElementById(event.target.id.replace('tab-', 'cat-')).classList.remove('hidden');
   }
 
-  public openStats(ref: string, nam: string, sta: Array<any>): void {
+  public openStats(animal: any): void {
 
     const dialogRef = this.dialog.open(AnimalStatsComponent, {
       panelClass: 'stat-dialog-container',
-      data: { reference: ref, name: nam, stats: sta}
+      data: animal
     });
 
     dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });

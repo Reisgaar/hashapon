@@ -20,7 +20,7 @@
     </div>
 
     <div class="list-category babies hidden" id="cat-babies">
-      <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="openStats(b.type, b.name, b.stats)">
+      <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="openStats(b)">
         <h2>{{b.name}}</h2>
         <img src="../../../assets/images/panda/{{b.type}}.png" >
 
@@ -31,7 +31,7 @@
     </div>
 
     <div class="list-category youngs hidden" id="cat-youngs">
-      <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="openStats(y.type, y.name, {atk: 12, def: 10, vit: 11})">
+      <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="openStats(y)">
         <h2>{{y.name}}</h2>
         <img src="../../../assets/images/panda/{{y.type}}.png" >
 
@@ -42,7 +42,7 @@
     </div>
 
     <div class="list-category adults hidden" id="cat-adults">
-      <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}" (click)="openStats(a.type, a.name, {atk: 12, def: 10, vit: 11})">
+      <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}" (click)="openStats(a)">
         <h2>{{a.name}}</h2>
         <img src="../../../assets/images/panda/{{a.type}}.png" >
       </div>
