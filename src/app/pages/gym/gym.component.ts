@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { adult } from 'src/app/shared/data/animal-data';
 
 @Component({
   selector: 'app-gym',
@@ -7,9 +8,9 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class GymComponent implements OnInit {
 
-  machineHeightIsOccupied: boolean = false;
-  machineBoxingIsOccupied: boolean = false;
-  machineRunningIsOccupied: boolean = false;
+  machineHeightAnimal: any;
+  machineBoxingAnimal: any;
+  machineRunningAnimal: any;
   actualPosition: number = 5;
 
   @HostListener('window:resize', ['$event'])
@@ -17,7 +18,7 @@ export class GymComponent implements OnInit {
   handleResize(event: any): void {
     if (event.target.innerWidth > 1000) {
       const firstEgg = document.getElementById('first-machine') as HTMLElement;
-      this.actualPosition = 5;
+      this.actualPosition = 0;
       firstEgg.style.marginLeft = this.actualPosition + 'vw';
     }
   }
@@ -25,6 +26,10 @@ export class GymComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.getMachineAnimals();
+    console.log(this.machineBoxingAnimal);
+    console.log(this.machineHeightAnimal);
+    console.log(this.machineRunningAnimal);
   }
 
   public moveSlider(next: boolean): void {
@@ -43,6 +48,12 @@ export class GymComponent implements OnInit {
     }
     // Update position
     firstBaby.style.marginLeft = this.actualPosition + 'vw';
+  }
+
+  public getMachineAnimals(): void {
+    this.machineHeightAnimal = adult[1];
+    this.machineBoxingAnimal = adult[5];
+    this.machineRunningAnimal = adult[8];
   }
 
 }
