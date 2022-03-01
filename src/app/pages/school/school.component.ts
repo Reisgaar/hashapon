@@ -15,7 +15,7 @@ export class SchoolComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
 
-  handleResize(event: any) {
+  handleResize(event: any): void {
     if (event.target.innerWidth > 600) {
       const firstYoung = document.getElementById('young-0') as HTMLElement;
       this.actualPosition = 0;

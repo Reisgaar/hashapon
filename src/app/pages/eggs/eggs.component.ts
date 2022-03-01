@@ -14,7 +14,7 @@ export class EggsComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
 
-  handleResize(event: any) {
+  handleResize(event: any): void {
     if (event.target.innerWidth > 600) {
       const firstEgg = document.getElementById('egg-0') as HTMLElement;
       this.actualPosition = 0;

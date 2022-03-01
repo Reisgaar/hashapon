@@ -16,7 +16,7 @@ export class PlaygroundComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
 
-  handleResize(event: any) {
+  handleResize(event: any): void {
     if (event.target.innerWidth > 600) {
       const firstBaby = document.getElementById('baby-0') as HTMLElement;
       this.actualPosition = 0;

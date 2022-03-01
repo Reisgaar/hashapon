@@ -14,7 +14,7 @@ export class GymComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
 
-  handleResize(event: any) {
+  handleResize(event: any): void {
     if (event.target.innerWidth > 1000) {
       const firstEgg = document.getElementById('first-machine') as HTMLElement;
       this.actualPosition = 0;
