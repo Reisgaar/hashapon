@@ -17,7 +17,7 @@ export class GymComponent implements OnInit {
   handleResize(event: any): void {
     if (event.target.innerWidth > 1000) {
       const firstEgg = document.getElementById('first-machine') as HTMLElement;
-      this.actualPosition = 0;
+      this.actualPosition = 5;
       firstEgg.style.marginLeft = this.actualPosition + 'vw';
     }
   }
