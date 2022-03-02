@@ -1,3 +1,8 @@
 <div class="home background">
-  <h1>Welcome to Gachapon</h1>
+  <div class="instructions" *ngIf="utilsService.walletIsConnected">
+    <h1>Welcome to Gachapon Game</h1>
+    <p>Buy some eggs in the gachapon to get your first pets.</p>
+    <p>Raise them to the adult stage.</p>
+    <p>Fight with other players and win experience to raise your pet stats.</p>
+  </div>
 </div>
