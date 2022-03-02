@@ -23,6 +23,7 @@ import { AnimalListComponent } from './pages/animal-list/animal-list.component';
 import { AnimalStatsComponent } from './pages/animal-stats/animal-stats.component';
 import { LobbyComponent } from './pages/lobby/lobby.component';
 import { BattleComponent } from './pages/battle/battle.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { BattleComponent } from './pages/battle/battle.component';
     AnimalStatsComponent,
     LobbyComponent,
     BattleComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { BattleComponent } from './battle/battle.component';
 import { EggsComponent } from './eggs/eggs.component';
 import { GachaponComponent } from './gachapon/gachapon.component';
 import { GymComponent } from './gym/gym.component';
+import { HomeComponent } from './home/home.component';
 import { IncubatorsComponent } from './incubators/incubators.component';
 import { LobbyComponent } from './lobby/lobby.component';
 import { PagesComponent } from './pages.component';
@@ -17,10 +18,10 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: GachaponComponent
+        component: HomeComponent
       },
       {
-        path: 'gacha',
+        path: 'gachapon',
         component: GachaponComponent
       },
       {

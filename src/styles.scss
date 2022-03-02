@@ -38,6 +38,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 
+  &.home { background-image: url('./assets/images/backgrounds/home.png'); }
   &.gachapon { background-image: url('./assets/images/backgrounds/gacha_background.png'); }
   &.eggcare { background-image: url('./assets/images/backgrounds/eggs.png'); }
   &.incubators { background-image: url('./assets/images/backgrounds/incubators.png'); }
