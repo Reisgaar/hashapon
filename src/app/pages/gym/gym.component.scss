@@ -1,3 +1,5 @@
+@import '../../../style-variables.scss';
+
 .gym {
 
   .machines {
@@ -65,7 +67,7 @@
 
         &:hover {
           background-color: aqua;
-          color: black;
+          color: $black;
         }
       }
 

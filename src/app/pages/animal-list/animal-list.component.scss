@@ -15,7 +15,7 @@
       font-weight: bold;
       background-color: $lightgrey;
       box-sizing: border-box;
-      border: 2px solid black;
+      border: 2px solid $black;
       width: 25%;
       border-radius: 15px 15px 0 0;
       font-size: 1.5rem;
@@ -33,9 +33,9 @@
     overflow: hidden;
     height: 90%;
     padding-right: 3px;
-    background-color: #ffffff;
+    background-color: $white;
     border-radius: 0 0 15px 15px;
-    border: 2px solid black;
+    border: 2px solid $black;
     border-top-width: 0;
 
     &-category {
