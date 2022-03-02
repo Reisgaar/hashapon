@@ -83,18 +83,12 @@
   z-index: 10;
 
   .nav-button {
-    background-color: $interface-red;
     display: inline-block;
     margin: 5px 0 0 5px;
     border-radius: 15px 0 0 0;
 
-    &.active {
-      background-color: $interface-red-active;
-    }
-
-    &:hover {
-      background-color: $interface-red-active;
-    }
+    &.active { filter: hue-rotate(45deg); }
+    &:hover { filter: hue-rotate(45deg); }
   }
 }
 
