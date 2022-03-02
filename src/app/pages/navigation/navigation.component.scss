@@ -32,6 +32,7 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  padding: 20px 30px;
 
   .nav-button {
     &.active { filter: hue-rotate(-25deg); }
@@ -117,7 +118,7 @@
     right: 0;
     text-transform: uppercase;
     font-size: 1.7rem;
-    text-shadow: 1px 1px 1px #ffffff;
+    text-shadow: 1px 1px 1px $white;
   }
 
   &.active {
@@ -129,6 +130,24 @@
   &:hover {
     .button-tip {
       display: block;
+    }
+  }
+}
+
+.nav-wallet {
+
+  .nav-button {
+
+    img {
+      height: 110px;
+    }
+
+    &-icon {
+      background-color: yellow;
+      padding: 5px;
+      width: 100px;
+      height: 100px;
+      font-size: 100px;
     }
   }
 }
@@ -163,14 +182,21 @@
     }
   }
 
-  .nav-button {
+  .nav-wallet {
 
-    img {
-      height: 110px;
-    }
+    .nav-button {
 
-    &-icon {
-      font-size: 2rem;
+      img {
+        height: 110px;
+      }
+
+      &-icon {
+        background-color: yellow;
+        padding: 5px;
+        width: 100px;
+        height: 100px;
+        font-size: 100px;
+      }
     }
   }
 }
