@@ -20,7 +20,6 @@
           display: inline-block;
           transform: translate(-25px, 70px);
           margin-left: 0vw;
-          transition: margin-left 0.5s ease-in-out;
 
           img {
             animation: baby-move 10s ease-in-out infinite;
@@ -119,6 +118,7 @@
           margin: 5vw;
 
           &#baby-0 {
+            transition: margin-left 0.5s ease-in-out;
             margin: 5vw;
           }
 
