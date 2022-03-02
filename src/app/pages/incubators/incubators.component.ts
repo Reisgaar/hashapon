@@ -16,9 +16,9 @@ export class IncubatorsComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
 
   handleResize(event: any): void {
-    if (event.target.innerWidth > 1000) {
+    if (event.target.innerWidth > 600) {
       const firstEgg = document.getElementById('first-incubator') as HTMLElement;
-      this.actualPosition = 0;
+      this.actualPosition = 5;
       firstEgg.style.marginLeft = this.actualPosition + 'vw';
     }
   }
