@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { egg } from 'src/app/shared/data/animal-data';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 
@@ -24,7 +25,12 @@ export class EggsComponent implements OnInit {
   }
 
 
-  constructor(private utilsService: UtilsService) { }
+  constructor(
+    private router: Router,
+    private utilsService: UtilsService
+  ) {
+    if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+  }
 
   ngOnInit(): void {
     this.utilsService.changeActiveButton('button-eggs');

@@ -4,6 +4,7 @@ import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { baby } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playground',
@@ -29,12 +30,15 @@ export class PlaygroundComponent implements OnInit {
   }
 
   constructor(
+    private router: Router,
     public dialogRef: MatDialogRef<PlaygroundComponent>,
     @Inject(MAT_DIALOG_DATA) public sentData: any,
     public dialog: MatDialog,
     private sliderService: SliderService,
     private utilsService: UtilsService
-    ) { }
+    ) {
+      if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+    }
 
   ngOnInit(): void {
     this.utilsService.changeActiveButton('button-playground');

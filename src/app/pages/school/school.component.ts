@@ -4,6 +4,7 @@ import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { young } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-school',
@@ -26,12 +27,15 @@ export class SchoolComponent implements OnInit {
   }
 
   constructor(
+    private router: Router,
     public dialogRef: MatDialogRef<SchoolComponent>,
     @Inject(MAT_DIALOG_DATA) public sentData: any,
     public dialog: MatDialog,
     private sliderService: SliderService,
     private utilsService: UtilsService
-    ) { }
+    ) {
+      if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+    }
 
   ngOnInit(): void {
     this.utilsService.changeActiveButton('button-school');

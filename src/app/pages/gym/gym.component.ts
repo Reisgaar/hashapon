@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { adult } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
@@ -26,9 +27,12 @@ export class GymComponent implements OnInit {
   }
 
   constructor(
+    private router: Router,
     private sliderService: SliderService,
     private utilsService: UtilsService
-  ) {}
+  ) {
+    if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+  }
 
   ngOnInit(): void {
     this.utilsService.changeActiveButton('button-gym');

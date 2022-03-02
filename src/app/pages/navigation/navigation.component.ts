@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { AnimalListComponent } from '../animal-list/animal-list.component';
 import { ConnectionService } from 'src/app/shared/services/connection/connection.service';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-navigation',
@@ -17,7 +18,8 @@ export class NavigationComponent implements OnInit {
 
   constructor(
     public connectionService: ConnectionService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private utilsService: UtilsService
     ) { }
 
   ngOnInit(): void {
@@ -25,8 +27,11 @@ export class NavigationComponent implements OnInit {
 
   public connectWallet(): void {
     this.connectionService.connectAccount().then( (res) => {
-      this.walletIsConnected = true;
-      this.account = res[0].substring(0, 4) + '...' + res[0].substring(res[0].length - 4);
+      if (res){
+        this.walletIsConnected = true;
+        this.account = res[0].substring(0, 4) + '...' + res[0].substring(res[0].length - 4);
+        this.utilsService.walletIsConnected = true;
+      }
     });
   }
 

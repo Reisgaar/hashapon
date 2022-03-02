@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="nav-topright">
+<div class="nav-topright" *ngIf="walletIsConnected">
   <div class="nav-button" routerLink="/pages/eggs" id="button-eggs">
     <img src="../../../assets/images/buttons/eggs.png" />
     <span class="button-tip">Eggs</span>
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="nav-bottomleft">
+<div class="nav-bottomleft" *ngIf="walletIsConnected">
   <div class="nav-button" routerLink="/pages/playground" id="button-playground">
     <img src="../../../assets/images/buttons/playground.png" />
     <span class="button-tip">Playground</span>
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div class="nav-bottomright">
+<div class="nav-bottomright" *ngIf="walletIsConnected">
   <div class="nav-button" routerLink="/pages/lobby">
     <mat-icon class="nav-button-icon">local_dining</mat-icon>
   </div>
