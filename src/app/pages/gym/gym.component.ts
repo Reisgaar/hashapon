@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { adult } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-gym',
@@ -24,9 +25,13 @@ export class GymComponent implements OnInit {
     }
   }
 
-  constructor(private sliderService: SliderService) { }
+  constructor(
+    private sliderService: SliderService,
+    private utilsService: UtilsService
+  ) {}
 
   ngOnInit(): void {
+    this.utilsService.changeActiveButton('button-gym');
     this.getMachineAnimals();
     console.log(this.machineBoxingAnimal);
     console.log(this.machineHeightAnimal);

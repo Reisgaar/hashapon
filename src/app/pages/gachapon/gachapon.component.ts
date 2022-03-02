@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-gachapon',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GachaponComponent implements OnInit {
 
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit(): void {
+    this.utilsService.changeActiveButton('button-gachapon');
   }
 
 }

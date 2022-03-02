@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { SliderService } from 'src/app/shared/services/slider.service';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-incubators',
@@ -23,9 +24,13 @@ export class IncubatorsComponent implements OnInit {
     }
   }
 
-  constructor(private sliderService: SliderService) { }
+  constructor(
+    private sliderService: SliderService,
+    private utilsService: UtilsService
+    ) { }
 
   ngOnInit(): void {
+    this.utilsService.changeActiveButton('button-incubators');
   }
 
   public moveSlider(next: boolean): void {

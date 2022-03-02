@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { egg } from 'src/app/shared/data/animal-data';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
   selector: 'app-eggs',
@@ -23,9 +24,10 @@ export class EggsComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private utilsService: UtilsService) { }
 
   ngOnInit(): void {
+    this.utilsService.changeActiveButton('button-eggs');
     this.data = this.shuffleArray(this.data);
   }
 
