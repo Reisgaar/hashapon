@@ -1,31 +1,31 @@
 export let egg: Array<any> = [
-  {id: '', stage: 0, type: 'birds', upgrading: true, timeRemaining: 0},
-  {id: '', stage: 0, type: 'canines', upgrading: true, timeRemaining: 16400},
-  {id: '', stage: 0, type: 'felines', upgrading: true, timeRemaining: 36400},
-  {id: '', stage: 0, type: 'marsupials', upgrading: false, timeRemaining: null},
-  {id: '', stage: 0, type: 'primates', upgrading: false, timeRemaining: null},
-  {id: '', stage: 0, type: 'reptiles', upgrading: false, timeRemaining: null},
-  {id: '', stage: 0, type: 'rodents', upgrading: false, timeRemaining: null},
-  {id: '', stage: 0, type: 'ursids', upgrading: false, timeRemaining: null},
+  {id: '', stage: 0, type: 'birds', upgrading: true, timeRemaining: 0, timeForwarded: false},
+  {id: '', stage: 0, type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
+  {id: '', stage: 0, type: 'felines', upgrading: true, timeRemaining: 36400, timeForwarded: false},
+  {id: '', stage: 0, type: 'marsupials', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, type: 'primates', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, type: 'reptiles', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, type: 'rodents', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, type: 'ursids', upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
 
 export let baby: Array<any> = [
-  {id: '', stage: 1, name: 'Homeless Goddess', type: 'baby1', stats: {atk: 1, def: 4, vit: 2}, upgrading: true, timeRemaining: 0},
-  {id: '', stage: 1, name: 'Lucky Tsunami', type: 'baby2', stats: {atk: 5, def: 4, vit: 5}, upgrading: true, timeRemaining: 16400},
-  {id: '', stage: 1, name: 'Zonked Unicorn', type: 'baby3', stats: {atk: 0, def: 0, vit: 1}, upgrading: true, timeRemaining: 26400},
-  {id: '', stage: 1, name: 'Sensible Gangster', type: 'baby4', stats: {atk: 5, def: 0, vit: 3}, upgrading: false, timeRemaining: null},
+  {id: '', stage: 1, name: 'Homeless Goddess', type: 'baby1', stats: {atk: 1, def: 4, vit: 2}, upgrading: true, timeRemaining: 0, timeForwarded: false},
+  {id: '', stage: 1, name: 'Lucky Tsunami', type: 'baby2', stats: {atk: 5, def: 4, vit: 5}, upgrading: true, timeRemaining: 16400, timeForwarded: true},
+  {id: '', stage: 1, name: 'Zonked Unicorn', type: 'baby3', stats: {atk: 0, def: 0, vit: 1}, upgrading: true, timeRemaining: 26400, timeForwarded: false},
+  {id: '', stage: 1, name: 'Sensible Gangster', type: 'baby4', stats: {atk: 5, def: 0, vit: 3}, upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
 export let young: Array<any> = [
-  {id: '', stage: 2, name: 'Kind Nemesis', type: 'young1', stats: {atk: 10, def: 7, vit: 11}, upgrading: true, timeRemaining: 0},
-  {id: '', stage: 2, name: 'Emotional Destroyer', type: 'young2', stats: {atk: 2, def: 4, vit: 9}, upgrading: true, timeRemaining: 6400},
-  {id: '', stage: 2, name: 'Popular Whistle', type: 'young3', stats: {atk: 1, def: 7, vit: 8}, upgrading: true, timeRemaining: 16400},
-  {id: '', stage: 2, name: 'Garrulous Doctor', type: 'young4', stats: {atk: 10, def: 11, vit: 10}, upgrading: true, timeRemaining: 26400},
-  {id: '', stage: 2, name: 'Carnivorous King', type: 'young5', stats: {atk: 10, def: 7, vit: 2}, upgrading: true, timeRemaining: 36400},
-  {id: '', stage: 2, name: 'Youthful Philosopher', type: 'young6', stats: {atk: 12, def: 1, vit: 5}, upgrading: false, timeRemaining: null},
-  {id: '', stage: 2, name: 'Indestructible Sadist', type: 'young7', stats: {atk: 7, def: 8, vit: 7}, upgrading: false, timeRemaining: null},
-  {id: '', stage: 2, name: 'Radical Intruder', type: 'young8', stats: {atk: 10, def: 4, vit: 9}, upgrading: false, timeRemaining: null},
-  {id: '', stage: 2, name: 'Wise Banana', type: 'young9', stats: {atk: 9, def: 4, vit: 12}, upgrading: false, timeRemaining: null},
-  {id: '', stage: 2, name: 'Jealous Monarch', type: 'young10', stats: {atk: 13, def: 11, vit: 12}, upgrading: false, timeRemaining: null},
+  {id: '', stage: 2, name: 'Kind Nemesis', type: 'young1', stats: {atk: 10, def: 7, vit: 11}, upgrading: true, timeRemaining: 0, timeForwarded: false},
+  {id: '', stage: 2, name: 'Emotional Destroyer', type: 'young2', stats: {atk: 2, def: 4, vit: 9}, upgrading: true, timeRemaining: 6400, timeForwarded: true},
+  {id: '', stage: 2, name: 'Popular Whistle', type: 'young3', stats: {atk: 1, def: 7, vit: 8}, upgrading: true, timeRemaining: 16400, timeForwarded: true},
+  {id: '', stage: 2, name: 'Garrulous Doctor', type: 'young4', stats: {atk: 10, def: 11, vit: 10}, upgrading: true, timeRemaining: 26400, timeForwarded: false},
+  {id: '', stage: 2, name: 'Carnivorous King', type: 'young5', stats: {atk: 10, def: 7, vit: 2}, upgrading: true, timeRemaining: 36400, timeForwarded: false},
+  {id: '', stage: 2, name: 'Youthful Philosopher', type: 'young6', stats: {atk: 12, def: 1, vit: 5}, upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 2, name: 'Indestructible Sadist', type: 'young7', stats: {atk: 7, def: 8, vit: 7}, upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 2, name: 'Radical Intruder', type: 'young8', stats: {atk: 10, def: 4, vit: 9}, upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 2, name: 'Wise Banana', type: 'young9', stats: {atk: 9, def: 4, vit: 12}, upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 2, name: 'Jealous Monarch', type: 'young10', stats: {atk: 13, def: 11, vit: 12}, upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
 
 export let adult: Array<any> = [
