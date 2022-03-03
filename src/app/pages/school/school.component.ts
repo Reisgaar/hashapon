@@ -1,6 +1,5 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { young } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
@@ -28,9 +27,6 @@ export class SchoolComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public dialogRef: MatDialogRef<SchoolComponent>,
-    @Inject(MAT_DIALOG_DATA) public sentData: any,
-    public dialog: MatDialog,
     private sliderService: SliderService,
     private utilsService: UtilsService
     ) {
@@ -59,14 +55,6 @@ export class SchoolComponent implements OnInit {
 
   public moveSlider(next: boolean): void {
     this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'young-0', this.data.length);
-  }
-
-  public openStats(young: any): void {
-    const dialogRef = this.dialog.open(AnimalStatsComponent, {
-      panelClass: 'stat-dialog-container',
-      data: young
-    });
-    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 
 }

@@ -31,9 +31,6 @@ export class PlaygroundComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public dialogRef: MatDialogRef<PlaygroundComponent>,
-    @Inject(MAT_DIALOG_DATA) public sentData: any,
-    public dialog: MatDialog,
     private sliderService: SliderService,
     private utilsService: UtilsService
     ) {
@@ -62,14 +59,6 @@ export class PlaygroundComponent implements OnInit {
 
   public moveSlider(next: boolean): void {
     this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'baby-0', this.data.length);
-  }
-
-  public openStats(baby: any): void {
-    const dialogRef = this.dialog.open(AnimalStatsComponent, {
-      panelClass: 'stat-dialog-container',
-      data: baby
-    });
-    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 
 }

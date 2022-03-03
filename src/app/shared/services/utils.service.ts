@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { AnimalStatsComponent } from 'src/app/pages/animal-stats/animal-stats.component';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +9,11 @@ export class UtilsService {
   public activeButton: string = '';
   public walletIsConnected: boolean = false;
 
-  constructor() { }
+  constructor(
+    public dialog: MatDialog,
+    public dialogRef: MatDialogRef<UtilsService>,
+    @Inject(MAT_DIALOG_DATA) public sentData: any
+  ) { }
 
   public changeActiveButton(button: string): void {
     console.log(this.activeButton + '  -  ' + button);
@@ -18,5 +24,13 @@ export class UtilsService {
       document.getElementById(button).classList.add('active');
     }
     this.activeButton = button;
+  }
+
+  public openStats(animal: any): void {
+    const dialogRef = this.dialog.open(AnimalStatsComponent, {
+      panelClass: 'stat-dialog-container',
+      data: animal
+    });
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 }

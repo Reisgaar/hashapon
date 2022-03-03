@@ -5,7 +5,7 @@
       <div *ngIf="!machineHeightAnimal" class="add-button">
         <p>+</p>
       </div>
-      <div *ngIf="machineHeightAnimal" class="working-animal height-animal">
+      <div *ngIf="machineHeightAnimal" class="working-animal height-animal" (click)="utilsService.openStats(machineHeightAnimal)">
         <img src="../../../assets/images/panda/{{machineHeightAnimal.type}}.png" />
       </div>
       <img src="../../../assets/images/height.png" class="height" />
@@ -15,7 +15,7 @@
       <div *ngIf="!machineBoxingAnimal" class="add-button">
         <p>+</p>
       </div>
-      <div *ngIf="machineBoxingAnimal" class="working-animal boxing-animal">
+      <div *ngIf="machineBoxingAnimal" class="working-animal boxing-animal" (click)="utilsService.openStats(machineBoxingAnimal)">
         <img src="../../../assets/images/panda/{{machineBoxingAnimal.type}}.png" />
       </div>
       <img src="../../../assets/images/boxing.png" class="boxing" />
@@ -25,7 +25,7 @@
       <div *ngIf="!machineRunningAnimal" class="add-button">
         <p>+</p>
       </div>
-      <div *ngIf="machineRunningAnimal" class="working-animal running-animal">
+      <div *ngIf="machineRunningAnimal" class="working-animal running-animal" (click)="utilsService.openStats(machineRunningAnimal)">
         <img src="../../../assets/images/panda/{{machineRunningAnimal.type}}.png" />
       </div>
       <img src="../../../assets/images/running.png" class="running" />
