@@ -22,6 +22,9 @@ export class AnimalListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.data);
+    document.getElementById(this.data.tab).classList.add('active');
+    document.getElementById(this.data.cat).classList.remove('hidden');
   }
 
   onNoClick(): void {

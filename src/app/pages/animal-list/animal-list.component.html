@@ -1,14 +1,14 @@
 <div class="lists">
 
   <div class="tabs">
-    <div class="tab tab-1 active" id="tab-eggs" (click)="changeTab($event)">Egg</div>
+    <div class="tab tab-1" id="tab-eggs" (click)="changeTab($event)">Egg</div>
     <div class="tab tab-2" id="tab-babies" (click)="changeTab($event)">Baby</div>
     <div class="tab tab-3" id="tab-youngs" (click)="changeTab($event)">Young</div>
     <div class="tab tab-4" id="tab-adults" (click)="changeTab($event)">Adult</div>
   </div>
 
   <div class="list">
-    <div class="list-category eggs" id="cat-eggs">
+    <div class="list-category eggs hidden" id="cat-eggs">
       <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
         <h2>{{e.type + " egg"}}</h2>
         <img src="../../../assets/images/eggs/{{e.type}}.png" >
