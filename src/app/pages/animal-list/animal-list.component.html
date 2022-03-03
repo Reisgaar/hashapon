@@ -14,10 +14,10 @@
         <img src="../../../assets/images/eggs/{{e.type}}.png" >
 
         <div class="upgrade-button">
-          <div *ngIf="e.upgrading" class="upgrading" (click)="console.log('upgrading')">
-            <app-timer [time]="e.timeRemaining" *ngIf="e.timeRemaining > 0; else timedone"></app-timer>
-            <ng-template #timedone><p>Done!</p></ng-template>
+          <div *ngIf="e.upgrading && e.timeRemaining > 0" class="upgrading" (click)="console.log('upgrading')">
+            <app-timer [time]="e.timeRemaining"></app-timer>
           </div>
+          <div *ngIf="e.upgrading && e.timeRemaining <= 0" class="upgraded" (click)="console.log('upgrade')">UPGRADE</div>
           <div *ngIf="!e.upgrading" class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</div>
         </div>
 
@@ -30,10 +30,10 @@
         <img src="../../../assets/images/panda/{{b.type}}.png" >
 
         <div class="upgrade-button">
-          <div *ngIf="b.upgrading" class="upgrading" (click)="console.log('upgrading')">
-            <app-timer [time]="b.timeRemaining" *ngIf="b.timeRemaining > 0; else timedone"></app-timer>
-            <ng-template #timedone><p>Done!</p></ng-template>
+          <div *ngIf="b.upgrading && b.timeRemaining > 0" class="upgrading" (click)="console.log('upgrading')">
+            <app-timer [time]="b.timeRemaining"></app-timer>
           </div>
+          <div *ngIf="b.upgrading && b.timeRemaining <= 0" class="upgraded" (click)="console.log('upgrade')">UPGRADE</div>
           <div *ngIf="!b.upgrading" class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</div>
         </div>
       </div>
@@ -45,10 +45,10 @@
         <img src="../../../assets/images/panda/{{y.type}}.png" >
 
         <div class="upgrade-button">
-          <div *ngIf="y.upgrading" class="upgrading" (click)="console.log('upgrading')">
-            <app-timer [time]="y.timeRemaining" *ngIf="y.timeRemaining > 0; else timedone"></app-timer>
-            <ng-template #timedone><p>Done!</p></ng-template>
+          <div *ngIf="y.upgrading && y.timeRemaining > 0" class="upgrading" (click)="console.log('upgrading')">
+            <app-timer [time]="y.timeRemaining"></app-timer>
           </div>
+          <div *ngIf="y.upgrading && y.timeRemaining <= 0" class="upgraded" (click)="console.log('upgrade')">UPGRADE</div>
           <div *ngIf="!y.upgrading" class="upgrade" (click)="upgrade($event, 'young')">STUDY</div>
         </div>
       </div>

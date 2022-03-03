@@ -117,17 +117,20 @@
           margin: 0;
         }
 
-        .upgrade {
+        .upgrade, .upgrading, .upgraded {
           cursor: pointer;
           font-weight: bold;
           white-space: nowrap;
           text-shadow: 1px 1px 4px $black;
-          color: $white;
-          background-color: $button-blue;
-          border: 3px solid $button-blue-border;
           border-radius: 15px;
           padding: 3px 30px;
           font-size: 1.2rem;
+        }
+
+        .upgrade {
+          color: $white;
+          background-color: $button-blue;
+          border: 3px solid $button-blue-border;
 
           &:hover {
             text-shadow: 1px 1px 4px $white;
@@ -138,15 +141,22 @@
         }
 
         .upgrading {
-          font-weight: bold;
-          white-space: nowrap;
-          text-shadow: 1px 1px 4px $black;
           color: $white;
           background-color: $black;
           border: 3px solid $interface-red;
-          border-radius: 15px;
-          padding: 3px 30px;
-          font-size: 1.2rem;
+        }
+
+        .upgraded {
+          color: $white;
+          background-color: $button-green;
+          border: 3px solid $button-green-border;
+
+          &:hover {
+            text-shadow: 1px 1px 4px $white;
+            background-color: $button-green-active;
+            border: 3px solid $button-green-active-border;
+            color: $black;
+          }
         }
       }
     }
