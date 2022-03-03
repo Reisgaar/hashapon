@@ -13,7 +13,6 @@ export class TimerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.time);
     this.interval = setInterval(() => {
       this.time--;
     }, 1000);

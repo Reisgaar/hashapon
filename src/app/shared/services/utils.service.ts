@@ -16,7 +16,6 @@ export class UtilsService {
   ) { }
 
   public changeActiveButton(button: string): void {
-    console.log(this.activeButton + '  -  ' + button);
     if (this.activeButton !== '' && this.walletIsConnected) {
       document.getElementById(this.activeButton).classList.remove('active');
     }
