@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { egg, baby, young, adult } from '../../shared/data/animal-data';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { UpgradeService } from 'src/app/shared/services/upgrade.service';
 
 @Component({
   selector: 'app-animal-list',
@@ -20,7 +21,8 @@ export class AnimalListComponent implements OnInit {
     public dialogRef: MatDialogRef<AnimalListComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialog: MatDialog,
-    public utilsService: UtilsService
+    public utilsService: UtilsService,
+    public upgradeService: UpgradeService
   ) { }
 
   ngOnInit(): void {
