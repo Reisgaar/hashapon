@@ -31,7 +31,7 @@
 
   .list {
     overflow: hidden;
-    height: 90%;
+    height: 91%;
     padding-right: 3px;
     background-color: $white;
     border-radius: 0 0 15px 15px;
@@ -40,10 +40,15 @@
 
     &-category {
       overflow: auto;
+      cursor: pointer;
       max-height: 100%;
       // scrollbar on firefox
       scrollbar-color: $lightgrey transparent;
       scrollbar-width: thin;
+
+      &.eggs {
+        cursor: default;
+      }
 
       .item {
         position: relative;
@@ -168,6 +173,7 @@
 
           .accelerated {
             position: absolute;
+            opacity: 0.5;
             background-color: #cacaca;
             border: 3px solid #4b4b4b;
             right: 0px;
