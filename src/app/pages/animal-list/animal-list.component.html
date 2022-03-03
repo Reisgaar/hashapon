@@ -13,9 +13,14 @@
         <h2>{{e.type + " egg"}}</h2>
         <img src="../../../assets/images/eggs/{{e.type}}.png" >
 
-        <div class="eggs-button">
-          <p class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</p>
+        <div class="upgrade-button">
+          <div *ngIf="e.upgrading" class="upgrading" (click)="console.log('upgrading')">
+            <app-timer [time]="e.timeRemaining" *ngIf="e.timeRemaining > 0; else timedone"></app-timer>
+            <ng-template #timedone><p>Done!</p></ng-template>
+          </div>
+          <div *ngIf="!e.upgrading" class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</div>
         </div>
+
       </div>
     </div>
 
@@ -24,8 +29,12 @@
         <h2>{{b.name}}</h2>
         <img src="../../../assets/images/panda/{{b.type}}.png" >
 
-        <div class="eggs-button">
-          <p class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</p>
+        <div class="upgrade-button">
+          <div *ngIf="b.upgrading" class="upgrading" (click)="console.log('upgrading')">
+            <app-timer [time]="b.timeRemaining" *ngIf="b.timeRemaining > 0; else timedone"></app-timer>
+            <ng-template #timedone><p>Done!</p></ng-template>
+          </div>
+          <div *ngIf="!b.upgrading" class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</div>
         </div>
       </div>
     </div>
@@ -35,8 +44,12 @@
         <h2>{{y.name}}</h2>
         <img src="../../../assets/images/panda/{{y.type}}.png" >
 
-        <div class="eggs-button">
-          <p class="upgrade" (click)="upgrade($event, 'young')">STUDY</p>
+        <div class="upgrade-button">
+          <div *ngIf="y.upgrading" class="upgrading" (click)="console.log('upgrading')">
+            <app-timer [time]="y.timeRemaining" *ngIf="y.timeRemaining > 0; else timedone"></app-timer>
+            <ng-template #timedone><p>Done!</p></ng-template>
+          </div>
+          <div *ngIf="!y.upgrading" class="upgrade" (click)="upgrade($event, 'young')">STUDY</div>
         </div>
       </div>
     </div>
