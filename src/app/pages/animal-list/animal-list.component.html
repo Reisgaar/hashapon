@@ -17,7 +17,8 @@
           <div *ngIf="!e.upgrading" class="upgrade" (click)="upgrade($event, 'egg')">INCUBATE</div>
           <div *ngIf="e.upgrading && e.timeRemaining > 0" class="upgrading" >
             <app-timer [time]="e.timeRemaining"></app-timer>
-            <div class="accelerate"><mat-icon>fast_forward</mat-icon></div>
+            <div class="accelerate" *ngIf="!e.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
+            <div class="accelerated" *ngIf="e.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
           </div>
           <div *ngIf="e.upgrading && e.timeRemaining <= 0" class="upgraded" (click)="console.log('upgrade')">UPGRADE</div>
         </div>
@@ -34,7 +35,8 @@
           <div *ngIf="!b.upgrading" class="upgrade" (click)="upgrade($event, 'baby')">TO SCHOOL</div>
           <div *ngIf="b.upgrading && b.timeRemaining > 0" class="upgrading" >
             <app-timer [time]="b.timeRemaining"></app-timer>
-            <div class="accelerate"><mat-icon>fast_forward</mat-icon></div>
+            <div class="accelerate" *ngIf="!b.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
+            <div class="accelerated" *ngIf="b.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
           </div>
           <div *ngIf="b.upgrading && b.timeRemaining <= 0" class="upgraded" (click)="console.log('upgrade')">UPGRADE</div>
         </div>
@@ -50,7 +52,8 @@
           <div *ngIf="!y.upgrading" class="upgrade" (click)="upgrade($event, 'young')">STUDY</div>
           <div *ngIf="y.upgrading && y.timeRemaining > 0" class="upgrading" >
             <app-timer [time]="y.timeRemaining"></app-timer>
-            <div class="accelerate"><mat-icon>fast_forward</mat-icon></div>
+            <div class="accelerate" *ngIf="!y.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
+            <div class="accelerated" *ngIf="y.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
           </div>
           <div *ngIf="y.upgrading && y.timeRemaining <= 0" class="upgraded" (click)="console.log('upgrade')">UPGRADE</div>
         </div>
