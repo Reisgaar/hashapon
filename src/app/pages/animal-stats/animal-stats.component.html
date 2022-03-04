@@ -10,15 +10,15 @@
     <div class="stats">
       <div class="stat stat-atk">
         <p>{{'ATK: ' + data.stats.atk}}</p>
-        <img src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
+        <img *ngIf="data.stage === 3" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
       </div>
       <div class="stat stat-def">
         <p>{{'DEF: ' + data.stats.def}}</p>
-        <img src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
+        <img *ngIf="data.stage === 3" src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
       </div>
       <div class="stat stat-vit">
         <p>{{'VIT: ' + data.stats.vit}}</p>
-        <img src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
+        <img *ngIf="data.stage === 3" src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
       </div>
     </div>
 
@@ -26,6 +26,17 @@
       <p>{{'EXP: ' + data.experience + ' (total exp: ' + data.experienceTotal + ')'}}</p>
       <p>{{'Battles: ' + data.battleTotal + ' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</p>
     </div>
+
+    <div class="interaction">
+      <div *ngIf="!data.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, data)">INCUBATE</div>
+      <div *ngIf="data.upgrading && data.timeRemaining > 0" class="upgrading" >
+        <app-timer [time]="data.timeRemaining"></app-timer>
+        <div class="accelerate" *ngIf="!data.timeForwarded" (click)="upgradeService.forwardUpgrade($event, data)"><mat-icon>fast_forward</mat-icon></div>
+        <div class="accelerated" *ngIf="data.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
+      </div>
+      <div *ngIf="data.upgrading && data.timeRemaining <= 0" class="upgraded" (click)="upgradeService.finishUpgrade($event, data)">UPGRADE</div>
+    </div>
+
   </div>
 
 </div>

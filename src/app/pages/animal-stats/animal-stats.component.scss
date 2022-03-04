@@ -55,5 +55,101 @@
       line-height: 2.5rem;
       margin-top: 40px;
     }
+
+    .interaction {
+      margin: 20px 0 0 0;
+
+      p{
+        margin: 0;
+      }
+
+      .upgrade, .upgrading, .upgraded {
+        cursor: pointer;
+        margin: auto;
+        font-weight: bold;
+        white-space: nowrap;
+        width: 90px;
+        text-shadow: 1px 1px 4px $black;
+        border-radius: 15px;
+        padding: 3px 30px;
+        font-size: 1.2rem;
+      }
+
+      .upgrade {
+        color: $white;
+        background-color: $button-blue;
+        border: 3px solid $button-blue-border;
+
+        &:hover {
+          text-shadow: 1px 1px 4px $white;
+          background-color: $button-blue-active;
+          border: 3px solid $button-blue-active-border;
+          color: $black;
+        }
+      }
+
+      .upgrading {
+        position: relative;
+        cursor: default;
+        color: $white;
+        background-color: $black;
+        border: 3px solid $interface-red;
+
+        .accelerate {
+          position: absolute;
+          cursor: pointer;
+          background-color: $button-yellow;
+          border: 3px solid $black;
+          right: 0px;
+          bottom: -15px;
+          border-radius: 15px;
+          padding: 0px 4px;
+
+          &:hover {
+            background-color: #fff700;
+            color: $black;
+            text-shadow: 1px 1px 4px #999999;
+          }
+
+          .mat-icon {
+            margin: 1px;
+            vertical-align: middle;
+            height: unset;
+            width: unset;
+          }
+        }
+
+        .accelerated {
+          position: absolute;
+          opacity: 0.5;
+          background-color: #cacaca;
+          border: 3px solid #4b4b4b;
+          right: 0px;
+          bottom: -15px;
+          border-radius: 15px;
+          padding: 0px 4px;
+
+          .mat-icon {
+            margin: 1px;
+            vertical-align: middle;
+            height: unset;
+            width: unset;
+          }
+        }
+      }
+
+      .upgraded {
+        color: $white;
+        background-color: $button-green;
+        border: 3px solid $button-green-border;
+
+        &:hover {
+          text-shadow: 1px 1px 4px $white;
+          background-color: $button-green-active;
+          border: 3px solid $button-green-active-border;
+          color: $black;
+        }
+      }
+    }
   }
 }
