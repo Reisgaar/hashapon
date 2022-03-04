@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { adult } from 'src/app/shared/data/animal-data';
 
 @Component({
   selector: 'app-fighter-selector',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FighterSelectorComponent implements OnInit {
 
-  constructor() { }
+  adults = adult;
+
+  constructor() {
+    this.adults.sort( (a, b) => {
+      return b.battleTotal - a.battleTotal;
+    });
+  }
 
   ngOnInit(): void {
   }

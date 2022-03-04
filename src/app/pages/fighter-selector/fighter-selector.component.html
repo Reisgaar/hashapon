@@ -1,1 +1,19 @@
-<p style="background-color: white; border: 3px solid black; font-size: 3rem; padding: 30px; text-align: center;">CHOOSE YOUR FIGHTER!</p>
+<div class="fighter-selector">
+  <p class="title">CHOOSE YOUR FIGHTER!</p>
+
+  <div class="selector">
+    <div class="fighter-item" *ngFor="let a of adults">
+      <img src="../../../assets/images/panda/{{a.type}}.png" class="image" />
+      <div class="data">
+        <p class="name">{{a.name}}</p>
+        <div class="stats">
+          <p>{{'ATK: ' + a.stats.atk}}</p>
+          <p>{{'DEF: ' + a.stats.def}}</p>
+          <p>{{'VIT: ' + a.stats.vit}}</p>
+          <p>{{'Battles: ' + a.battleTotal}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

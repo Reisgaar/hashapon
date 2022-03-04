@@ -30,15 +30,15 @@ export let young: Array<any> = [
 
 export let adult: Array<any> = [
   {id: '', stage: 3, name: 'Macabre Pacifist', type: 'adult1', stats: {atk: 25, def: 19, vit: 20}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, timeRemaining: 0},
-  {id: '', stage: 3, name: 'Dandy Sleepwalker', type: 'adult2', stats: {atk: 4, def: 15, vit: 22}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, timeRemaining: 16400},
-  {id: '', stage: 3, name: 'Ugly Maiden', type: 'adult3', stats: {atk: 30, def: 25, vit: 28}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, timeRemaining: 26400},
-  {id: '', stage: 3, name: 'Bizarre Comrade', type: 'adult4', stats: {atk: 0, def: 0, vit: 0}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'Odorous Butcher', type: 'adult5', stats: {atk: 20, def: 14, vit: 25}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'The Nightmare', type: 'adult6', stats: {atk: 25, def: 22, vit: 27}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'Flammable Anarchist', type: 'adult7', stats: {atk: 10, def: 21, vit: 9}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'Abandoned Pet', type: 'adult8', stats: {atk: 4, def: 15, vit: 23}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'Viscous Nudist', type: 'adult9', stats: {atk: 22, def: 17, vit: 11}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'Questionable Proffesional', type: 'adult10', stats: {atk: 30, def: 0, vit:15}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: false, timeRemaining: null},
-  {id: '', stage: 3, name: 'Neurotic Villain', type: 'adult11', stats: {atk: 0, def: 30, vit:30, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32}, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Dandy Sleepwalker', type: 'adult2', stats: {atk: 4, def: 15, vit: 22}, experienceTotal: 74, experience: 24, battleTotal: 40, battleWon: 18, battleLost: 22, upgrading: true, timeRemaining: 16400},
+  {id: '', stage: 3, name: 'Ugly Maiden', type: 'adult3', stats: {atk: 30, def: 25, vit: 28}, experienceTotal: 74, experience: 24, battleTotal: 27, battleWon: 17, battleLost: 10, upgrading: true, timeRemaining: 26400},
+  {id: '', stage: 3, name: 'Bizarre Comrade', type: 'adult4', stats: {atk: 0, def: 0, vit: 0}, experienceTotal: 74, experience: 24, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Odorous Butcher', type: 'adult5', stats: {atk: 20, def: 14, vit: 25}, experienceTotal: 74, experience: 24, battleTotal: 46, battleWon: 13, battleLost: 33, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'The Nightmare', type: 'adult6', stats: {atk: 25, def: 22, vit: 27}, experienceTotal: 74, experience: 24, battleTotal: 42, battleWon: 39, battleLost: 3, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Flammable Anarchist', type: 'adult7', stats: {atk: 10, def: 21, vit: 9}, experienceTotal: 74, experience: 24, battleTotal: 103, battleWon: 75, battleLost: 28, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Abandoned Pet', type: 'adult8', stats: {atk: 4, def: 15, vit: 23}, experienceTotal: 74, experience: 24, battleTotal: 99, battleWon: 68, battleLost: 31, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Viscous Nudist', type: 'adult9', stats: {atk: 22, def: 17, vit: 11}, experienceTotal: 74, experience: 24, battleTotal: 4, battleWon: 0, battleLost: 4, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Questionable Proffesional', type: 'adult10', stats: {atk: 30, def: 0, vit:15}, experienceTotal: 74, experience: 24, battleTotal: 12, battleWon: 3, battleLost: 9, upgrading: false, timeRemaining: null},
+  {id: '', stage: 3, name: 'Neurotic Villain', type: 'adult11', stats: {atk: 0, def: 30, vit:30}, experienceTotal: 74, experience: 24, battleTotal: 39, battleWon: 22, battleLost: 17, upgrading: false, timeRemaining: null},
 ];
 
