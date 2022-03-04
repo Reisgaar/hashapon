@@ -66,6 +66,7 @@
         h2 {
           font-family: $main-font;
           text-transform: capitalize;
+          white-space: nowrap;
           font-weight: bold;
           margin: 0;
         }
@@ -76,6 +77,24 @@
           margin-top: 5%;
           -webkit-filter: drop-shadow(5px 5px 5px #222);
           filter: drop-shadow(5px 5px 5px #222);
+        }
+
+        .adult-buttons {
+          position: absolute;
+          display: inline-block;
+          white-space: nowrap;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+
+          img {
+            width: 40%;
+            margin: 0 5%;
+
+            &:hover {
+              filter: drop-shadow(5px 5px 5px #222) hue-rotate(-100deg);
+            }
+          }
         }
       }
 
@@ -162,6 +181,12 @@
             bottom: -15px;
             border-radius: 15px;
             padding: 0px 4px;
+
+            &:hover {
+              background-color: #fff700;
+              color: $black;
+              text-shadow: 1px 1px 4px #999999;
+            }
 
             .mat-icon {
               margin: 1px;
