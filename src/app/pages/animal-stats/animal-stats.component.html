@@ -8,9 +8,18 @@
     </div>
 
     <div class="stats">
-      <p>{{'ATK: ' + data.stats.atk}}</p>
-      <p>{{'DEF: ' + data.stats.def}}</p>
-      <p>{{'VIT: ' + data.stats.vit}}</p>
+      <div class="stat stat-atk">
+        <p>{{'ATK: ' + data.stats.atk}}</p>
+        <img src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
+      </div>
+      <div class="stat stat-def">
+        <p>{{'DEF: ' + data.stats.def}}</p>
+        <img src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
+      </div>
+      <div class="stat stat-vit">
+        <p>{{'VIT: ' + data.stats.vit}}</p>
+        <img src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
+      </div>
     </div>
 
     <div *ngIf="data.stage === 3" class="info">

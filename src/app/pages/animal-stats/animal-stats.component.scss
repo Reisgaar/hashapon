@@ -18,6 +18,7 @@
       img {
         -webkit-filter: drop-shadow(5px 5px 5px #222);
         filter: drop-shadow(5px 5px 5px #222);
+        height: 250px;
       }
     }
 
@@ -27,8 +28,25 @@
       margin: 0 30px;
       font-size: 1.8rem;
 
-      p {
-        margin: 30px 0;
+      .stat {
+        text-align: right;
+
+        img {
+          cursor: pointer;
+          display: inline-block;
+          height: 40px;
+          margin-left: 15px;
+          vertical-align: text-bottom;
+
+          &:hover {
+            filter: hue-rotate(45deg);
+          }
+        }
+
+        p {
+          display: inline-block;
+          margin: 30px 0;
+        }
       }
     }
 
