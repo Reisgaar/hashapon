@@ -4,6 +4,7 @@ import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { egg, baby, young, adult } from '../../shared/data/animal-data';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { UpgradeService } from 'src/app/shared/services/upgrade.service';
+import { BattleService } from 'src/app/shared/services/battle.service';
 
 @Component({
   selector: 'app-animal-list',
@@ -22,7 +23,8 @@ export class AnimalListComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialog: MatDialog,
     public utilsService: UtilsService,
-    public upgradeService: UpgradeService
+    public upgradeService: UpgradeService,
+    public battleService: BattleService
   ) { }
 
   ngOnInit(): void {
