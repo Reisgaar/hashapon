@@ -23,6 +23,11 @@ export class UpgradeService {
     event.stopPropagation();
   }
 
+  upgradeStat(event: any, animal: any, stat: string): void {
+    console.log('Upgrade ' + animal.name + '\'s ' + stat);
+    event.stopPropagation();
+  }
+
   getStage(animal: any): string {
     let stage = '';
     switch (animal.stage) {
