@@ -25,6 +25,7 @@ import { LobbyComponent } from './pages/lobby/lobby.component';
 import { BattleComponent } from './pages/battle/battle.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TimerComponent } from './pages/timer/timer.component';
+import { FighterSelectorComponent } from './pages/fighter-selector/fighter-selector.component';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { TimerComponent } from './pages/timer/timer.component';
     BattleComponent,
     HomeComponent,
     TimerComponent,
+    FighterSelectorComponent,
   ],
   imports: [
     BrowserModule,
