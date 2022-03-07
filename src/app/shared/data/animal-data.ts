@@ -1,3 +1,14 @@
+export let incubators: Array<any> = [
+  {id: 1, type: 'birds', bought: true, incubating: true},
+  {id: 2, type: 'canines', bought: true, incubating: true},
+  {id: 3, type: 'felines', bought: true, incubating: true},
+  {id: 4, type: 'marsupials', bought: true, incubating: false},
+  {id: 5, type: 'primates', bought: true, incubating: false},
+  {id: 6, type: 'reptiles', bought: false, incubating: false},
+  {id: 7, type: 'rodents', bought: false, incubating: false},
+  {id: 8, type: 'ursids', bought: false, incubating: false},
+];
+
 export let egg: Array<any> = [
   {id: '', stage: 0, type: 'birds', upgrading: true, timeRemaining: 0, timeForwarded: false},
   {id: '', stage: 0, type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
