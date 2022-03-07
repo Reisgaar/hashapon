@@ -20,7 +20,11 @@ export class IncubatorsComponent implements OnInit {
   sliderItemAmount: number;
 
   @HostListener('window:resize', ['$event'])
+/*
 
+FIX TO WORK ALWAYS, NOT ONLY ON WINDOW RESIZE
+
+*/
   handleResize(event: any): void {
     const firstEgg = document.getElementById('incubator0') as HTMLElement;
     this.actualPosition = 5;
