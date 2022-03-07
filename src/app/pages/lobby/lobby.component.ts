@@ -19,21 +19,20 @@ export class LobbyComponent implements OnInit {
     private utilsService: UtilsService,
     public dialog: MatDialog,
   ) {
+    if (!this.utilsService.walletIsConnected) {
+      this.router.navigate(['home']);
+    }
     this.route.queryParams.subscribe(params => {
-      this.fighter = JSON.parse(params.data);
-      console.log(this.fighter);
-      //this.fighter = params['fighter'];
+      if (params.data) {
+        this.fighter = JSON.parse(params.data);
+        console.log(this.fighter);
+      }
     });
   }
 
   ngOnInit(): void {
-    if (!this.utilsService.walletIsConnected) {
-      this.router.navigate(['home']);
-    }
-    else {
-      if (!this.fighter) {
-        this.openFighterDialog();
-      }
+    if (!this.fighter) {
+      this.openFighterDialog();
     }
   }
 
