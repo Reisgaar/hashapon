@@ -47,9 +47,15 @@ export class GymComponent implements OnInit {
   }
 
   public getMachineAnimals(): void {
-    this.machineHeightAnimal = adult[1];
-    this.machineBoxingAnimal = adult[5];
-    this.machineRunningAnimal = adult[8];
+    for (const a of adult) {
+      if (a.upgrading){
+        switch (a.upgradingStat) {
+          case(0): this.machineHeightAnimal = a; break;
+          case(1): this.machineBoxingAnimal = a; break;
+          case(2): this.machineRunningAnimal = a; break;
+        }
+      }
+    }
   }
 
 }
