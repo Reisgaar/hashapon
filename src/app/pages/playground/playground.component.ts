@@ -21,6 +21,8 @@ export class PlaygroundComponent implements OnInit {
     if (event.target.innerWidth > 600) {
       this.actualPosition = 5;
       firstBaby.style.marginLeft = '0vw';
+    } else {
+      firstBaby.style.marginLeft = this.actualPosition + 'vw';
     }
   }
 

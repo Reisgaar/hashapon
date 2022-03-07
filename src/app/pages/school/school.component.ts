@@ -19,7 +19,9 @@ export class SchoolComponent implements OnInit {
   handleResize(event: any): void {
     const firstYoung = document.getElementById('young-0') as HTMLElement;
     if (event.target.innerWidth > 600) {
-      this.actualPosition = 0;
+      this.actualPosition = 5;
+      firstYoung.style.marginLeft = '0vw';
+    } else {
       firstYoung.style.marginLeft = this.actualPosition + 'vw';
     }
   }

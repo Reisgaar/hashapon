@@ -18,9 +18,11 @@ export class EggsComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
 
   handleResize(event: any): void {
+    const firstEgg = document.getElementById('egg-0') as HTMLElement;
     if (event.target.innerWidth > 600) {
-      const firstEgg = document.getElementById('egg-0') as HTMLElement;
       this.actualPosition = 5;
+      firstEgg.style.marginLeft = '0vw';
+    } else {
       firstEgg.style.marginLeft = this.actualPosition + 'vw';
     }
   }
