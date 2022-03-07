@@ -20,10 +20,13 @@ export class LobbyComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
-
-    if (!this.fighter) {
-      this.openFighterDialog();
+    if (!this.utilsService.walletIsConnected) {
+      this.router.navigate(['home']);
+    }
+    else {
+      if (!this.fighter) {
+        this.openFighterDialog();
+      }
     }
   }
 
@@ -31,7 +34,7 @@ export class LobbyComponent implements OnInit {
     const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'list-dialog-container', data: { cat: 'cat-' + location, tab: 'tab-' + location } });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      this.fighter = result;
     });
   }
 

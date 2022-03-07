@@ -2,7 +2,7 @@
   <p class="title">CHOOSE YOUR FIGHTER!</p>
 
   <div class="selector">
-    <div class="fighter-item" *ngFor="let a of adults">
+    <div class="fighter-item" *ngFor="let a of adults" (click)="selectFigther(a)">
       <img src="../../../assets/images/panda/{{a.type}}.png" class="image" />
       <div class="data">
         <p class="name">{{a.name}}</p>

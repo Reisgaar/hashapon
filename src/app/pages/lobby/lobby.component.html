@@ -1,3 +1,9 @@
 <div class="lobby background">
-  <p>lobby works!</p>
+  <div class="fighter">
+    <p *ngIf="!fighter" style="font-size: 2rem;">Fighter not found, <span (click)="openFighterDialog()" style="cursor: pointer; color: blue;">please choose your fighter.</span></p>
+    <div *ngIf="fighter" class="data">
+      <p>{{'Selected fighter: ' + fighter.name}}</p>
+      <img src="../../../assets/images/panda/{{fighter.type}}.png" />
+    </div>
+  </div>
 </div>
