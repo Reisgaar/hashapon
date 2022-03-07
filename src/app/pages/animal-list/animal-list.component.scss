@@ -40,7 +40,6 @@
 
     &-category {
       overflow: auto;
-      cursor: pointer;
       max-height: 100%;
       // scrollbar on firefox
       scrollbar-color: $lightgrey transparent;
@@ -51,6 +50,7 @@
       }
 
       .item {
+        cursor: pointer;
         position: relative;
         display: inline-block;
         text-align: center;
