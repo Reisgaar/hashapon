@@ -12,15 +12,13 @@ export class BattleService {
     private matDialog: MatDialog
   ) { }
 
-  sendToFight(event: any, animal: any): void {
+  sendToFight(animal: any): void {
     console.log('Start battle with: ' + animal.name);
-    event.stopPropagation();
   }
 
   public sendFighterToLobby(event: any, animal: any): void {
     event.stopPropagation();
     this.matDialog.closeAll();
-    console.log(animal);
     this.router.navigate(['/pages/lobby'], { queryParams: {data: JSON.stringify(animal)} });
   }
 }
