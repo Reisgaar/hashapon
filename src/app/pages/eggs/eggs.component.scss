@@ -107,7 +107,7 @@
       &-shown{
         top: 55%;
         white-space: nowrap;
-        width: 80vw;
+        width: 100vw;
 
         .egg {
           padding: 0;
@@ -115,8 +115,13 @@
           text-align: center;
           transform: translate(0,0) !important;
           filter: drop-shadow(5px 5px 5px #222);
-          width: 100%;
-          margin-right: 10vw;
+          width: 90vw;
+          margin: 5vw;
+
+          &#egg-0 {
+            transition: margin-left 0.5s ease-in-out;
+            margin: 5vw;
+          }
 
           img {
             width: 70%;

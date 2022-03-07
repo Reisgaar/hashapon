@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { egg } from 'src/app/shared/data/animal-data';
+import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 
 export class EggsComponent implements OnInit {
 
-  actualPosition: number = 0;
+  actualPosition: number = 5;
   data: Array<any> = egg;
 
   @HostListener('window:resize', ['$event'])
@@ -19,7 +20,7 @@ export class EggsComponent implements OnInit {
   handleResize(event: any): void {
     if (event.target.innerWidth > 600) {
       const firstEgg = document.getElementById('egg-0') as HTMLElement;
-      this.actualPosition = 0;
+      this.actualPosition = 5;
       firstEgg.style.marginLeft = this.actualPosition + 'vw';
     }
   }
@@ -27,7 +28,8 @@ export class EggsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
+    private sliderService: SliderService
   ) {
     if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
   }
@@ -53,21 +55,7 @@ export class EggsComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    const firstEgg = document.getElementById('egg-0') as HTMLElement;
-    // Set actual position
-    if (next) {
-      this.actualPosition = this.actualPosition - 90;
-    } else {
-      this.actualPosition = this.actualPosition + 90;
-    }
-    // Check if first or last
-    if (this.actualPosition === (-90 * this.data.length)) {
-      this.actualPosition = 0;
-    } else if (this.actualPosition === 90) {
-      this.actualPosition = -90 * (this.data.length - 1);
-    }
-    // Update position
-    firstEgg.style.marginLeft = this.actualPosition + 'vw';
+    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'egg-0', this.data.length);
   }
 
 }

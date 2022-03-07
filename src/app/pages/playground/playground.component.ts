@@ -1,6 +1,4 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AnimalStatsComponent } from '../animal-stats/animal-stats.component';
 import { baby } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
@@ -11,7 +9,6 @@ import { Router } from '@angular/router';
   templateUrl: './playground.component.html',
   styleUrls: ['./playground.component.scss']
 })
-
 export class PlaygroundComponent implements OnInit {
 
   actualPosition: number = 5;
@@ -24,8 +21,6 @@ export class PlaygroundComponent implements OnInit {
     if (event.target.innerWidth > 600) {
       this.actualPosition = 5;
       firstBaby.style.marginLeft = '0vw';
-    } else {
-      firstBaby.style.marginLeft = this.actualPosition + 'vw';
     }
   }
 

@@ -1,5 +1,4 @@
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { young } from 'src/app/shared/data/animal-data';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
@@ -18,9 +17,9 @@ export class SchoolComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
 
   handleResize(event: any): void {
+    const firstYoung = document.getElementById('young-0') as HTMLElement;
     if (event.target.innerWidth > 600) {
-      const firstYoung = document.getElementById('young-0') as HTMLElement;
-      this.actualPosition = 5;
+      this.actualPosition = 0;
       firstYoung.style.marginLeft = this.actualPosition + 'vw';
     }
   }
