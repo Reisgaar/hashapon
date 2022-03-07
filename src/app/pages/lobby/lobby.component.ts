@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { FighterSelectorComponent } from '../fighter-selector/fighter-selector.component';
 
@@ -15,9 +15,16 @@ export class LobbyComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private utilsService: UtilsService,
     public dialog: MatDialog,
-  ) { }
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.fighter = JSON.parse(params.data);
+      console.log(this.fighter);
+      //this.fighter = params['fighter'];
+    });
+  }
 
   ngOnInit(): void {
     if (!this.utilsService.walletIsConnected) {

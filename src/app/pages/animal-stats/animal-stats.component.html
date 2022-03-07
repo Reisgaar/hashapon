@@ -25,6 +25,7 @@
     <div *ngIf="data.stage === 3" class="info">
       <p>{{'EXP: ' + data.experience + ' (total exp: ' + data.experienceTotal + ')'}}</p>
       <p>{{'Battles: ' + data.battleTotal + ' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</p>
+      <img src="../../../assets/images/fight.png" (click)="battleService.sendFighterToLobby($event, data)" />
     </div>
 
     <div class="interaction" *ngIf="data.stage !== 3">
