@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { BattleService } from 'src/app/shared/services/battle.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { FighterSelectorComponent } from '../fighter-selector/fighter-selector.component';
 
@@ -18,6 +19,7 @@ export class LobbyComponent implements OnInit {
     private route: ActivatedRoute,
     private utilsService: UtilsService,
     public dialog: MatDialog,
+    public battleService: BattleService
   ) {
     if (!this.utilsService.walletIsConnected) {
       this.router.navigate(['home']);

@@ -4,6 +4,7 @@
     <div *ngIf="fighter" class="data">
       <p>{{'Selected fighter: ' + fighter.name}}</p>
       <img src="../../../assets/images/panda/{{fighter.type}}.png" />
+      <img src="../../../assets/images/fight.png" (click)="battleService.sendToFight(fighter)" />
     </div>
   </div>
 </div>
