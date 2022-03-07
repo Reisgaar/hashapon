@@ -1,14 +1,14 @@
 <div class="incubators background">
 
   <div class="incubators-container">
-    <div class="incubator" id="first-incubator">
-      <img src="../../../assets/images/incubator.png" /><span style="position: absolute; font-size: 3rem; top: 50%; left: 50%; transform: translate(-50%, -50%);">1</span>
-    </div>
-    <div class="incubator">
-      <img src="../../../assets/images/incubator.png" /><span style="position: absolute; font-size: 3rem; top: 50%; left: 50%; transform: translate(-50%, -50%);">2</span>
-    </div>
-    <div class="incubator">
-      <img src="../../../assets/images/incubator.png" /><span style="position: absolute; font-size: 3rem; top: 50%; left: 50%; transform: translate(-50%, -50%);">3</span>
+
+    <div *ngFor="let inc of incubators; let index = index" class="incubator" id="{{'incubator' + index}}">
+      <img *ngIf="!inc.bought" src="../../../assets/images/incubator.png" class="locked" />
+      <img *ngIf="inc.bought" src="../../../assets/images/incubator.png" />
+      <span class="egg">
+        <img *ngIf="inc.egg" src="../../../assets/images/eggs/{{inc.egg}}.png" />
+      </span>
+      <span style="position: absolute; left: 0;">{{inc.type}}</span>
     </div>
 
     <div class="swiper-arrows">

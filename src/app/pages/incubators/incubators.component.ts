@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { incubators } from 'src/app/shared/data/animal-data';
 
 @Component({
   selector: 'app-incubators',
@@ -10,18 +11,32 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 })
 export class IncubatorsComponent implements OnInit {
 
+  incubators = incubators;
   machineHeightAnimal: any;
   machineBoxingAnimal: any;
   machineRunningAnimal: any;
   actualPosition: number = 5;
+  sliderItemSize: number;
+  sliderItemAmount: number;
 
   @HostListener('window:resize', ['$event'])
 
   handleResize(event: any): void {
-    if (event.target.innerWidth > 600) {
-      const firstEgg = document.getElementById('first-incubator') as HTMLElement;
-      this.actualPosition = 5;
-      firstEgg.style.marginLeft = this.actualPosition + 'vw';
+    const firstEgg = document.getElementById('incubator0') as HTMLElement;
+    this.actualPosition = 5;
+    firstEgg.style.marginLeft = this.actualPosition + 'vw';
+    if (event.target.innerWidth > 1200) {
+      this.sliderItemSize = 25;
+      this.sliderItemAmount = 4;
+    } else if (event.target.innerWidth > 900) {
+      this.sliderItemSize = 33.33;
+      this.sliderItemAmount = 3;
+    } else if (event.target.innerWidth > 600) {
+      this.sliderItemSize = 50;
+      this.sliderItemAmount = 2;
+    } else {
+      this.sliderItemSize = 100;
+      this.sliderItemAmount = 1;
     }
   }
 
@@ -38,7 +53,8 @@ export class IncubatorsComponent implements OnInit {
   }
 
   public moveSlider(next: boolean): void {
-    this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'first-incubator', 3);
+    console.log(this.incubators.length);
+    this.actualPosition = this.sliderService.moveSliderOneStep(next, this.actualPosition, 'incubator0', this.incubators.length, this.sliderItemSize, this.sliderItemAmount);
   }
 
 }
