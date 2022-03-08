@@ -42,8 +42,14 @@ export class LobbyComponent implements OnInit {
     const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'list-dialog-container', data: { cat: 'cat-' + location, tab: 'tab-' + location } });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.fighter = result;
+      if (result) {
+        this.fighter = result;
+      }
     });
+  }
+
+  removeFighter(): void {
+    this.fighter = null;
   }
 
 }
