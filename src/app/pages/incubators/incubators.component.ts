@@ -19,31 +19,6 @@ export class IncubatorsComponent implements OnInit {
   sliderItemSize: number;
   sliderItemAmount: number;
 
-  @HostListener('window:resize', ['$event'])
-/*
-
-FIX TO WORK ALWAYS, NOT ONLY ON WINDOW RESIZE
-
-*/
-  handleResize(event: any): void {
-    const firstEgg = document.getElementById('incubator0') as HTMLElement;
-    this.actualPosition = 5;
-    firstEgg.style.marginLeft = this.actualPosition + 'vw';
-    if (event.target.innerWidth > 1200) {
-      this.sliderItemSize = 25;
-      this.sliderItemAmount = 4;
-    } else if (event.target.innerWidth > 900) {
-      this.sliderItemSize = 33.33;
-      this.sliderItemAmount = 3;
-    } else if (event.target.innerWidth > 600) {
-      this.sliderItemSize = 50;
-      this.sliderItemAmount = 2;
-    } else {
-      this.sliderItemSize = 100;
-      this.sliderItemAmount = 1;
-    }
-  }
-
   constructor(
     private router: Router,
     private sliderService: SliderService,
@@ -54,10 +29,35 @@ FIX TO WORK ALWAYS, NOT ONLY ON WINDOW RESIZE
 
   ngOnInit(): void {
     this.utilsService.changeActiveButton('button-incubators');
+    this.setItemSizeAndAmount(innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+
+  handleResize(event: any): void {
+    const firstEgg = document.getElementById('incubator0') as HTMLElement;
+    this.actualPosition = 5;
+    firstEgg.style.marginLeft = this.actualPosition + 'vw';
+    this.setItemSizeAndAmount(event.target.innerWidth);
+  }
+
+  setItemSizeAndAmount(width: number): void {
+    if (width > 1200) {
+      this.sliderItemSize = 25;
+      this.sliderItemAmount = 4;
+    } else if (width > 900) {
+      this.sliderItemSize = 33.33;
+      this.sliderItemAmount = 3;
+    } else if (width > 600) {
+      this.sliderItemSize = 50;
+      this.sliderItemAmount = 2;
+    } else {
+      this.sliderItemSize = 100;
+      this.sliderItemAmount = 1;
+    }
   }
 
   public moveSlider(next: boolean): void {
-    console.log(this.incubators.length);
     this.actualPosition = this.sliderService.moveSliderOneStep(next, this.actualPosition, 'incubator0', this.incubators.length, this.sliderItemSize, this.sliderItemAmount);
   }
 
