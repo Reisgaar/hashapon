@@ -131,7 +131,7 @@
           }
 
           &-animal {
-            width: 250px;
+            width: 180px;
             animation: young-move 10s ease-in-out infinite;
           }
 
@@ -140,7 +140,7 @@
             transform: translateX(-50%);
             bottom: -50px;
             z-index: -1;
-            width: 750px;
+            width: 600px;
           }
         }
       }

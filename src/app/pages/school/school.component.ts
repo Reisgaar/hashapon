@@ -43,7 +43,7 @@ export class SchoolComponent implements OnInit {
   }
 
   checkMobileWidth(width: number): void {
-    if (width > 650) {
+    if (width > 560) {
       this.mobileSchool = false;
     } else {
       this.mobileSchool = true;
