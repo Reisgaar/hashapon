@@ -64,15 +64,34 @@
 
 .nav-bottomleft {
   position: absolute;
-  bottom: 0%;
-  left: 0%;
+  bottom: -8px;
+  left: 20px;
   z-index: 10;
 
   .nav-button {
     display: inline-block;
 
-    &.active { filter: hue-rotate(45deg); }
-    &:hover { filter: hue-rotate(45deg); }
+    .location {
+      filter: unset;
+      height: 200px;
+      margin: -1px;
+
+      &.active {
+        display: none;
+      }
+    }
+
+    &.active, &:hover {
+
+      .location {
+        display: none;
+
+        &.active {
+          display: block;
+          background: radial-gradient(#ffffff88 40%, transparent 70%);
+        }
+      }
+    }
   }
 }
 
