@@ -36,6 +36,15 @@
         img {
           height: 120px;
           animation: float 6s ease-in-out infinite;
+
+          &.delay0{ animation-delay: -0s; }
+          &.delay1{ animation-delay: -2s; }
+          &.delay2{ animation-delay: -4s; }
+          &.delay3{ animation-delay: -6s; }
+          &.delay4{ animation-delay: -1s; }
+          &.delay5{ animation-delay: -3s; }
+          &.delay6{ animation-delay: -5s; }
+          &.delay7{ animation-delay: -7s; }
         }
 
         @keyframes float {

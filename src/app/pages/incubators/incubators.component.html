@@ -5,8 +5,8 @@
     <div *ngFor="let inc of incubators; let index = index" class="incubator" id="{{'incubator' + index}}">
       <img *ngIf="!inc.bought" src="../../../assets/images/incubator.png" class="locked" />
       <img *ngIf="inc.bought" src="../../../assets/images/incubator.png" />
-      <span class="egg">
-        <img *ngIf="inc.egg" src="../../../assets/images/eggs/{{inc.egg}}.png" />
+      <span class="egg" *ngIf="inc.incubating">
+        <img class="delay{{index}}" src="../../../assets/images/eggs/{{inc.type}}.png" />
       </span>
       <span style="position: absolute; left: 50%; transform: translateX(-50%); top: -40px; font-size: 2rem;">{{inc.type}}</span>
     </div>
