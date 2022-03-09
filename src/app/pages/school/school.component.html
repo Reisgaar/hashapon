@@ -1,12 +1,14 @@
 <div class="school background">
   <div class="youngs-shown">
     <div *ngFor="let young of data; let i = index" class="young" id="young-{{i}}">
-      <img src="../../../assets/images/panda/{{young.type}}.png" class="young-animal" (click)="utilsService.openStats(young)">
+      <div class="young-img-container">
+        <img src="../../../assets/images/panda/{{young.type}}.png" class="young-animal" (click)="utilsService.openStats(young)">
 
-      <img *ngIf="i < 3 && !mobileSchool" src="../../../assets/images/backgrounds/school_table_{{i}}.png" class="young-table" />
-      <img *ngIf="i > 2 && !mobileSchool" src="../../../assets/images/backgrounds/school_table_{{getTable(i)}}.png" class="young-table random" />
+        <img *ngIf="i < 3 && !mobileSchool" src="../../../assets/images/backgrounds/school_table_{{i}}.png" class="young-table young-table{{i}}" />
+        <img *ngIf="i > 2 && !mobileSchool" src="../../../assets/images/backgrounds/school_table_{{getTable(i)}}.png" class="young-table young-table young-table{{getTable(i)}}" />
 
-      <img *ngIf="mobileSchool" src="../../../assets/images/backgrounds/school_table_mobile.png" class="young-table" />
+        <img *ngIf="mobileSchool" src="../../../assets/images/backgrounds/school_table_mobile.png" class="young-table" />
+      </div>
     </div>
   </div>
 
