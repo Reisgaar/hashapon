@@ -107,7 +107,6 @@
 
     .location {
       transform: translateY(6px);
-      width: 150px;
 
       &.mobile {
         display: none !important;
@@ -188,6 +187,30 @@
 
 
 
+@media(max-width: 850px) {
+  .nav-bottomleft {
+
+    .nav-button {
+
+      .location {
+        height: 23.5vw;
+      }
+    }
+  }
+
+  .nav-bottomright {
+    width: 17.6vw;
+
+    .nav-button {
+
+      .location {
+        height: 17.6vw;
+      }
+    }
+  }
+}
+
+
 @media(max-width: 600px) {
 
   .nav-bottomleft {
@@ -205,7 +228,7 @@
       .location {
         height: unset;
         width: 101%;
-        margin: -1px;
+        margin: 0px;
       }
     }
   }
