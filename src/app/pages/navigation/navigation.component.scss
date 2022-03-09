@@ -97,6 +97,7 @@
 
 .nav-bottomright {
   position: absolute;
+  width: 150px;
   bottom: 0%;
   right: 0%;
   z-index: 10;
@@ -104,12 +105,30 @@
   .nav-button {
     display: inline-block;
 
-    img {
+    .location {
       transform: translateY(6px);
+      width: 150px;
+
+      &.mobile {
+        display: none !important;
+      }
+
+      &.active {
+        display: none;
+      }
     }
 
-    &.active { filter: hue-rotate(45deg); }
-    &:hover { filter: hue-rotate(45deg); }
+    &.active, &:hover {
+
+      .location {
+        display: none;
+
+        &.active {
+          display: block;
+          background: radial-gradient(#ffffff88 40%, transparent 70%);
+        }
+      }
+    }
   }
 }
 
@@ -174,25 +193,63 @@
   .nav-bottomleft {
     width: 100vw;
     margin: 0;
+    left: 0;
+    bottom: calc(13vw - 8px);
 
     .nav-button {
       display: inline-block;
       margin: 0;
       padding: 0;
       width: 33.33%;
+
+      .location {
+        height: unset;
+        width: 101%;
+        margin: -1px;
+      }
     }
   }
 
   .nav-bottomright {
     position: absolute;
-    bottom: 18%;
+    height: 13vw;
+    bottom: 0;
+    left: 0;
     right: unset;
     width: 100vw;
     text-align: center;
 
     .nav-button {
-      width: 80vw;
-      border-radius: 15px;
+      width: 100%;
+      height: 100%;
+      background: #424242;
+
+      .location {
+        width: unset;
+        border-radius: 15px;
+        height: 9vw;
+        padding: 1vw;
+        margin: auto;
+
+        &.mobile {
+          display: block !important;
+        }
+
+        &.desktop {
+          display: none !important;
+        }
+      }
+
+      &.active, &:hover {
+
+        .location.mobile {
+          display: none !important;
+
+          &.active {
+            display: block !important;
+          }
+        }
+      }
     }
   }
 
