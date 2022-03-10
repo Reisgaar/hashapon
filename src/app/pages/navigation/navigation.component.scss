@@ -47,6 +47,13 @@
   z-index: 10;
 
   .nav-button {
+    text-align: unset;
+
+    &.gachapon img {
+      height: 80px;
+      margin-left: 40px;
+    }
+
     &.active { filter: hue-rotate(-25deg); }
     &:hover { filter: hue-rotate(-25deg); }
   }
