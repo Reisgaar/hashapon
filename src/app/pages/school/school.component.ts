@@ -38,7 +38,7 @@ export class SchoolComponent implements OnInit {
 
   ngOnInit(): void {
     this.utilsService.changeActiveButton('button-school');
-    this.data = this.shuffleArray(this.data);
+    this.data = this.utilsService.shuffleArray(this.data);
     this.checkMobileWidth(innerWidth);
   }
 
@@ -48,21 +48,6 @@ export class SchoolComponent implements OnInit {
     } else {
       this.mobileSchool = true;
     }
-  }
-
-  public shuffleArray(array: Array<any>): any {
-    let currentIndex = array.length;
-    let randomIndex: any;
-
-    // While there remain elements to shuffle...
-    while (currentIndex !== 0) {
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-    }
-    return array;
   }
 
   public moveSlider(next: boolean): void {
