@@ -12,9 +12,6 @@ import { incubators } from 'src/app/shared/data/animal-data';
 export class IncubatorsComponent implements OnInit {
 
   incubators = incubators;
-  machineHeightAnimal: any;
-  machineBoxingAnimal: any;
-  machineRunningAnimal: any;
   actualPosition: number = 5;
   sliderItemSize: number;
   sliderItemAmount: number;
