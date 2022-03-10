@@ -33,6 +33,7 @@ export class LobbyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.utilsService.changeActiveButton('');
     if (!this.fighter) {
       this.openFighterDialog();
     }
