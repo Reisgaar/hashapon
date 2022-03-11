@@ -50,8 +50,8 @@
     text-align: unset;
 
     &.gachapon img {
-      height: 80px;
-      margin-left: 40px;
+      height: 100px;
+      margin-left: 20px;
     }
 
     &.active { filter: hue-rotate(-25deg); }
@@ -103,7 +103,7 @@
 
     .location {
       filter: unset;
-      height: 200px;
+      height: 170px;
       margin: -1px;
 
       &.active {
@@ -127,13 +127,17 @@
 
 .nav-bottomright {
   position: absolute;
-  width: 150px;
+  width: 130px;
   bottom: 0%;
   right: 0%;
   z-index: 10;
 
   .nav-button {
     display: inline-block;
+
+    img {
+      height: 130px;
+    }
 
     .location {
       transform: translateY(6px);
@@ -194,24 +198,24 @@
 
 
 
-@media(max-width: 850px) {
+@media(max-width: 750px) {
   .nav-bottomleft {
 
     .nav-button {
 
       .location {
-        height: 23.5vw;
+        height: 20vw;
       }
     }
   }
 
   .nav-bottomright {
-    width: 17.6vw;
+    width: 15.3vw;
 
     .nav-button {
 
       .location {
-        height: 17.6vw;
+        height: 15.3vw;
       }
     }
   }
@@ -219,6 +223,29 @@
 
 
 @media(max-width: 600px) {
+
+  .nav-topleft {
+
+    .nav-button {
+
+      &.gachapon img {
+        height: 80px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .nav-topright {
+
+    .nav-button {
+      height: 110px;
+
+      .location {
+        filter: unset;
+        height: 100%;
+      }
+    }
+  }
 
   .nav-bottomleft {
     width: 100vw;
