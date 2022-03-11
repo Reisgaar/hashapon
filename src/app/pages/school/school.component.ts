@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class SchoolComponent implements OnInit {
 
   actualPosition: number = 5;
-  data: Array<any> = young;
+  data: Array<any> = [];
   mobileSchool: boolean;
 
   @HostListener('window:resize', ['$event'])
@@ -34,6 +34,9 @@ export class SchoolComponent implements OnInit {
     private utilsService: UtilsService
   ) {
     if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+    for (const a of young) {
+      this.data.push(a);
+    }
   }
 
   ngOnInit(): void {

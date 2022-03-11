@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PlaygroundComponent implements OnInit {
 
   actualPosition: number = 5;
-  data: Array<any> = baby;
+  data: Array<any> = [];
 
   @HostListener('window:resize', ['$event'])
 
@@ -32,6 +32,9 @@ export class PlaygroundComponent implements OnInit {
     private utilsService: UtilsService
     ) {
       if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+      for (const a of baby) {
+        this.data.push(a);
+      }
     }
 
   ngOnInit(): void {

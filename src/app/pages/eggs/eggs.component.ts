@@ -13,7 +13,7 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 export class EggsComponent implements OnInit {
 
   actualPosition: number = 5;
-  data: Array<any> = egg;
+  data: Array<any> = [];
 
   @HostListener('window:resize', ['$event'])
 
@@ -34,6 +34,9 @@ export class EggsComponent implements OnInit {
     private sliderService: SliderService
   ) {
     if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
+    for (const a of egg) {
+      this.data.push(a);
+    }
   }
 
   ngOnInit(): void {
