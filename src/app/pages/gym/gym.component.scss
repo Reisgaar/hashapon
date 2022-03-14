@@ -115,6 +115,7 @@
       }
 
       .next {
+        transform: rotate(180deg);
         cursor: pointer;
         position: absolute;
         right: 0;

@@ -48,11 +48,24 @@
   .nav-button {
     text-align: unset;
     margin-top: 20px;
-    height: 170px;
+    height: 200px;
 
     &.gachapon img {
       height: 170px;
       margin-left: 20px;
+    }
+
+    &.list img {
+      height: 200px;
+      position: relative;
+      left: -50px;
+      animation: koala 10s ease-in-out infinite;
+
+      @keyframes koala {
+        0%   { transform: rotate(0) translate(0px, 0px);}
+        50%  { transform: rotate(40deg) translate(55px, 10px);}
+        100% { transform: rotate(0) translate(0px, 0px);}
+      }
     }
 
     .location {
@@ -146,16 +159,16 @@
 
 .nav-bottomright {
   position: absolute;
-  width: 130px;
+  width: 170px;
   bottom: 0%;
-  right: 0%;
+  right: 0;
   z-index: 10;
 
   .nav-button {
     display: inline-block;
 
     img {
-      height: 130px;
+      height: 170px;
     }
 
     .location {
