@@ -48,14 +48,33 @@
   .nav-button {
     text-align: unset;
     margin-top: 20px;
+    height: 170px;
 
     &.gachapon img {
-      height: 100px;
+      height: 170px;
       margin-left: 20px;
     }
 
-    &.active { filter: hue-rotate(-25deg); }
-    &:hover { filter: hue-rotate(-25deg); }
+    .location {
+      filter: unset;
+      height: 100%;
+
+      &.active {
+        display: none;
+      }
+    }
+
+    &.active, &:hover {
+
+      .location {
+        display: none;
+
+        &.active {
+          display: block;
+          background: radial-gradient(#ffffff88 40%, transparent 70%);
+        }
+      }
+    }
   }
 }
 
@@ -171,6 +190,7 @@
   text-align: center;
 
   img {
+    display: block;
     filter: drop-shadow(0px 0px 6px $black);
     height: 150px;
     margin: 0;
@@ -227,9 +247,10 @@
   .nav-topleft {
 
     .nav-button {
+    height: 100px;
 
       &.gachapon img {
-        height: 80px;
+        height: 100px;
         margin-left: 20px;
       }
     }

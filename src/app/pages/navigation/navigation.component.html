@@ -13,7 +13,8 @@
 
 <div class="nav-topleft" *ngIf="walletIsConnected">
   <div class="nav-button gachapon" routerLink="/pages/gachapon" id="button-gachapon">
-    <img src="../../../assets/images/buttons/gachapon.png" />
+    <img class="location" src="../../../assets/images/buttons/gachapon.png" />
+    <img class="location active" src="../../../assets/images/buttons/gachapon_active.png" />
   </div>
   <div class="nav-button" (click)="openDialog()">
     <img src="../../../assets/images/buttons/list.png" />
