@@ -48,7 +48,6 @@
   .nav-button {
     text-align: unset;
     margin-top: 20px;
-    height: 200px;
 
     &.gachapon img {
       height: 170px;
@@ -63,7 +62,7 @@
 
       @keyframes koala {
         0%   { transform: rotate(0) translate(0px, 0px);}
-        50%  { transform: rotate(40deg) translate(55px, 10px);}
+        50%  { transform: rotate(10deg) translate(15px, 10px);}
         100% { transform: rotate(0) translate(0px, 0px);}
       }
     }
@@ -265,6 +264,10 @@
       &.gachapon img {
         height: 100px;
         margin-left: 20px;
+      }
+
+      &.list img {
+        height: 170px;
       }
     }
   }
