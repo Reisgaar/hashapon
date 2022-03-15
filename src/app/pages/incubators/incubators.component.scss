@@ -78,46 +78,7 @@
     }
 
     .swiper-arrows {
-      width: 100%;
-      position: absolute;
       top: 40%;
-
-      .prev {
-        cursor: pointer;
-        position: absolute;
-        z-index: 5;
-        left: 0;
-        height: 100px;
-        width: 100px;
-        font-size: 100px;
-        -webkit-animation: prev-arrow 1s ease-in-out infinite;
-        animation: prev-arrow 1s ease-in-out infinite;
-
-        @keyframes prev-arrow {
-          0%   { left: 0px; }
-          50%  { left: -5px; }
-          100% { left: 0px; }
-        }
-      }
-
-      .next {
-        transform: rotate(180deg) scaleY(-1);
-        cursor: pointer;
-        position: absolute;
-        z-index: 5;
-        right: 0;
-        height: 100px;
-        width: 100px;
-        font-size: 100px;
-        -webkit-animation: next-arrow 1s ease-in-out infinite;
-        animation: next-arrow 1s ease-in-out infinite;
-
-        @keyframes next-arrow {
-          0%   { right: 0px; }
-          50%  { right: -5px; }
-          100% { right: 0px; }
-        }
-      }
     }
   }
 }
