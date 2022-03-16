@@ -35,7 +35,14 @@
       &:hover {
 
         .card-front {
-          filter: saturate(2);
+          &.birds { filter: hue-rotate(0deg) saturate(2); }
+          &.canines { filter: hue-rotate(30deg) saturate(2); }
+          &.felines { filter: hue-rotate(60deg) saturate(2); }
+          &.marsupials { filter: hue-rotate(90deg) saturate(2); }
+          &.primates { filter: hue-rotate(120deg) saturate(2); }
+          &.reptiles { filter: hue-rotate(150deg) saturate(2); }
+          &.rodents { filter: hue-rotate(180deg) saturate(2); }
+          &.ursids { filter: hue-rotate(210deg) saturate(2); }
         }
 
         .image {
@@ -66,6 +73,17 @@
         width: 100%;
         top: 0;
         left: 0;
+
+        &-front{
+          &.birds { filter: hue-rotate(0deg); }
+          &.canines { filter: hue-rotate(30deg); }
+          &.felines { filter: hue-rotate(60deg); }
+          &.marsupials { filter: hue-rotate(90deg); }
+          &.primates { filter: hue-rotate(120deg); }
+          &.reptiles { filter: hue-rotate(150deg); }
+          &.rodents { filter: hue-rotate(180deg); }
+          &.ursids { filter: hue-rotate(210deg); }
+        }
 
         &-background {
           z-index: 0;
