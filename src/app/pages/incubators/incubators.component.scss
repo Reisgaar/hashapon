@@ -18,6 +18,20 @@
       display: inline-block;
       position: relative;
 
+      .button {
+        position: absolute;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: auto;
+
+        &:hover {
+          width: 120px;
+        }
+      }
+
       img {
         height: 300px;
 
