@@ -40,9 +40,10 @@ export let young: Array<any> = [
 ];
 
 export let adult: Array<any> = [
-  {id: '', stage: 3, name: 'Macabre Pacifist', type: 'adult1', stats: {atk: 25, def: 19, vit: 20}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, upgradingStat: 0, timeRemaining: 0},
-  {id: '', stage: 3, name: 'Dandy Sleepwalker', type: 'adult2', stats: {atk: 4, def: 15, vit: 22}, experienceTotal: 74, experience: 24, battleTotal: 40, battleWon: 18, battleLost: 22, upgrading: true, upgradingStat: 1, timeRemaining: 16400},
-  {id: '', stage: 3, name: 'Ugly Maiden', type: 'adult3', stats: {atk: 30, def: 25, vit: 28}, experienceTotal: 74, experience: 24, battleTotal: 27, battleWon: 17, battleLost: 10, upgrading: true, upgradingStat: 2, timeRemaining: 26400},
+  {id: '', stage: 3, name: 'Macabre Pacifist', type: 'adult0', stats: {atk: 25, def: 19, vit: 20}, experienceTotal: 74, experience: 24, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, upgradingStat: 0, timeRemaining: 0},
+  {id: '', stage: 3, name: 'Dandy Sleepwalker', type: 'adult1', stats: {atk: 4, def: 15, vit: 22}, experienceTotal: 74, experience: 24, battleTotal: 40, battleWon: 18, battleLost: 22, upgrading: true, upgradingStat: 1, timeRemaining: 16400},
+  {id: '', stage: 3, name: 'Ugly Maiden', type: 'adult2', stats: {atk: 30, def: 25, vit: 28}, experienceTotal: 74, experience: 24, battleTotal: 27, battleWon: 17, battleLost: 10, upgrading: true, upgradingStat: 2, timeRemaining: 26400},
+  {id: '', stage: 3, name: 'Uncommunicative Troublemaker', type: 'adult3', stats: {atk: 20, def: 29, vit: 15}, experienceTotal: 74, experience: 24, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, upgradingStat: null, timeRemaining: null},
   {id: '', stage: 3, name: 'Bizarre Comrade', type: 'adult4', stats: {atk: 0, def: 0, vit: 0}, experienceTotal: 74, experience: 24, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, upgradingStat: null, timeRemaining: null},
   {id: '', stage: 3, name: 'Odorous Butcher', type: 'adult5', stats: {atk: 20, def: 14, vit: 25}, experienceTotal: 74, experience: 24, battleTotal: 46, battleWon: 13, battleLost: 33, upgrading: false, upgradingStat: null, timeRemaining: null},
   {id: '', stage: 3, name: 'The Nightmare', type: 'adult6', stats: {atk: 25, def: 22, vit: 27}, experienceTotal: 74, experience: 24, battleTotal: 42, battleWon: 39, battleLost: 3, upgrading: false, upgradingStat: null, timeRemaining: null},
