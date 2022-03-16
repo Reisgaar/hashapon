@@ -29,7 +29,7 @@
     <div class="list-category babies hidden" id="cat-babies">
       <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="utilsService.openStats(b)">
         <h2>{{b.name}}</h2>
-        <img src="../../../assets/images/panda/{{b.type}}.png" >
+        <img src="../../../assets/images/panda/{{b.image}}.png" >
 
         <div class="interaction">
           <div *ngIf="!b.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, b)">TO SCHOOL</div>
@@ -46,7 +46,7 @@
     <div class="list-category youngs hidden" id="cat-youngs">
       <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="utilsService.openStats(y)">
         <h2>{{y.name}}</h2>
-        <img src="../../../assets/images/panda/{{y.type}}.png" >
+        <img src="../../../assets/images/panda/{{y.image}}.png" >
 
         <div class="interaction">
           <div *ngIf="!y.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, y)">STUDY</div>
@@ -63,7 +63,7 @@
     <div class="list-category adults hidden" id="cat-adults">
       <div *ngFor="let a of adult; let i = index" class="item adult" id="adult-{{i}}" (click)="utilsService.openStats(a)">
         <h2>{{a.name}}</h2>
-        <img src="../../../assets/images/panda/{{a.type}}.png" >
+        <img src="../../../assets/images/panda/{{a.image}}.png" >
         <div class="adult-buttons">
           <img src="../../../assets/images/stats.png" />
           <img src="../../../assets/images/fight.png" (click)="battleService.sendFighterToLobby($event, a)" />

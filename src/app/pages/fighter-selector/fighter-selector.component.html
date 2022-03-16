@@ -3,13 +3,26 @@
 
   <div class="selector">
     <div class="fighter-item" *ngFor="let a of adults" (click)="selectFigther(a)">
-      <img src="../../../assets/images/panda/{{a.type}}.png" class="image" />
+
+      <div class="card card-front {{a.type}}">
+        <img src="../../../assets/images/card.png" />
+      </div>
+
+      <div class="card card-background">
+        <img src="../../../assets/images/card_back.png" />
+      </div>
+
+      <div class="name">
+        <p>{{a.name}}</p>
+      </div>
+
+      <img src="../../../assets/images/panda/{{a.image}}.png" class="image" />
+
       <div class="data">
-        <p class="name">{{a.name}}</p>
         <div class="stats">
-          <p>{{'ATK: ' + a.stats.atk}}</p>
-          <p>{{'DEF: ' + a.stats.def}}</p>
-          <p>{{'VIT: ' + a.stats.vit}}</p>
+          <span class="stats-name">ATK {{a.stats.atk}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.stats.atk, a.maxStats.atk, 'red')}"></div></span>
+          <span class="stats-name">DEF {{a.stats.def}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.stats.def, a.maxStats.def, 'blue')}"></div></span>
+          <span class="stats-name">VIT {{a.stats.vit}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.stats.vit, a.maxStats.vit, 'green')}"></div></span>
           <p>{{'Battles: ' + a.battleTotal}}</p>
         </div>
       </div>
