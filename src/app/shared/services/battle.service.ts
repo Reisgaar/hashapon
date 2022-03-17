@@ -19,7 +19,7 @@ export class BattleService {
   public sendFighterToLobby(event: any, animal: any): void {
     event.stopPropagation();
     this.matDialog.closeAll();
-    const navigationExtras: NavigationExtras = {
+    let navigationExtras: NavigationExtras = {
       state: {
         data: animal
       }
