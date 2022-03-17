@@ -37,6 +37,10 @@ export class AnimalListComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
+
   changeTab(event: any): void {
     document.getElementById('tab-eggs').classList.remove('active');
     document.getElementById('tab-babies').classList.remove('active');

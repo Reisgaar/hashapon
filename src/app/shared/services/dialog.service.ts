@@ -40,19 +40,6 @@ export class DialogService {
     dialogRef.afterClosed().subscribe(result => {
       document.getElementById('selectFighter').style.visibility = 'visible';
       document.getElementById('gamescreen').style.filter = 'unset';
-      if (result) {
-        return result;
-      } else {
-        return null;
-      }
     });
-  }
-
-  blurBack(addBlur: boolean): void {
-    if (addBlur) {
-
-    } else {
-
-    }
   }
 }
