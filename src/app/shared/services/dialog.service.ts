@@ -33,7 +33,7 @@ export class DialogService {
   }
 
   fighterDialog(): any {
-    const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'list-dialog-container'});
+    const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'fighter-dialog-container'});
     document.getElementById('selectFighter').style.visibility = 'hidden';
     document.getElementById('gamescreen').style.filter = 'blur(5px)';
 
