@@ -17,21 +17,17 @@ export class LobbyComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private utilsService: UtilsService,
     public dialog: MatDialog,
-    public battleService: BattleService,
-    private dialogService: DialogService
+    public battleService: BattleService
   ) {
     if (!this.utilsService.walletIsConnected) {
       this.router.navigate(['home']);
     }
-
-    const navigation = this.router.getCurrentNavigation();
-    const state = navigation.extras.state.data;
-    if (state) {
-      this.fighter = state;
-      console.log(this.fighter);
+    console.log('init lobby');
+    let navigation = this.router.getCurrentNavigation();
+    if (navigation.extras.state) {
+      this.fighter = navigation.extras.state.data;
     } else {
       this.fighter = null;
     }

@@ -2,12 +2,15 @@
   <div class="fighter" id="selectFighter">
     <p *ngIf="!fighter" style="font-size: 2rem;">Fighter not found, <span (click)="openFighterDialog()" style="cursor: pointer; color: blue;">please choose your fighter.</span></p>
     <div *ngIf="fighter" class="data">
-      <p>{{'Selected fighter: ' + fighter.name}}</p>
-      <img src="../../../assets/images/panda/{{fighter.image}}.png" />
-      <img src="../../../assets/images/fight.png" (click)="battleService.sendToFight(fighter)" />
-    </div>
-    <div *ngIf="fighter">
-      <p (click)="openFighterDialog()" style="cursor: pointer; color: blue; font-size: 2rem;">Change Fighter</p>
+      <div class="image">
+        <img src="../../../assets/images/panda/{{fighter.image}}.png" />
+      </div>
+      <div class="options">
+        <p>{{fighter.name}}</p>
+        <img class="button" src="../../../assets/images/buttons/lobby_change.png" (click)="openFighterDialog()" />
+        <img class="button" src="../../../assets/images/buttons/lobby_leave.png" routerLink="/home" />
+        <img class="button" src="../../../assets/images/buttons/lobby_fight.png" (click)="battleService.sendToFight(fighter)" />
+      </div>
     </div>
   </div>
 
