@@ -194,26 +194,6 @@
       }
     }
   }
-
-  .secondary-click {
-    position: absolute;
-    cursor: pointer;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
-
-    &:hover + .nav-button {
-
-      .location {
-        display: none;
-
-        &.active {
-          display: block;
-          background: radial-gradient(#ffffff88 40%, transparent 70%);
-        }
-      }
-    }
-  }
 }
 
 .nav-button {

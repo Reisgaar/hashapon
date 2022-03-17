@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
   name: string;
 
   constructor(
-    private router: Router,
+    public router: Router,
     public connectionService: ConnectionService,
     public dialog: MatDialog,
     private utilsService: UtilsService,
