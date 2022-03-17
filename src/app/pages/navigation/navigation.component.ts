@@ -40,21 +40,7 @@ export class NavigationComponent implements OnInit {
   }
 
   openDialog(): void {
-    let location: string;
-    if (this.router.url.includes('playground')) {
-      location = 'babies';
-    } else if (this.router.url.includes('school')) {
-      location = 'youngs';
-    } else if (this.router.url.includes('gym')) {
-      location = 'adults';
-    } else {
-      location = 'eggs';
-    }
-    const dialogRef = this.dialog.open(AnimalListComponent, { panelClass: 'list-dialog-container', data: { cat: 'cat-' + location, tab: 'tab-' + location } });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
+    this.dialogService.listDialog(this.router.url);
   }
 
 }
