@@ -41,8 +41,12 @@ export class LobbyComponent implements OnInit {
 
   openFighterDialog(): void {
     const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'list-dialog-container', data: { cat: 'cat-' + location, tab: 'tab-' + location } });
+    document.getElementById('selectFighter').style.visibility = 'hidden';
+    document.getElementById('gamescreen').style.filter = 'blur(5px)';
 
     dialogRef.afterClosed().subscribe(result => {
+      document.getElementById('selectFighter').style.visibility = 'visible';
+      document.getElementById('gamescreen').style.filter = 'unset';
       if (result) {
         this.fighter = result;
       }
