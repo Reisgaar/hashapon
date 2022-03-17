@@ -27,6 +27,10 @@ export class FighterSelectorComponent implements OnInit {
     this.dialogRef.close(animal);
   }
 
+  closeDialog(): void{
+    this.dialogRef.close();
+  }
+
   createStyleForProgressBar(stat: number, maxStat: number, color: string): string {
     return 'linear-gradient(90deg, ' + color+ ' 0%, ' + color + ' ' + (stat * 100 / 40) + '%, white ' + (stat * 100 / 40) + '%, white ' + (maxStat * 100 / 40) + '%, black ' + (maxStat * 100 / 40) + '%, black 100%)';
   }
