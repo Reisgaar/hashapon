@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,11 @@ export class BattleService {
   public sendFighterToLobby(event: any, animal: any): void {
     event.stopPropagation();
     this.matDialog.closeAll();
-    this.router.navigate(['/pages/lobby'], { queryParams: {data: JSON.stringify(animal)} });
+    const navigationExtras: NavigationExtras = {
+      state: {
+        data: animal
+      }
+    };
+    this.router.navigate(['/pages/lobby'], navigationExtras);
   }
 }

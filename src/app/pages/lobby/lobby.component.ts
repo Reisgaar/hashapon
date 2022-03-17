@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { DialogService } from 'src/app/shared/services/dialog.service';
+import { FighterSelectorComponent } from '../fighter-selector/fighter-selector.component';
 
 @Component({
   selector: 'app-lobby',
@@ -25,12 +26,15 @@ export class LobbyComponent implements OnInit {
     if (!this.utilsService.walletIsConnected) {
       this.router.navigate(['home']);
     }
-    this.route.queryParams.subscribe(params => {
-      if (params.data) {
-        this.fighter = JSON.parse(params.data);
-        console.log(this.fighter);
-      }
-    });
+
+    const navigation = this.router.getCurrentNavigation();
+    const state = navigation.extras.state.data;
+    if (state) {
+      this.fighter = state;
+      console.log(this.fighter);
+    } else {
+      this.fighter = null;
+    }
   }
 
   ngOnInit(): void {
@@ -41,11 +45,15 @@ export class LobbyComponent implements OnInit {
   }
 
   openFighterDialog(): void {
-    this.fighter = this.dialogService.fighterDialog();
-  }
+    const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'fighter-dialog-container'});
+    document.getElementById('selectFighter').style.visibility = 'hidden';
+    document.getElementById('gamescreen').style.filter = 'blur(5px)';
 
-  removeFighter(): void {
-    this.fighter = null;
+    dialogRef.afterClosed().subscribe(result => {
+      document.getElementById('selectFighter').style.visibility = 'visible';
+      document.getElementById('gamescreen').style.filter = 'unset';
+      this.fighter = result;
+    });
   }
 
 }

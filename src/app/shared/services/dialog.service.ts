@@ -31,15 +31,4 @@ export class DialogService {
       console.log('The dialog was closed');
     });
   }
-
-  fighterDialog(): any {
-    const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'fighter-dialog-container'});
-    document.getElementById('selectFighter').style.visibility = 'hidden';
-    document.getElementById('gamescreen').style.filter = 'blur(5px)';
-
-    dialogRef.afterClosed().subscribe(result => {
-      document.getElementById('selectFighter').style.visibility = 'visible';
-      document.getElementById('gamescreen').style.filter = 'unset';
-    });
-  }
 }

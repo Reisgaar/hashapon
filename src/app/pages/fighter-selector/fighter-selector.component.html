@@ -4,7 +4,7 @@
   <p class="title">CHOOSE YOUR FIGHTER!</p>
 
   <div class="selector">
-    <div class="fighter-item" *ngFor="let a of adults" (click)="battleService.sendFighterToLobby($event, a)">
+    <div class="fighter-item" *ngFor="let a of adults" (click)="selectFigther(a)">
 
       <div class="card card-front {{a.type}}">
         <img src="../../../assets/images/card.png" />
