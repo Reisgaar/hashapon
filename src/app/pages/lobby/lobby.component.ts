@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
-import { FighterSelectorComponent } from '../fighter-selector/fighter-selector.component';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 
 @Component({
   selector: 'app-lobby',
@@ -19,7 +19,8 @@ export class LobbyComponent implements OnInit {
     private route: ActivatedRoute,
     private utilsService: UtilsService,
     public dialog: MatDialog,
-    public battleService: BattleService
+    public battleService: BattleService,
+    private dialogService: DialogService
   ) {
     if (!this.utilsService.walletIsConnected) {
       this.router.navigate(['home']);
@@ -40,17 +41,7 @@ export class LobbyComponent implements OnInit {
   }
 
   openFighterDialog(): void {
-    const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'list-dialog-container', data: { cat: 'cat-' + location, tab: 'tab-' + location } });
-    document.getElementById('selectFighter').style.visibility = 'hidden';
-    document.getElementById('gamescreen').style.filter = 'blur(5px)';
-
-    dialogRef.afterClosed().subscribe(result => {
-      document.getElementById('selectFighter').style.visibility = 'visible';
-      document.getElementById('gamescreen').style.filter = 'unset';
-      if (result) {
-        this.fighter = result;
-      }
-    });
+    this.fighter = this.dialogService.fighterDialog();
   }
 
   removeFighter(): void {

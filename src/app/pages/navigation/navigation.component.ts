@@ -4,6 +4,7 @@ import { AnimalListComponent } from '../animal-list/animal-list.component';
 import { ConnectionService } from 'src/app/shared/services/connection/connection.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { Router } from '@angular/router';
+import { DialogService } from 'src/app/shared/services/dialog.service';
 
 @Component({
   selector: 'app-navigation',
@@ -21,7 +22,8 @@ export class NavigationComponent implements OnInit {
     private router: Router,
     public connectionService: ConnectionService,
     public dialog: MatDialog,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
+    private dialogService: DialogService
     ) { }
 
   ngOnInit(): void {
