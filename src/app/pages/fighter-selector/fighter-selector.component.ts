@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { adult } from 'src/app/shared/data/animal-data';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { BattleService } from 'src/app/shared/services/battle.service';
 
 @Component({
   selector: 'app-fighter-selector',
@@ -13,7 +14,8 @@ export class FighterSelectorComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: {animal: any},
-    public dialogRef: MatDialogRef<FighterSelectorComponent>
+    public dialogRef: MatDialogRef<FighterSelectorComponent>,
+    public battleService: BattleService
   ) {
     this.adults.sort( (a, b) => {
       return b.battleTotal - a.battleTotal;
