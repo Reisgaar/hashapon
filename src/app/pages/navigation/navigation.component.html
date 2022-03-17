@@ -48,6 +48,7 @@
 </div>
 
 <div class="nav-bottomright" *ngIf="walletIsConnected">
+  <div class="secondary-click" *ngIf="router.url.includes('lobby')" (click)="dialogService.fighterDialog()"></div>
   <div class="nav-button" routerLink="/pages/lobby">
     <img class="location desktop" src="../../../assets/images/buttons/battle.png" />
     <img class="location desktop active" src="../../../assets/images/buttons/battle_active.png" />
