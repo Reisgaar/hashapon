@@ -24,6 +24,8 @@ export class BattleService {
         data: animal
       }
     };
-    this.router.navigate(['/pages/lobby'], navigationExtras);
+    this.router.navigate(['/']).then(() => {
+      this.router.navigate(['/pages/lobby'], navigationExtras);
+    });
   }
 }
