@@ -10,14 +10,14 @@ export let incubators: Array<any> = [
 ];
 
 export let egg: Array<any> = [
-  {id: '', stage: 0, type: 'birds', upgrading: true, timeRemaining: 0, timeForwarded: false},
-  {id: '', stage: 0, type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
-  {id: '', stage: 0, type: 'felines', upgrading: true, timeRemaining: 36400, timeForwarded: false},
-  {id: '', stage: 0, type: 'marsupials', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, type: 'primates', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, type: 'reptiles', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, type: 'rodents', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, type: 'ursids', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, image: 'birds', type: 'birds', upgrading: true, timeRemaining: 0, timeForwarded: false},
+  {id: '', stage: 0, image: 'canines', type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
+  {id: '', stage: 0, image: 'felines', type: 'felines', upgrading: true, timeRemaining: 36400, timeForwarded: false},
+  {id: '', stage: 0, image: 'marsupials', type: 'marsupials', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, image: 'primates', type: 'primates', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, image: 'reptiles', type: 'reptiles', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, image: 'rodents', type: 'rodents', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, image: 'ursids', type: 'ursids', upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
 
 export let baby: Array<any> = [

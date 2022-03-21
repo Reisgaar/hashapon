@@ -4,10 +4,11 @@
 
   <div class="data">
     <div class="image">
-      <img src="../../../assets/images/panda/{{data.image}}.png" >
+      <img *ngIf="data.stage !== 0" src="../../../assets/images/panda/{{data.image}}.png" >
+      <img *ngIf="data.stage === 0" src="../../../assets/images/eggs/{{data.image}}.png" >
     </div>
 
-    <div class="stats">
+    <div class="stats" *ngIf="data.stage !== 0">
       <div class="stat stat-atk">
         <p>{{'ATK: ' + data.stats.atk}}</p>
         <img *ngIf="data.stage === 3" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />

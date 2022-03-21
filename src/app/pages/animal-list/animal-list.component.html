@@ -10,7 +10,7 @@
 
   <div class="list">
     <div class="list-category eggs hidden" id="cat-eggs">
-      <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
+      <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}" (click)="utilsService.openStats(e)">
         <h2>{{e.type + " egg"}}</h2>
         <img src="../../../assets/images/eggs/{{e.type}}.png" >
 
