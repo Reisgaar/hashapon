@@ -12,52 +12,24 @@
     <div class="list-category eggs hidden" id="cat-eggs">
       <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}" (click)="utilsService.openStats(e)">
         <h2>{{e.type + " egg"}}</h2>
-        <img src="../../../assets/images/eggs/{{e.type}}.png" >
-
-        <div class="interaction">
-          <div *ngIf="!e.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, e)">INCUBATE</div>
-          <div *ngIf="e.upgrading && e.timeRemaining > 0" class="upgrading" >
-            <app-timer [time]="e.timeRemaining"></app-timer>
-            <div class="accelerate" *ngIf="!e.timeForwarded" (click)="upgradeService.forwardUpgrade($event, e)"><mat-icon>fast_forward</mat-icon></div>
-            <div class="accelerated" *ngIf="e.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
-          </div>
-          <div *ngIf="e.upgrading && e.timeRemaining <= 0" class="upgraded" (click)="upgradeService.finishUpgrade($event, e)">UPGRADE</div>
-        </div>
-
+        <img src="../../../assets/images/eggs/{{e.type}}.png" />
+        <app-interaction [data]="e"></app-interaction>
       </div>
     </div>
 
     <div class="list-category babies hidden" id="cat-babies">
       <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="utilsService.openStats(b)">
         <h2>{{b.name}}</h2>
-        <img src="../../../assets/images/panda/{{b.image}}.png" >
-
-        <div class="interaction">
-          <div *ngIf="!b.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, b)">TO SCHOOL</div>
-          <div *ngIf="b.upgrading && b.timeRemaining > 0" class="upgrading" >
-            <app-timer [time]="b.timeRemaining"></app-timer>
-            <div class="accelerate" *ngIf="!b.timeForwarded" (click)="upgradeService.forwardUpgrade($event, b)"><mat-icon>fast_forward</mat-icon></div>
-            <div class="accelerated" *ngIf="b.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
-          </div>
-          <div *ngIf="b.upgrading && b.timeRemaining <= 0" class="upgraded" (click)="upgradeService.finishUpgrade($event, b)">UPGRADE</div>
-        </div>
+        <img src="../../../assets/images/panda/{{b.image}}.png" />
+        <app-interaction [data]="b"></app-interaction>
       </div>
     </div>
 
     <div class="list-category youngs hidden" id="cat-youngs">
       <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="utilsService.openStats(y)">
         <h2>{{y.name}}</h2>
-        <img src="../../../assets/images/panda/{{y.image}}.png" >
-
-        <div class="interaction">
-          <div *ngIf="!y.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, y)">STUDY</div>
-          <div *ngIf="y.upgrading && y.timeRemaining > 0" class="upgrading" >
-            <app-timer [time]="y.timeRemaining"></app-timer>
-            <div class="accelerate" *ngIf="!y.timeForwarded" (click)="upgradeService.forwardUpgrade($event, y)"><mat-icon>fast_forward</mat-icon></div>
-            <div class="accelerated" *ngIf="y.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
-          </div>
-          <div *ngIf="y.upgrading && y.timeRemaining <= 0" class="upgraded" (click)="upgradeService.finishUpgrade($event, y)">UPGRADE</div>
-        </div>
+        <img src="../../../assets/images/panda/{{y.image}}.png" />
+        <app-interaction [data]="y"></app-interaction>
       </div>
     </div>
 

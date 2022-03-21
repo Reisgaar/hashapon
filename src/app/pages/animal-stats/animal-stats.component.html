@@ -29,15 +29,7 @@
       <img src="../../../assets/images/fight.png" (click)="battleService.sendFighterToLobby($event, data)" />
     </div>
 
-    <div class="interaction" *ngIf="data.stage !== 3">
-      <div *ngIf="!data.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, data)">INCUBATE</div>
-      <div *ngIf="data.upgrading && data.timeRemaining > 0" class="upgrading" >
-        <app-timer [time]="data.timeRemaining"></app-timer>
-        <div class="accelerate" *ngIf="!data.timeForwarded" (click)="upgradeService.forwardUpgrade($event, data)"><mat-icon>fast_forward</mat-icon></div>
-        <div class="accelerated" *ngIf="data.timeForwarded"><mat-icon>fast_forward</mat-icon></div>
-      </div>
-      <div *ngIf="data.upgrading && data.timeRemaining <= 0" class="upgraded" (click)="upgradeService.finishUpgrade($event, data)">UPGRADE</div>
-    </div>
+    <app-interaction [data]="data"></app-interaction>
 
   </div>
 
