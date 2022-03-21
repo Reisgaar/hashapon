@@ -13,6 +13,7 @@
       display: inline-block;
       margin: auto;
       position: relative;
+      z-index: 0;
 
       &#first-machine {
         margin-left: unset;
@@ -82,6 +83,7 @@
           left: 62%;
           transform: translate(-50%, -50%);
           animation: height-machine 1.5s ease-in-out infinite;
+          z-index: 1;
 
           @keyframes height-machine {
             0%   { top: calc(73% + 1px); left: calc(62% + 1px); transform: translate(-50%, -50%) rotate(0deg); }
@@ -97,7 +99,6 @@
             50%  { top: calc(73% + 1px); left: calc(62% + -2px); transform: translate(-50%, -50%) rotate(-1deg); }
             55%  { top: 73%; left: 62%; transform: translate(-50%, -50%) rotate(-1deg); }
             100%  { top: 73%; left: 62%; transform: translate(-50%, -50%) rotate(-1deg); }
-
           }
         }
 
@@ -106,6 +107,7 @@
           left: 70%;
           transform: translate(-50%, -50%);
           animation: boxing-machine 4s ease-in-out infinite;
+          z-index: 1;
 
           @keyframes boxing-machine {
             0%   { top: 50%; left: 60%; transform: translate(-50%, -50%) scale(1); }
@@ -125,6 +127,7 @@
           left: 42%;
           transform: translate(-50%, -50%);
           animation: running-machine 2s ease-in-out infinite;
+          z-index: 1;
 
           @keyframes running-machine {
             0%   { top: 58%; left: 20%; }
@@ -183,14 +186,20 @@
 
           &.height {
             transform: unset;
+            max-width: 100%;
+            margin: 0px;
           }
 
           &.boxing {
-            transform: unset;
+            transform: translate(0px, -50px);
+            max-width: 100%;
+            margin: 0px;
           }
 
           &.running {
-            transform: unset;
+            transform: translate(0px, 70px);
+            max-width: 100%;
+            margin: 0px;
           }
         }
 
@@ -200,17 +209,51 @@
             top: 55%;
             left: 57%;
             transform: translate(-50%, -50%) rotate(-50deg);
+
+            @keyframes height-machine {
+              0%   { top: calc(55% + 1px); left: calc(57% + 1px); transform: translate(-50%, -50%) rotate(0deg); }
+              5%   { top: calc(55% + -1px); left: calc(57% + -2px); transform: translate(-50%, -50%) rotate(-1deg); }
+              10%  { top: calc(55% + -3px); left: calc(57% + 0px); transform: translate(-50%, -50%) rotate(1deg); }
+              15%  { top: calc(55% + 3px); left: calc(57% + 2px); transform: translate(-50%, -50%) rotate(0deg); }
+              20%  { top: calc(55% + 1px); left: calc(57% + -1px); transform: translate(-50%, -50%) rotate(1deg); }
+              25%  { top: calc(55% + -1px); left: calc(57% + 2px); transform: translate(-50%, -50%) rotate(-1deg); }
+              30%  { top: calc(55% + -3px); left: calc(57% + 1px); transform: translate(-50%, -50%) rotate(0deg); }
+              35%  { top: calc(55% + 3px); left: calc(57% + 1px); transform: translate(-50%, -50%) rotate(-1deg); }
+              40%  { top: calc(55% + -1px); left: calc(57% + -1px); transform: translate(-50%, -50%) rotate(1deg); }
+              45%  { top: calc(55% + 1px); left: calc(57% + 2px); transform: translate(-50%, -50%) rotate(0deg); }
+              50%  { top: calc(55% + 1px); left: calc(57% + -2px); transform: translate(-50%, -50%) rotate(-1deg); }
+              55%  { top: 55%; left: 57%; transform: translate(-50%, -50%) rotate(-1deg); }
+              100%  { top: 55%; left: 57%; transform: translate(-50%, -50%) rotate(-1deg); }
+            }
           }
 
           &.boxing-animal {
             top: 70%;
             left: 60%;
-            z-index: -1;
+
+            @keyframes boxing-machine {
+              0%   { top: 65%; left: 55%; transform: translate(-50%, -50%) scale(1); }
+              12%  { top: 60%; left: 50%; transform: translate(-50%, -50%) scale(0.9); }
+              25%  { top: 65%; left: 45%; transform: translate(-50%, -50%) scale(1); }
+              35%  { top: 62%; left: 45%; transform: translate(-50%, -50%) scale(1); }
+              50%  { top: 65%; left: 45%; transform: translate(-50%, -50%) scale(1); }
+              63%  { top: 60%; left: 50%; transform: translate(-50%, -50%) scale(0.9); }
+              75%  { top: 65%; left: 55%; transform: translate(-50%, -50%) scale(1); }
+              88%  { top: 62%; left: 55%; transform: translate(-50%, -50%) scale(1); }
+              100% { top: 65%; left: 55%; transform: translate(-50%, -50%) scale(1); }
+            }
           }
 
           &.running-animal {
             top: 40%;
             left: 42%;
+
+            @keyframes running-machine {
+              0%   { top: 58%; left: 40%; }
+              33%  { top: 50%; }
+              66%  { top: 56%; left: 50%; }
+              100% { top: 58%; left: 40%; }
+            }
           }
 
           img {
