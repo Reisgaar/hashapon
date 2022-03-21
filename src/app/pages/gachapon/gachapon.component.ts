@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/shared/services/utils.service';
+import { BuyService } from 'src/app/shared/services/buy.service';
 
 @Component({
   selector: 'app-gachapon',
@@ -11,7 +12,8 @@ export class GachaponComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
+    public buyService: BuyService
   ) { }
 
   ngOnInit(): void {
