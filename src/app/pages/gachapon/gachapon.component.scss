@@ -17,12 +17,10 @@
         animation: buy-button 0.8s ease-in-out infinite;
 
         @keyframes buy-button {
-          0%   { transform: translate(-50%, -50%) rotate(0deg); }
           20%  { transform: translate(-50%, -50%) rotate(0deg); }
           40%  { transform: translate(-50%, -50%) rotate(-20deg); }
           60%  { transform: translate(-50%, -50%) rotate(20deg); }
           80%  { transform: translate(-50%, -50%) rotate(0deg); }
-          100% { transform: translate(-50%, -50%) rotate(0deg); }
         }
       }
     }
