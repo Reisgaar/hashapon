@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class InteractionComponent implements OnInit {
 
   @Input() data: any;
+  @Input() type: string;
 
   constructor() { }
 

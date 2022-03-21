@@ -1,10 +1,19 @@
 @import '../../../style-variables.scss';
 
 .interaction {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
+
+  &.mini {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.big{
+    .upgrade, .upgrading, .upgraded {
+      margin: 15px auto 0;
+    }
+  }
 
   p {
     margin: 0;
