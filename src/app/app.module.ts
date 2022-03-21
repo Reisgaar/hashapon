@@ -27,6 +27,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TimerComponent } from './pages/timer/timer.component';
 import { FighterSelectorComponent } from './pages/fighter-selector/fighter-selector.component';
 import { InteractionComponent } from './pages/interaction/interaction.component';
+import { WaitingComponent } from './pages/waiting/waiting.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { InteractionComponent } from './pages/interaction/interaction.component'
     TimerComponent,
     FighterSelectorComponent,
     InteractionComponent,
+    WaitingComponent,
   ],
   imports: [
     BrowserModule,
