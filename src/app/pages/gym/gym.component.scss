@@ -31,7 +31,7 @@
       }
 
       img {
-        height: 300px;
+        height: 400px;
         margin: 25px;
 
         &.height {
@@ -80,17 +80,58 @@
         &.height-animal {
           top: 73%;
           left: 62%;
-          transform: translate(-50%, -50%) rotate(-50deg);
+          transform: translate(-50%, -50%);
+          animation: height-machine 1.5s ease-in-out infinite;
+
+          @keyframes height-machine {
+            0%   { top: calc(73% + 1px); left: calc(62% + 1px); transform: translate(-50%, -50%) rotate(0deg); }
+            5%   { top: calc(73% + -1px); left: calc(62% + -2px); transform: translate(-50%, -50%) rotate(-1deg); }
+            10%  { top: calc(73% + -3px); left: calc(62% + 0px); transform: translate(-50%, -50%) rotate(1deg); }
+            15%  { top: calc(73% + 3px); left: calc(62% + 2px); transform: translate(-50%, -50%) rotate(0deg); }
+            20%  { top: calc(73% + 1px); left: calc(62% + -1px); transform: translate(-50%, -50%) rotate(1deg); }
+            25%  { top: calc(73% + -1px); left: calc(62% + 2px); transform: translate(-50%, -50%) rotate(-1deg); }
+            30%  { top: calc(73% + -3px); left: calc(62% + 1px); transform: translate(-50%, -50%) rotate(0deg); }
+            35%  { top: calc(73% + 3px); left: calc(62% + 1px); transform: translate(-50%, -50%) rotate(-1deg); }
+            40%  { top: calc(73% + -1px); left: calc(62% + -1px); transform: translate(-50%, -50%) rotate(1deg); }
+            45%  { top: calc(73% + 1px); left: calc(62% + 2px); transform: translate(-50%, -50%) rotate(0deg); }
+            50%  { top: calc(73% + 1px); left: calc(62% + -2px); transform: translate(-50%, -50%) rotate(-1deg); }
+            55%  { top: 73%; left: 62%; transform: translate(-50%, -50%) rotate(-1deg); }
+            100%  { top: 73%; left: 62%; transform: translate(-50%, -50%) rotate(-1deg); }
+
+          }
         }
 
         &.boxing-animal {
           top: 50%;
           left: 70%;
+          transform: translate(-50%, -50%);
+          animation: boxing-machine 4s ease-in-out infinite;
+
+          @keyframes boxing-machine {
+            0%   { top: 50%; left: 60%; transform: translate(-50%, -50%) scale(1); }
+            12%  { top: 40%; left: 50%; transform: translate(-50%, -50%) scale(0.9); }
+            25%  { top: 50%; left: 40%; transform: translate(-50%, -50%) scale(1); }
+            35%  { top: 48%; left: 40%; transform: translate(-50%, -50%) scale(1); }
+            50%  { top: 50%; left: 40%; transform: translate(-50%, -50%) scale(1); }
+            63%  { top: 40%; left: 50%; transform: translate(-50%, -50%) scale(0.9); }
+            75%  { top: 50%; left: 60%; transform: translate(-50%, -50%) scale(1); }
+            88%  { top: 48%; left: 60%; transform: translate(-50%, -50%) scale(1); }
+            100% { top: 50%; left: 60%; transform: translate(-50%, -50%) scale(1); }
+          }
         }
 
         &.running-animal {
           top: 60%;
           left: 42%;
+          transform: translate(-50%, -50%);
+          animation: running-machine 2s ease-in-out infinite;
+
+          @keyframes running-machine {
+            0%   { top: 58%; left: 20%; }
+            33%  { top: 50%; }
+            66%  { top: 56%; left: 50%; }
+            100% { top: 58%; left: 20%; }
+          }
         }
 
         img {
