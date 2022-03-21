@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UpgradeService } from 'src/app/shared/services/upgrade.service';
 
 @Component({
   selector: 'app-interaction',
@@ -10,7 +11,7 @@ export class InteractionComponent implements OnInit {
   @Input() data: any;
   @Input() type: string;
 
-  constructor() { }
+  constructor(public upgradeService: UpgradeService) { }
 
   ngOnInit(): void {
   }
