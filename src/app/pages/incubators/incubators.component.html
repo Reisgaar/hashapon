@@ -13,7 +13,7 @@
 
       <!-- Incubator buttons -->
       <img *ngIf="!inc.bought && inc.launched" src="../../../assets/images/buttons/buy.png" class="button buy" />
-      <img *ngIf="inc.bought && !inc.incubating" src="../../../assets/images/buttons/incubate.png" class="button incubate" />
+      <img *ngIf="inc.bought && !inc.incubating" src="../../../assets/images/buttons/incubate.png" class="button incubate" (click)="openIncubatorDialog()" />
 
       <!-- Incubator egg -->
       <span class="egg" *ngIf="inc.incubating">

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { SliderService } from 'src/app/shared/services/slider.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { incubators } from 'src/app/shared/data/animal-data';
+import { IncubationSelectorComponent } from '../popUp/incubation-selector/incubation-selector.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-incubators',
@@ -19,8 +21,9 @@ export class IncubatorsComponent implements OnInit {
   constructor(
     private router: Router,
     private sliderService: SliderService,
+    private dialog: MatDialog,
     private utilsService: UtilsService
-    ) {
+  ) {
       if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
     }
 
@@ -56,6 +59,16 @@ export class IncubatorsComponent implements OnInit {
 
   public moveSlider(next: boolean): void {
     this.actualPosition = this.sliderService.moveSliderOneStep(next, this.actualPosition, 'incubator0', this.incubators.length, this.sliderItemSize, this.sliderItemAmount);
+  }
+
+  openIncubatorDialog(): void {
+    const dialogRef = this.dialog.open(IncubationSelectorComponent, { panelClass: 'incubator-selector-dialog-container'});
+    document.getElementById('gamescreen').style.filter = 'blur(5px)';
+
+    dialogRef.afterClosed().subscribe(result => {
+      document.getElementById('gamescreen').style.filter = 'unset';
+      console.log(result);
+    });
   }
 
 }

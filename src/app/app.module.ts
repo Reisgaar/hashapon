@@ -28,6 +28,7 @@ import { TimerComponent } from './pages/timer/timer.component';
 import { FighterSelectorComponent } from './pages/popUp/fighter-selector/fighter-selector.component';
 import { InteractionComponent } from './pages/interaction/interaction.component';
 import { WaitingComponent } from './pages/popUp/waiting/waiting.component';
+import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/incubation-selector.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { WaitingComponent } from './pages/popUp/waiting/waiting.component';
     FighterSelectorComponent,
     InteractionComponent,
     WaitingComponent,
+    IncubationSelectorComponent,
   ],
   imports: [
     BrowserModule,
