@@ -7,12 +7,12 @@
       <img *ngIf="!inc.bought" src="../../../assets/images/incubator.png" class="locked" />
       <img *ngIf="inc.bought" src="../../../assets/images/incubator.png" />
 
-      <!-- Incubator images -->
+      <!-- Incubator icons -->
       <img *ngIf="!inc.bought && !inc.launched" src="../../../assets/images/coming_soon.png" class="locked-icon" />
       <img *ngIf="!inc.bought && inc.launched" src="../../../assets/images/padlock.png" class="locked-icon"/>
 
       <!-- Incubator buttons -->
-      <img *ngIf="!inc.bought && inc.launched" src="../../../assets/images/buttons/buy.png" class="button buy" />
+      <img *ngIf="!inc.bought && inc.launched" src="../../../assets/images/buttons/buy.png" class="button buy" (click)="buyService.buyIncubator()" />
       <img *ngIf="inc.bought && !inc.incubating" src="../../../assets/images/buttons/incubate.png" class="button incubate" (click)="openIncubatorDialog()" />
 
       <!-- Incubator egg -->

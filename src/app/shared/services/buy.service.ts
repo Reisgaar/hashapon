@@ -25,6 +25,10 @@ export class BuyService {
     this.utilsService.openStats(egg[4]);
   }
 
+  async buyIncubator(): Promise<void> {
+    console.log("buy incubator");
+  }
+
   getEgg(ms: number): Promise<any> {
     return new Promise( resolve => setTimeout(resolve, ms) );
   }

@@ -5,6 +5,7 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 import { incubators } from 'src/app/shared/data/animal-data';
 import { IncubationSelectorComponent } from '../popUp/incubation-selector/incubation-selector.component';
 import { MatDialog } from '@angular/material/dialog';
+import { BuyService } from 'src/app/shared/services/buy.service';
 
 @Component({
   selector: 'app-incubators',
@@ -22,7 +23,8 @@ export class IncubatorsComponent implements OnInit {
     private router: Router,
     private sliderService: SliderService,
     private dialog: MatDialog,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
+    public buyService: BuyService
   ) {
       if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
     }
