@@ -14,6 +14,12 @@ export class BattleService {
 
   sendToFight(animal: any): void {
     console.log('Start battle with: ' + animal.name);
+    let navigationExtras: NavigationExtras = {
+      state: {
+        data: animal
+      }
+    };
+    this.router.navigate(['/pages/battle'], navigationExtras);
   }
 
   public sendFighterToLobby(event: any, animal: any): void {

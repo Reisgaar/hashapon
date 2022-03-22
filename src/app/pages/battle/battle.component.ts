@@ -9,10 +9,19 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 })
 export class BattleComponent implements OnInit {
 
+  fighter: any;
+
   constructor(
     private router: Router,
     private utilsService: UtilsService
-  ) { }
+  ) {
+    let navigation = this.router.getCurrentNavigation();
+    if (navigation.extras.state) {
+      this.fighter = navigation.extras.state.data;
+    } else {
+      this.fighter = null;
+    }
+  }
 
   ngOnInit(): void {
     if (!this.utilsService.walletIsConnected) { this.router.navigate(['home']); }
