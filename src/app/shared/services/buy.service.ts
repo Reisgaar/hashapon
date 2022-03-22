@@ -25,8 +25,8 @@ export class BuyService {
     this.utilsService.openStats(egg[4]);
   }
 
-  async buyIncubator(): Promise<void> {
-    console.log("buy incubator");
+  async buyIncubator(inc: any): Promise<void> {
+    console.log("buy incubator " + inc.type);
   }
 
   getEgg(ms: number): Promise<any> {
