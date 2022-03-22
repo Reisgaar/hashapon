@@ -7,7 +7,7 @@
     position: relative;
     text-align: center;
     white-space: nowrap;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
 
     #incubator0 {
@@ -17,7 +17,7 @@
 
     .incubator {
       margin: 5vw;
-      width: 15vw;
+      width: 23.33vw;
       display: inline-block;
       position: relative;
 
@@ -36,7 +36,7 @@
       }
 
       img {
-        height: 300px;
+        height: 380px;
 
         &.locked {
           filter: brightness(0.05);
@@ -105,20 +105,12 @@
 @media (max-width: 1200px) {
   .incubators-container .incubator {
     margin: 5vw;
-    width: 23.33vw;
-  }
-}
-
-
-@media (max-width: 900px) {
-  .incubators-container .incubator {
-    margin: 5vw;
     width: 40vw;
   }
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .incubators-container .incubator {
     margin: 5vw;
     width: 90vw;

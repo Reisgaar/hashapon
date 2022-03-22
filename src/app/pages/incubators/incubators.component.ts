@@ -45,12 +45,9 @@ export class IncubatorsComponent implements OnInit {
 
   setItemSizeAndAmount(width: number): void {
     if (width > 1200) {
-      this.sliderItemSize = 25;
-      this.sliderItemAmount = 4;
-    } else if (width > 900) {
       this.sliderItemSize = 33.33;
       this.sliderItemAmount = 3;
-    } else if (width > 600) {
+    } else if (width > 800) {
       this.sliderItemSize = 50;
       this.sliderItemAmount = 2;
     } else {
