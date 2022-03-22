@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AnimalStatsComponent } from 'src/app/pages/animal-stats/animal-stats.component';
-import { WaitingComponent } from 'src/app/pages/waiting/waiting.component';
+import { AnimalStatsComponent } from 'src/app/pages/popUp/animal-stats/animal-stats.component';
+import { WaitingComponent } from 'src/app/pages/popUp/waiting/waiting.component';
 
 @Injectable({
   providedIn: 'root'

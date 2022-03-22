@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { FighterSelectorComponent } from 'src/app/pages/fighter-selector/fighter-selector.component';
-import { AnimalListComponent } from 'src/app/pages/animal-list/animal-list.component';
+import { FighterSelectorComponent } from 'src/app/pages/popUp/fighter-selector/fighter-selector.component';
+import { AnimalListComponent } from 'src/app/pages/popUp/animal-list/animal-list.component';
 
 @Injectable({
   providedIn: 'root'

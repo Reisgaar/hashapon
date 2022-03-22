@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AnimalListComponent } from '../animal-list/animal-list.component';
+import { AnimalListComponent } from '../popUp/animal-list/animal-list.component';
 import { ConnectionService } from 'src/app/shared/services/connection/connection.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { Router } from '@angular/router';

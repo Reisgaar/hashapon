@@ -5,7 +5,7 @@
 
   .fighter {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px;
@@ -17,20 +17,21 @@
       .image {
         display: inline-block;
         vertical-align: top;
-        margin-right: 15px;
+        margin: auto 15px;
 
         img {
-          width: 300px;
+          width: 250px;
         }
       }
 
       .options {
         display: inline-block;
         vertical-align: top;
-        margin-left: 15px;
+        margin: 15px;
 
         p {
           font-size: 2.5rem;
+          line-height: 2.5rem;
           text-align: center;
           color: white;
           text-shadow: 2px 2px 2px black;
@@ -44,6 +45,33 @@
           cursor: pointer;
           width: 250px;
           margin: 20px auto;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .lobby {
+
+    .fighter {
+
+      .data {
+
+        .image {
+
+          img {
+            width: 200px;
+          }
+        }
+
+        .options {
+
+          .button {
+            width: 220px;
+            margin: 10px auto;
+          }
         }
       }
     }

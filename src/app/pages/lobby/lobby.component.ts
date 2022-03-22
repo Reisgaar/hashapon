@@ -4,7 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BattleService } from 'src/app/shared/services/battle.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { DialogService } from 'src/app/shared/services/dialog.service';
-import { FighterSelectorComponent } from '../fighter-selector/fighter-selector.component';
+import { FighterSelectorComponent } from '../popUp/fighter-selector/fighter-selector.component';
 
 @Component({
   selector: 'app-lobby',

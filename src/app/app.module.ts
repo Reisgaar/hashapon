@@ -19,15 +19,15 @@ import { GymComponent } from './pages/gym/gym.component';
 import { IncubatorsComponent } from './pages/incubators/incubators.component';
 import { EggsComponent } from './pages/eggs/eggs.component';
 import { NavigationComponent } from './pages/navigation/navigation.component';
-import { AnimalListComponent } from './pages/animal-list/animal-list.component';
-import { AnimalStatsComponent } from './pages/animal-stats/animal-stats.component';
+import { AnimalListComponent } from './pages/popUp/animal-list/animal-list.component';
+import { AnimalStatsComponent } from './pages/popUp/animal-stats/animal-stats.component';
 import { LobbyComponent } from './pages/lobby/lobby.component';
 import { BattleComponent } from './pages/battle/battle.component';
 import { HomeComponent } from './pages/home/home.component';
 import { TimerComponent } from './pages/timer/timer.component';
-import { FighterSelectorComponent } from './pages/fighter-selector/fighter-selector.component';
+import { FighterSelectorComponent } from './pages/popUp/fighter-selector/fighter-selector.component';
 import { InteractionComponent } from './pages/interaction/interaction.component';
-import { WaitingComponent } from './pages/waiting/waiting.component';
+import { WaitingComponent } from './pages/popUp/waiting/waiting.component';
 
 
 @NgModule({
