@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WaitingComponent } from './waiting.component';
+import { WaitingGachaponComponent } from './waiting-gachapon.component';
 
-describe('WaitingComponent', () => {
-  let component: WaitingComponent;
-  let fixture: ComponentFixture<WaitingComponent>;
+describe('WaitingGachaponComponent', () => {
+  let component: WaitingGachaponComponent;
+  let fixture: ComponentFixture<WaitingGachaponComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WaitingComponent ]
+      declarations: [ WaitingGachaponComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WaitingComponent);
+    fixture = TestBed.createComponent(WaitingGachaponComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

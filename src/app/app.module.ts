@@ -27,7 +27,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { TimerComponent } from './pages/timer/timer.component';
 import { FighterSelectorComponent } from './pages/popUp/fighter-selector/fighter-selector.component';
 import { InteractionComponent } from './pages/interaction/interaction.component';
-import { WaitingComponent } from './pages/popUp/waiting/waiting.component';
+import { WaitingGachaponComponent } from './pages/popUp/waiting-gachapon/waiting-gachapon.component';
 import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/incubation-selector.component';
 
 
@@ -50,7 +50,7 @@ import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/i
     TimerComponent,
     FighterSelectorComponent,
     InteractionComponent,
-    WaitingComponent,
+    WaitingGachaponComponent,
     IncubationSelectorComponent,
   ],
   imports: [
