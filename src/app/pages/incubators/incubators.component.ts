@@ -5,7 +5,7 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 import { incubators } from 'src/app/shared/data/animal-data';
 import { IncubationSelectorComponent } from '../popUp/incubation-selector/incubation-selector.component';
 import { MatDialog } from '@angular/material/dialog';
-import { BuyService } from 'src/app/shared/services/buy.service';
+import { BuyService } from 'src/app/shared/services/contracts/buy.service';
 
 @Component({
   selector: 'app-incubators',

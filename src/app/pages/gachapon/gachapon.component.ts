@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/shared/services/utils.service';
-import { BuyService } from 'src/app/shared/services/buy.service';
+import { BuyService } from 'src/app/shared/services/contracts/buy.service';
 
 @Component({
   selector: 'app-gachapon',

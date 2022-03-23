@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { BattleService } from 'src/app/shared/services/battle.service';
+import { BattleService } from 'src/app/shared/services/contracts/battle.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { DialogService } from 'src/app/shared/services/dialog.service';
 import { FighterSelectorComponent } from '../popUp/fighter-selector/fighter-selector.component';

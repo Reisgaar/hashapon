@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { egg } from '../data/animal-data';
-import { UtilsService } from './utils.service';
+import { egg } from '../../data/animal-data';
+import { UtilsService } from './../utils.service';
 
 
 @Injectable({

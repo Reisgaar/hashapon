@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { UpgradeService } from 'src/app/shared/services/upgrade.service';
+import { UpgradeService } from 'src/app/shared/services/contracts/upgrade.service';
 
 @Component({
   selector: 'app-interaction',

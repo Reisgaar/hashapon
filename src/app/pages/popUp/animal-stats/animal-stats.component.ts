@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BattleService } from 'src/app/shared/services/battle.service';
-import { UpgradeService } from 'src/app/shared/services/upgrade.service';
+import { BattleService } from 'src/app/shared/services/contracts/battle.service';
+import { UpgradeService } from 'src/app/shared/services/contracts/upgrade.service';
 
 @Component({
   selector: 'app-animal-stats',

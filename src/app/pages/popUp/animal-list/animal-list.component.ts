@@ -2,8 +2,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { egg, baby, young, adult } from '../../../shared/data/animal-data';
 import { UtilsService } from 'src/app/shared/services/utils.service';
-import { UpgradeService } from 'src/app/shared/services/upgrade.service';
-import { BattleService } from 'src/app/shared/services/battle.service';
+import { UpgradeService } from 'src/app/shared/services/contracts/upgrade.service';
+import { BattleService } from 'src/app/shared/services/contracts/battle.service';
 import { Router } from '@angular/router';
 
 @Component({

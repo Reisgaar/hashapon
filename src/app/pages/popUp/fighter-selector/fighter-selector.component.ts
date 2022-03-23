@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { adult } from 'src/app/shared/data/animal-data';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { BattleService } from 'src/app/shared/services/battle.service';
+import { BattleService } from 'src/app/shared/services/contracts/battle.service';
 
 @Component({
   selector: 'app-fighter-selector',
