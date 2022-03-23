@@ -29,6 +29,7 @@ import { FighterSelectorComponent } from './pages/popUp/fighter-selector/fighter
 import { InteractionComponent } from './pages/interaction/interaction.component';
 import { WaitingGachaponComponent } from './pages/popUp/waiting-gachapon/waiting-gachapon.component';
 import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/incubation-selector.component';
+import { SearchingOpponentComponent } from './pages/popUp/searching-opponent/searching-opponent.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/i
     InteractionComponent,
     WaitingGachaponComponent,
     IncubationSelectorComponent,
+    SearchingOpponentComponent,
   ],
   imports: [
     BrowserModule,
