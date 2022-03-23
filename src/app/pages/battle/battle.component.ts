@@ -41,11 +41,11 @@ export class BattleComponent implements OnInit {
       disableClose: true,
       data: { animal: this.fighter }
     });
-    //document.getElementById('selectFighter').style.visibility = 'hidden';
+    document.getElementById('battle').style.visibility = 'hidden';
     document.getElementById('gamescreen').style.filter = 'blur(5px)';
 
     dialogRef.afterClosed().subscribe(result => {
-      //document.getElementById('selectFighter').style.visibility = 'visible';
+      document.getElementById('battle').style.visibility = 'visible';
       document.getElementById('gamescreen').style.filter = 'unset';
     });
   }
