@@ -10,36 +10,35 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 // List container
-.list-dialog-container .mat-dialog-container {
+.list-dialog-container .mat-dialog-container,
+.fighter-dialog-container .mat-dialog-container,
+.incubator-selector-dialog-container .mat-dialog-container,
+.waiting-opponent-dialog-container .mat-dialog-container {
   padding: 0;
   overflow: hidden;
   background-color: transparent !important;
   box-shadow: unset;
   height: 80vh;
   width: 80vw;
-  max-width: 700px;
-  max-height: 700px;
 }
 
 // List container
+
+.list-dialog-container .mat-dialog-container {
+  max-width: 700px;
+  max-height: 700px;
+}
 .fighter-dialog-container .mat-dialog-container {
-  padding: 0;
-  overflow: hidden;
-  background-color: transparent !important;
-  box-shadow: unset;
-  height: 80vh;
-  width: 80vw;
   max-width: 80vw;
   max-height: 80vh;
 }
 
 .incubator-selector-dialog-container .mat-dialog-container {
-  padding: 0;
-  overflow: hidden;
-  background-color: transparent !important;
-  box-shadow: unset;
-  height: 80vh;
-  width: 80vw;
+  max-width: 700px;
+  max-height: 700px;
+}
+
+.waiting-opponent-dialog-container .mat-dialog-container {
   max-width: 700px;
   max-height: 700px;
 }

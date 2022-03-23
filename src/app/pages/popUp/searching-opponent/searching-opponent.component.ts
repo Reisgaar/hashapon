@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-searching-opponent',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchingOpponentComponent implements OnInit {
 
-  constructor() { }
+  fighter: any;
+  opponent: any;
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.fighter = data.animal;
+  }
 
   ngOnInit(): void {
   }
