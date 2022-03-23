@@ -11,7 +11,7 @@
   </div>
 </div>
 
-<div class="nav-topleft" *ngIf="walletIsConnected">
+<div class="nav-topleft" *ngIf="walletIsConnected && !router.url.includes('battle')">
   <div class="nav-button gachapon" routerLink="/pages/gachapon" id="button-gachapon">
     <img class="location" src="../../../assets/images/buttons/gachapon.png" />
     <img class="location active" src="../../../assets/images/buttons/gachapon_active.png" />
@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="nav-topright" *ngIf="walletIsConnected">
+<div class="nav-topright" *ngIf="walletIsConnected && !router.url.includes('battle')">
   <div class="nav-button" routerLink="/pages/eggs" id="button-eggs">
     <img class="location" src="../../../assets/images/buttons/eggs.png" />
     <img class="location active" src="../../../assets/images/buttons/eggs_active.png" />
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="nav-bottomleft" *ngIf="walletIsConnected">
+<div class="nav-bottomleft" *ngIf="walletIsConnected && !router.url.includes('battle')">
   <div class="nav-button" routerLink="/pages/playground" id="button-playground">
     <img class="location" src="../../../assets/images/buttons/playground.png" />
     <img class="location active" src="../../../assets/images/buttons/playground_active.png" />
@@ -47,7 +47,7 @@
   </div>
 </div>
 
-<div class="nav-bottomright" *ngIf="walletIsConnected && !router.url.includes('lobby')">
+<div class="nav-bottomright" *ngIf="walletIsConnected && !router.url.includes('lobby') && !router.url.includes('battle')">
   <div class="nav-button" routerLink="/pages/lobby">
     <img class="location desktop" src="../../../assets/images/buttons/battle.png" />
     <img class="location desktop active" src="../../../assets/images/buttons/battle_active.png" />
