@@ -4,8 +4,8 @@
 
     <div *ngFor="let inc of incubators; let index = index" class="incubator" id="{{'incubator' + index}}">
       <!-- Incubator selection (bought, launched, comingSoon) -->
-      <img *ngIf="!inc.bought" src="../../../assets/images/incubator.png" class="locked" />
-      <img *ngIf="inc.bought" src="../../../assets/images/incubator.png" />
+      <img *ngIf="!inc.bought" src="../../../assets/images/incubators/{{inc.type}}.png" class="locked" />
+      <img *ngIf="inc.bought" src="../../../assets/images/incubators/{{inc.type}}.png" />
 
       <!-- Incubator icons -->
       <img *ngIf="!inc.bought && !inc.launched" src="../../../assets/images/coming_soon.png" class="locked-icon" />
