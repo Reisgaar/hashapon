@@ -1,23 +1,23 @@
 export let incubators: Array<any> = [
-  {id: 1, type: 'birds', launched: true, bought: true, incubating: true},
+  {id: 1, type: 'ursids', launched: true, bought: true, incubating: true},
   {id: 2, type: 'canines', launched: true, bought: true, incubating: true},
   {id: 3, type: 'felines', launched: true, bought: true, incubating: true},
   {id: 4, type: 'marsupials', launched: true, bought: true, incubating: false},
   {id: 5, type: 'primates', launched: true, bought: true, incubating: false},
   {id: 6, type: 'reptiles', launched: true, bought: false, incubating: false},
   {id: 7, type: 'rodents', launched: false, bought: false, incubating: false},
-  {id: 8, type: 'ursids', launched: false, bought: false, incubating: false},
+  {id: 8, type: 'birds', launched: false, bought: false, incubating: false},
 ];
 
 export let egg: Array<any> = [
-  {id: '', stage: 0, image: 'birds', type: 'birds', upgrading: true, timeRemaining: 0, timeForwarded: false},
+  {id: '', stage: 0, image: 'ursids', type: 'ursids', upgrading: true, timeRemaining: 0, timeForwarded: false},
   {id: '', stage: 0, image: 'canines', type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
   {id: '', stage: 0, image: 'felines', type: 'felines', upgrading: true, timeRemaining: 36400, timeForwarded: false},
   {id: '', stage: 0, image: 'marsupials', type: 'marsupials', upgrading: false, timeRemaining: null, timeForwarded: false},
   {id: '', stage: 0, image: 'primates', type: 'primates', upgrading: false, timeRemaining: null, timeForwarded: false},
   {id: '', stage: 0, image: 'reptiles', type: 'reptiles', upgrading: false, timeRemaining: null, timeForwarded: false},
   {id: '', stage: 0, image: 'rodents', type: 'rodents', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, image: 'ursids', type: 'ursids', upgrading: false, timeRemaining: null, timeForwarded: false},
+  {id: '', stage: 0, image: 'birds', type: 'birds', upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
 
 export let baby: Array<any> = [
