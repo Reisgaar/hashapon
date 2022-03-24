@@ -20,23 +20,23 @@ export class BuyService {
   ) { }
 
   async buyGachapon(): Promise<void> {
-    this.mintAndPay(this.uri);
-    /*
     this.utilsService.openWaitForGachapon();
     // Add functionality to buy egg
-    await this.getEgg(5000);
-    // Close dialog and open detail
-    this.matDialog.closeAll();
-    this.utilsService.openStats(egg[4]);
-    */
+    try {
+      await this.mintAndPay(this.uri);
+
+      // Close dialog and open detail
+      this.matDialog.closeAll();
+      this.utilsService.openStats(egg[4]);
+    } catch (error) {
+      console.log('error');
+      this.matDialog.closeAll();
+      this.utilsService.openError(error.message);
+    }
   }
 
   async buyIncubator(inc: any): Promise<void> {
     console.log("buy incubator " + inc.type);
-  }
-
-  getEgg(ms: number): Promise<any> {
-    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
   // Function to get a pair of tokens
