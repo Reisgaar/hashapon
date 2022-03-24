@@ -31,6 +31,7 @@ import { WaitingGachaponComponent } from './pages/popUp/waiting-gachapon/waiting
 import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/incubation-selector.component';
 import { SearchingOpponentComponent } from './pages/popUp/searching-opponent/searching-opponent.component';
 import { ErrorComponent } from './pages/popUp/error/error.component';
+import { NewEggComponent } from './pages/popUp/new-egg/new-egg.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { ErrorComponent } from './pages/popUp/error/error.component';
     IncubationSelectorComponent,
     SearchingOpponentComponent,
     ErrorComponent,
+    NewEggComponent,
   ],
   imports: [
     BrowserModule,
