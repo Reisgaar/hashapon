@@ -32,6 +32,7 @@ import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/i
 import { SearchingOpponentComponent } from './pages/popUp/searching-opponent/searching-opponent.component';
 import { ErrorComponent } from './pages/popUp/error/error.component';
 import { NewEggComponent } from './pages/popUp/new-egg/new-egg.component';
+import { BattleStatisticsComponent } from './pages/popUp/battle-statistics/battle-statistics.component';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { NewEggComponent } from './pages/popUp/new-egg/new-egg.component';
     SearchingOpponentComponent,
     ErrorComponent,
     NewEggComponent,
+    BattleStatisticsComponent,
   ],
   imports: [
     BrowserModule,
