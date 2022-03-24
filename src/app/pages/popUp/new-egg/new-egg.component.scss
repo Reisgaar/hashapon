@@ -1,0 +1,25 @@
+@import '../../../../style-variables.scss';
+
+.new-egg {
+
+  h2 {
+    text-align: center;
+    font-family: $main-font;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .data {
+    text-align: center;
+
+    .image {
+      display: inline-block;
+
+      img {
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+        height: 250px;
+      }
+    }
+  }
+}
