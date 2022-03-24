@@ -21,6 +21,12 @@
       display: inline-block;
       position: relative;
 
+      &-screen {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
       .button {
         position: absolute;
         cursor: pointer;
