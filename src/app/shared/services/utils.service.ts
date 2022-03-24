@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AnimalStatsComponent } from 'src/app/pages/popUp/animal-stats/animal-stats.component';
+import { ErrorComponent } from 'src/app/pages/popUp/error/error.component';
 import { WaitingGachaponComponent } from 'src/app/pages/popUp/waiting-gachapon/waiting-gachapon.component';
 
 @Injectable({
@@ -35,7 +36,12 @@ export class UtilsService {
   }
 
   public openWaitForGachapon(): void {
-    const dialogRef = this.dialog.open(WaitingGachaponComponent, { panelClass: 'stat-dialog-container'});
+    const dialogRef = this.dialog.open(WaitingGachaponComponent, { panelClass: 'stat-dialog-container', disableClose: true});
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
+  }
+
+  public openError(errorMessage: string): void {
+    const dialogRef = this.dialog.open(ErrorComponent, { panelClass: 'error-dialog-container', data: errorMessage});
     dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 
