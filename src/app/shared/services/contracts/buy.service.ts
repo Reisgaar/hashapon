@@ -11,8 +11,6 @@ const GachaponERC721Abi = require('./abi/GachaponERC721.json');
 })
 export class BuyService {
 
-  uri = '';
-
   constructor(
     private utilsService: UtilsService,
     private matDialog: MatDialog,
@@ -23,9 +21,9 @@ export class BuyService {
     this.utilsService.openWaitForGachapon();
     // Add functionality to buy egg
     try {
-      await this.mintAndPay(this.uri);
+      await this.mintAndPay();
       // Get new egg
-      let newEgg = egg[Math.floor(Math.random() * (egg.length - 1)) + 1];
+      let newEgg = egg[Math.floor(Math.random() * egg.length)];
       // Close dialog and open detail
       this.matDialog.closeAll();
       this.utilsService.openNewEgg(newEgg);
@@ -41,12 +39,12 @@ export class BuyService {
   }
 
   // Function to get a pair of tokens
-  public async mintAndPay(uri: string): Promise<any>{
+  public async mintAndPay(): Promise<any>{
     await this.connectionService.syncAccount();
     const nftFactory = new this.connectionService.web3js.eth.Contract(GachaponERC721Abi.abi, GachaponERC721Abi.address);
     const userAddr = this.connectionService.accounts[0];
     try {
-      return await nftFactory.methods.mintAndPay(uri).send({from: userAddr});
+      return await nftFactory.methods.mintAndPay().send({from: userAddr});
     } catch (e) {
       throw e;
     }
