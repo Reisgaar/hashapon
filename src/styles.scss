@@ -43,6 +43,11 @@ body, h1, h2, h3, h4, h5, h6 {
   max-height: 700px;
 }
 
+.error-dialog-container .mat-dialog-container {
+  border: 3px solid red;
+  background: #ffdddd;
+}
+
 // Background images style
 
 .gamescreen,
