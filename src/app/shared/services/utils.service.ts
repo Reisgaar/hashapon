@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AnimalStatsComponent } from 'src/app/pages/popUp/animal-stats/animal-stats.component';
+import { BattleStatisticsComponent } from 'src/app/pages/popUp/battle-statistics/battle-statistics.component';
 import { ErrorComponent } from 'src/app/pages/popUp/error/error.component';
 import { NewEggComponent } from 'src/app/pages/popUp/new-egg/new-egg.component';
 import { WaitingGachaponComponent } from 'src/app/pages/popUp/waiting-gachapon/waiting-gachapon.component';
@@ -61,6 +62,16 @@ export class UtilsService {
     const dialogRef = this.dialog.open(NewEggComponent, {
       panelClass: 'stat-dialog-container',
       data: animal
+    });
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
+  }
+
+  // Open battle statistics
+  public openBattleStats(animal1: any, animal2: any): void {
+    const dialogRef = this.dialog.open(BattleStatisticsComponent, {
+      panelClass: 'battle-stat-dialog-container',
+      disableClose: true,
+      data: {fighter: animal1, opponent: animal2}
     });
     dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
