@@ -48,6 +48,12 @@ body, h1, h2, h3, h4, h5, h6 {
   background: #ffdddd;
 }
 
+.battle-stat-dialog-container .mat-dialog-container {
+  border: 3px solid blue;
+  width: 70vw;
+  padding: 0;
+}
+
 // Background images style
 
 .gamescreen,
