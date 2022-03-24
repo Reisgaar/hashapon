@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AnimalStatsComponent } from 'src/app/pages/popUp/animal-stats/animal-stats.component';
 import { ErrorComponent } from 'src/app/pages/popUp/error/error.component';
+import { NewEggComponent } from 'src/app/pages/popUp/new-egg/new-egg.component';
 import { WaitingGachaponComponent } from 'src/app/pages/popUp/waiting-gachapon/waiting-gachapon.component';
 
 @Injectable({
@@ -27,24 +28,6 @@ export class UtilsService {
     this.activeButton = button;
   }
 
-  public openStats(animal: any): void {
-    const dialogRef = this.dialog.open(AnimalStatsComponent, {
-      panelClass: 'stat-dialog-container',
-      data: animal
-    });
-    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
-  }
-
-  public openWaitForGachapon(): void {
-    const dialogRef = this.dialog.open(WaitingGachaponComponent, { panelClass: 'stat-dialog-container', disableClose: true});
-    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
-  }
-
-  public openError(errorMessage: string): void {
-    const dialogRef = this.dialog.open(ErrorComponent, { panelClass: 'error-dialog-container', data: errorMessage});
-    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
-  }
-
   public shuffleArray(array: Array<any>): any {
     let currentIndex = array.length;
     let randomIndex: any;
@@ -58,5 +41,39 @@ export class UtilsService {
       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
     }
     return array;
+  }
+
+  /*
+   * POP UPS
+   */
+
+  // Individual animal stats & interaction
+  public openStats(animal: any): void {
+    const dialogRef = this.dialog.open(AnimalStatsComponent, {
+      panelClass: 'stat-dialog-container',
+      data: animal
+    });
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
+  }
+
+  // Obtained new Egg
+  public openNewEgg(animal: any): void {
+    const dialogRef = this.dialog.open(NewEggComponent, {
+      panelClass: 'stat-dialog-container',
+      data: animal
+    });
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
+  }
+
+  // Waiting for gachapon buy process
+  public openWaitForGachapon(): void {
+    const dialogRef = this.dialog.open(WaitingGachaponComponent, { panelClass: 'stat-dialog-container', disableClose: true});
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
+  }
+
+  // Any error message
+  public openError(errorMessage: string): void {
+    const dialogRef = this.dialog.open(ErrorComponent, { panelClass: 'error-dialog-container', data: errorMessage});
+    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 }
