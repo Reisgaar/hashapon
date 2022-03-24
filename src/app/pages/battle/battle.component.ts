@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { SearchingOpponentComponent } from '../popUp/searching-opponent/searching-opponent.component';
+import { adult } from 'src/app/shared/data/animal-data';
 
 @Component({
   selector: 'app-battle',
@@ -12,6 +13,7 @@ import { SearchingOpponentComponent } from '../popUp/searching-opponent/searchin
 export class BattleComponent implements OnInit {
 
   fighter: any;
+  opponent = adult[Math.floor(Math.random() * 8)];
 
   constructor(
     public dialogRef: MatDialogRef<BattleComponent>,
@@ -47,7 +49,17 @@ export class BattleComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       document.getElementById('battle').style.visibility = 'visible';
       document.getElementById('gamescreen').style.filter = 'unset';
+      this.startBattle();
     });
+  }
+
+  async startBattle(): Promise<void> {
+    await this.delay(5000);
+    this.utilsService.openBattleStats(this.fighter, this.opponent);
+  }
+
+  async delay(ms: number): Promise<any> {
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
 }
