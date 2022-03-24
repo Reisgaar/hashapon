@@ -30,6 +30,7 @@ import { InteractionComponent } from './pages/interaction/interaction.component'
 import { WaitingGachaponComponent } from './pages/popUp/waiting-gachapon/waiting-gachapon.component';
 import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/incubation-selector.component';
 import { SearchingOpponentComponent } from './pages/popUp/searching-opponent/searching-opponent.component';
+import { ErrorComponent } from './pages/popUp/error/error.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { SearchingOpponentComponent } from './pages/popUp/searching-opponent/sea
     WaitingGachaponComponent,
     IncubationSelectorComponent,
     SearchingOpponentComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
