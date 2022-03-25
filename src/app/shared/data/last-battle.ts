@@ -67,21 +67,21 @@ export let battle = {
               c1life: 7,
               c1result: 2,
               c2life: 13,
-              c2result: 1
+              c2result: 3
           },
           {
               round: 9,
-              c1life: 6,
+              c1life: 4,
               c1result: 4,
               c2life: 11,
               c2result: 2
           },
           {
               round: 10,
-              c1life: 4,
+              c1life: 2,
               c1result: 5,
               c2life: 7,
-              c2result: 4
+              c2result: 3
           }
       ]
   }
