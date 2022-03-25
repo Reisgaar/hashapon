@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { battle } from 'src/app/shared/data/last-battle';
 
 @Component({
@@ -18,6 +19,7 @@ export class BattleStatisticsComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<BattleStatisticsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
+    private router: Router
   ) {
     this.fighter = data.fighter;
     this.opponent = data.opponent;
@@ -39,6 +41,11 @@ export class BattleStatisticsComponent implements OnInit {
     document.getElementById('lifebar2').style.width = actualLife2.toString() + '%';
     document.getElementById('damagebar1').style.width = actualDamage1.toString() + '%';
     document.getElementById('damagebar2').style.width = actualDamage2.toString() + '%';
+  }
+
+  endBattle(): void {
+    this.dialogRef.close();
+    this.router.navigate(['home']);
   }
 
 }

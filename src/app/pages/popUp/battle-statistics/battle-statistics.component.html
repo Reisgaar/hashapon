@@ -41,8 +41,14 @@
       <p *ngIf="battleResult.winner === 1" class="win">WIN (+2 XP)</p>
       <p *ngIf="battleResult.winner === 2" class="lose">LOSE (+1 XP)</p>
     </div>
-    <div *ngIf="battleResult.winner === 1" class="versus home"><p>-</p></div>
-    <div *ngIf="battleResult.winner === 2" class="versus visitor"><p>-</p></div>
+    <div *ngIf="battleResult.winner === 1" class="versus home">
+      <p>-</p>
+      <img src="../../../../assets/images/continueArrow.png" class="continueArrow" (click)="endBattle()" />
+    </div>
+    <div *ngIf="battleResult.winner === 2" class="versus visitor">
+      <p>-</p>
+      <img src="../../../../assets/images/continueArrow.png" class="continueArrow" (click)="endBattle()" />
+    </div>
     <div class="result">
       <p *ngIf="battleResult.winner === 2" class="win">WIN (+2 XP)</p>
       <p *ngIf="battleResult.winner === 1" class="lose">LOSE (+1 XP)</p>
