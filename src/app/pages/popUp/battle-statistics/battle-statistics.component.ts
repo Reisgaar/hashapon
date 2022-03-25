@@ -12,6 +12,8 @@ export class BattleStatisticsComponent implements OnInit {
   battleResult = battle;
   fighter: any;
   opponent: any;
+  totalLife1 = this.battleResult.log.assaults[0].c1life;
+  totalLife2 = this.battleResult.log.assaults[0].c2life;
 
   constructor(
     public dialogRef: MatDialogRef<BattleStatisticsComponent>,
@@ -22,6 +24,21 @@ export class BattleStatisticsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  changeLifeBar(life1: number, life2: number, result1: number, result2: number): void {
+
+    let actualLife1 = ((life1 - result2) * 100) / this.totalLife1;
+    if (actualLife1 < 0) { actualLife1 = 0; }
+    let actualLife2 = ((life2 - result1) * 100) / this.totalLife2;
+    if (actualLife2 < 0) { actualLife2 = 0; }
+    const actualDamage1 = (result2 * 100) / this.totalLife1;
+    const actualDamage2 = (result1 * 100) / this.totalLife2;
+
+    document.getElementById('lifebar1').style.width = actualLife1.toString() + '%';
+    document.getElementById('lifebar2').style.width = actualLife2.toString() + '%';
+    document.getElementById('damagebar1').style.width = actualDamage1.toString() + '%';
+    document.getElementById('damagebar2').style.width = actualDamage2.toString() + '%';
   }
 
 }

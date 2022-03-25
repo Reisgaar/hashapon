@@ -5,17 +5,25 @@
   <div class="battle-statistics-header">
     <div class="name">
       <p>{{fighter.name}}</p>
+      <div class="lifebar">
+        <div class="life" id="lifebar1"></div>
+        <div class="damage" id="damagebar1"></div>
+      </div>
     </div>
     <div class="versus">
       <p>vs</p>
     </div>
     <div class="name">
       <p>{{opponent.name}}</p>
+      <div class="lifebar">
+        <div class="life" id="lifebar2"></div>
+        <div class="damage" id="damagebar2"></div>
+      </div>
     </div>
   </div>
 
   <div class="battle-statistics-data">
-    <div class="round" *ngFor="let round of battleResult.log.assaults">
+    <div class="round" *ngFor="let round of battleResult.log.assaults" (mouseover)="changeLifeBar(round.c1life, round.c2life, round.c1result, round.c2result)">
       <div class="round-data">
         <p>{{round.c1life + ' - ' + round.c2result + ' = ' + (round.c1life - round.c2result)}}</p>
       </div>
@@ -30,13 +38,14 @@
 
   <div class="battle-statistics-footer">
     <div class="result">
-      <p *ngIf="battleResult.winner === 1">WIN (+2 XP)</p>
-      <p *ngIf="battleResult.winner === 2">LOSE (+1 XP)</p>
+      <p *ngIf="battleResult.winner === 1" class="win">WIN (+2 XP)</p>
+      <p *ngIf="battleResult.winner === 2" class="lose">LOSE (+1 XP)</p>
     </div>
-    <div class="versus"></div>
+    <div *ngIf="battleResult.winner === 1" class="versus home"><p>-</p></div>
+    <div *ngIf="battleResult.winner === 2" class="versus visitor"><p>-</p></div>
     <div class="result">
-      <p *ngIf="battleResult.winner === 2">WIN (+2 XP)</p>
-      <p *ngIf="battleResult.winner === 1">LOSE (+1 XP)</p>
+      <p *ngIf="battleResult.winner === 2" class="win">WIN (+2 XP)</p>
+      <p *ngIf="battleResult.winner === 1" class="lose">LOSE (+1 XP)</p>
     </div>
   </div>
 </div>
