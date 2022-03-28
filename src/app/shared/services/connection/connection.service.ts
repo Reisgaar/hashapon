@@ -102,6 +102,10 @@ export class ConnectionService {
     }
   }
 
+  public getWalletAddress(): any {
+    return this.accounts[0];
+  }
+
   public async syncAccount(): Promise<any> {
     if (!this.provider) {
       console.log('Please connect your wallet');
