@@ -38,6 +38,7 @@ export class NavigationComponent implements OnInit {
         this.account = res[0].substring(0, 4) + '...' + res[0].substring(res[0].length - 4);
         this.utilsService.walletIsConnected = true;
       }
+
       this.nftService.getWalletNft();
     });
   }

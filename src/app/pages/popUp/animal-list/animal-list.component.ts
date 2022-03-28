@@ -32,14 +32,13 @@ export class AnimalListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.nftService.getWalletNft();
     document.getElementById(this.data.tab).classList.add('active');
     document.getElementById(this.data.cat).classList.remove('hidden');
   }
 
   async refreshList(): Promise<void> {
-    this.refreshing = true;
     await this.nftService.getWalletNft();
-    this.refreshing = false;
   }
 
   onNoClick(): void {
