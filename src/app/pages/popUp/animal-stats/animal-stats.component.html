@@ -4,27 +4,27 @@
 
   <div class="data">
     <div class="image">
-      <img *ngIf="data.stage !== 0" src="../../../assets/images/panda/{{data.image}}.png" >
-      <img *ngIf="data.stage === 0" src="../../../assets/images/eggs/{{data.image}}.png" >
+      <img *ngIf="data.attributes.animalAge !== 0" src="../../../assets/images/panda/{{data.image}}.png" >
+      <img *ngIf="data.attributes.animalAge === 0" src="{{data.image}}" >
     </div>
 
-    <div class="stats" *ngIf="data.stage !== 0">
+    <div class="stats" *ngIf="data.attributes.animalAge !== 0">
       <div class="stat stat-atk">
-        <p>{{'ATK: ' + data.stats.atk}}</p>
-        <img *ngIf="data.stage === 3" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
+        <p>{{'ATK: ' + data.attributes.attack}}</p>
+        <img *ngIf="data.attributes.animalAge === 3" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
       </div>
       <div class="stat stat-def">
-        <p>{{'DEF: ' + data.stats.def}}</p>
-        <img *ngIf="data.stage === 3" src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
+        <p>{{'DEF: ' + data.attributes.defense}}</p>
+        <img *ngIf="data.attributes.animalAge === 3" src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
       </div>
       <div class="stat stat-vit">
-        <p>{{'VIT: ' + data.stats.vit}}</p>
-        <img *ngIf="data.stage === 3" src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
+        <p>{{'VIT: ' + data.attributes.vitality}}</p>
+        <img *ngIf="data.attributes.animalAge === 3" src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
       </div>
     </div>
 
-    <div *ngIf="data.stage === 3" class="info">
-      <p>{{'EXP: ' + data.experience + ' (total exp: ' + data.experienceTotal + ')'}}</p>
+    <div *ngIf="data.attributes.animalAge === 3" class="info">
+      <p>{{'EXP: ' + data.attributes.experience + ' (total exp: ' + data.attributes.experienceTotal + ')'}}</p>
       <p>{{'Battles: ' + data.battleTotal + ' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</p>
       <img src="../../../assets/images/fight.png" (click)="battleService.sendFighterToLobby($event, data)" />
     </div>

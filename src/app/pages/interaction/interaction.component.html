@@ -1,9 +1,9 @@
-<div class="interaction {{type}}" *ngIf="data.stage !== 3">
+<div class="interaction {{type}}" *ngIf="data.attributes.animalAge !== 3">
 
   <div *ngIf="!data.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, data)">
-    <span *ngIf="data.stage === 0">INCUBATE</span>
-    <span *ngIf="data.stage === 1">TO SCHOOL</span>
-    <span *ngIf="data.stage === 2">STUDY</span>
+    <span *ngIf="data.attributes.animalAge === 0">INCUBATE</span>
+    <span *ngIf="data.attributes.animalAge === 1">TO SCHOOL</span>
+    <span *ngIf="data.attributes.animalAge === 2">STUDY</span>
   </div>
 
   <div *ngIf="data.upgrading && data.timeRemaining > 0" class="upgrading" >
@@ -15,7 +15,7 @@
   <div *ngIf="data.upgrading && data.timeRemaining <= 0" class="upgraded" (click)="upgradeService.finishUpgrade($event, data)">UPGRADE</div>
 </div>
 
-<div class="interaction {{type}}" *ngIf="data.stage === 3">
+<div class="interaction {{type}}" *ngIf="data.attributes.animalAge === 3">
   <div *ngIf="data.upgrading && data.timeRemaining > 0" class="upgrading" >
     <app-timer [time]="data.timeRemaining"></app-timer>
     <div class="accelerate" *ngIf="!data.timeForwarded" (click)="upgradeService.forwardUpgrade($event, data)"><mat-icon>fast_forward</mat-icon></div>
