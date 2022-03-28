@@ -31,7 +31,7 @@ export class NftService {
       } catch (error) {
         tokenMetadata = {image: 'waiting'};
       }
-      egg.push(tokenMetadata);
+      egg[i] = tokenMetadata;
       console.log(tokenMetadata);
     }
     console.log(egg);
