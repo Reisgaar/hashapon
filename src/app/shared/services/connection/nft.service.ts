@@ -19,7 +19,6 @@ export class NftService {
     const contract = new this.connectionService.web3js.eth.Contract(GachaponERC721Abi.abi, GachaponERC721Abi.address);
     contract.defaultAccount = wallet;
     const nftBalance = await contract.methods.balanceOf(wallet).call();
-    egg.splice(0, egg.length);
 
     for (let i = 0; i < nftBalance; i++) {
       let tokenMetadata: any;
