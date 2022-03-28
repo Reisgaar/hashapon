@@ -38,7 +38,9 @@ export class AnimalListComponent implements OnInit {
   }
 
   async refreshList(): Promise<void> {
+    this.refreshing = true;
     await this.nftService.getWalletNft();
+    this.refreshing = false;
   }
 
   onNoClick(): void {

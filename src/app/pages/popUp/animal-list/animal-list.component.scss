@@ -1,18 +1,47 @@
 @import '../../../../style-variables.scss';
 
+.list-buttons {
+  position: absolute;
+  top: -60px;
+  width: 100%;
+
+  .refresh {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+
+    img {
+      cursor: pointer;
+      height: 50px;
+    }
+
+    .disabled {
+      cursor: default;
+      filter: saturate(0);
+      animation: rotate-refresh 2s ease-in-out infinite;
+
+      @keyframes rotate-refresh {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+      }
+    }
+  }
+
+  .close {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+
+    img {
+    cursor: pointer;
+      height: 50px;
+    }
+  }
+}
 
 .lists {
   height: 100%;
   border-radius: 15px;
-
-  .close-button {
-    position: absolute;
-    cursor: pointer;
-    top: 40px;
-    right: 40px;
-    height: 60px;
-    width: 60px;
-  }
 
   .tabs{
 

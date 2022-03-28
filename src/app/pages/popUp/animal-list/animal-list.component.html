@@ -1,8 +1,15 @@
-<input *ngIf="!refreshing" type="button" value="REFRESH" (click)="refreshList()" />
-<input *ngIf="refreshing" type="button" value="REFRESH" disabled />
+<div class="list-buttons">
+  <div class="refresh">
+    <img *ngIf="!refreshing" src="../../../assets/images/refresh.png" (click)="refreshList()" />
+    <img *ngIf="refreshing" class="disabled" src="../../../assets/images/refresh.png" />
+  </div>
+
+  <div class="close">
+    <img class="close-button" src="../../../assets/images/close.png" (click)="closeDialog()">
+  </div>
+</div>
 
 <div class="lists">
-  <img class="close-button" src="../../../assets/images/close.png" (click)="closeDialog()">
 
   <div class="tabs">
     <div class="tab tab-1" id="tab-eggs" (click)="changeTab($event)">Egg</div>
