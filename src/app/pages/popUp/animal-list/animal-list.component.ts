@@ -5,6 +5,7 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 import { UpgradeService } from 'src/app/shared/services/contracts/upgrade.service';
 import { BattleService } from 'src/app/shared/services/contracts/battle.service';
 import { Router } from '@angular/router';
+import { NftService } from 'src/app/shared/services/connection/nft.service';
 
 @Component({
   selector: 'app-animal-list',
@@ -17,6 +18,7 @@ export class AnimalListComponent implements OnInit {
   baby: Array<any> = baby;
   young: Array<any> = young;
   adult: Array<any> = adult;
+  refreshing: boolean = false;
 
   constructor(
     public dialogRef: MatDialogRef<AnimalListComponent>,
@@ -26,11 +28,18 @@ export class AnimalListComponent implements OnInit {
     public upgradeService: UpgradeService,
     public battleService: BattleService,
     public router: Router,
+    private nftService: NftService
   ) { }
 
   ngOnInit(): void {
     document.getElementById(this.data.tab).classList.add('active');
     document.getElementById(this.data.cat).classList.remove('hidden');
+  }
+
+  async refreshList(): Promise<void> {
+    this.refreshing = true;
+    await this.nftService.getWalletNft();
+    this.refreshing = false;
   }
 
   onNoClick(): void {
