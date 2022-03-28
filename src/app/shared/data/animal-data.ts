@@ -9,6 +9,9 @@ export let incubators: Array<any> = [
   {id: 8, type: 'birds', launched: false, bought: false, incubating: false},
 ];
 
+export let egg: Array<any> = [];
+
+/*
 export let egg: Array<any> = [
   {id: '', stage: 0, image: 'ursids', type: 'ursids', upgrading: true, timeRemaining: 0, timeForwarded: false},
   {id: '', stage: 0, image: 'canines', type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
@@ -19,6 +22,7 @@ export let egg: Array<any> = [
   {id: '', stage: 0, image: 'rodents', type: 'rodents', upgrading: false, timeRemaining: null, timeForwarded: false},
   {id: '', stage: 0, image: 'birds', type: 'birds', upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
+*/
 
 export let baby: Array<any> = [
   {id: '', image: 'baby1', stage: 1, type: '', name: 'Homeless Goddess', stats: {atk: 1, def: 4, vit: 2}, upgrading: true, timeRemaining: 0, timeForwarded: false},

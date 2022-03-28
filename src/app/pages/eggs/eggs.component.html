@@ -1,7 +1,7 @@
 <div class="eggcare background">
   <div class="eggs-shown">
     <div *ngFor="let egg of data; let i = index" class="egg" id="egg-{{i}}" (click)="utilsService.openStats(egg)">
-      <img src="../../../assets/images/eggs/{{egg.type}}.png" >
+      <img src="{{egg.image}}" >
     </div>
   </div>
 

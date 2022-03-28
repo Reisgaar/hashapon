@@ -5,6 +5,7 @@ import { ConnectionService } from 'src/app/shared/services/connection/connection
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { Router } from '@angular/router';
 import { DialogService } from 'src/app/shared/services/dialog.service';
+import { NftService } from 'src/app/shared/services/connection/nft.service';
 
 @Component({
   selector: 'app-navigation',
@@ -23,7 +24,8 @@ export class NavigationComponent implements OnInit {
     public connectionService: ConnectionService,
     public dialog: MatDialog,
     private utilsService: UtilsService,
-    private dialogService: DialogService
+    private dialogService: DialogService,
+    private nftService: NftService
     ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,7 @@ export class NavigationComponent implements OnInit {
         this.account = res[0].substring(0, 4) + '...' + res[0].substring(res[0].length - 4);
         this.utilsService.walletIsConnected = true;
       }
+      this.nftService.getWalletNft(res[0]);
     });
   }
 
