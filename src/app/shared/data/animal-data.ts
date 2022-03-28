@@ -1,3 +1,5 @@
+export let types: Array<string> = ['Felines', 'Canids', 'Reptiles', 'Birds', 'Ursids', 'Primates', 'Marsupials', 'Rodents'];
+
 export let incubators: Array<any> = [
   {id: 1, type: 'ursids', launched: true, bought: true, incubating: true},
   {id: 2, type: 'canines', launched: true, bought: true, incubating: true},
@@ -10,19 +12,6 @@ export let incubators: Array<any> = [
 ];
 
 export let egg: Array<any> = [];
-
-/*
-export let egg: Array<any> = [
-  {id: '', stage: 0, image: 'ursids', type: 'ursids', upgrading: true, timeRemaining: 0, timeForwarded: false},
-  {id: '', stage: 0, image: 'canines', type: 'canines', upgrading: true, timeRemaining: 16400, timeForwarded: true},
-  {id: '', stage: 0, image: 'felines', type: 'felines', upgrading: true, timeRemaining: 36400, timeForwarded: false},
-  {id: '', stage: 0, image: 'marsupials', type: 'marsupials', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, image: 'primates', type: 'primates', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, image: 'reptiles', type: 'reptiles', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, image: 'rodents', type: 'rodents', upgrading: false, timeRemaining: null, timeForwarded: false},
-  {id: '', stage: 0, image: 'birds', type: 'birds', upgrading: false, timeRemaining: null, timeForwarded: false},
-];
-*/
 
 export let baby: Array<any> = [
   {id: '', image: 'baby1', description: 'animal description', name: 'Homeless Goddess', attributes: { animalAge: 1, animalType: 0, attack: 1, defense: 4, vitality: 2, experience: 0, gender: 0 }, upgrading: true, timeRemaining: 0, timeForwarded: false},
@@ -44,16 +33,16 @@ export let young: Array<any> = [
 ];
 
 export let adult: Array<any> = [
-  {id: '', image: 'adult0', name: 'Macabre Pacifist', attributes: { animalAge: 3, animalType: 4, attack: 25, defense: 19, vitality: 20, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, upgradingStat: 0, timeRemaining: 0},
-  {id: '', image: 'adult1', name: 'Dandy Sleepwalker', attributes: { animalAge: 3, animalType: 5, attack: 4, defense: 15, vitality: 22, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 40, battleWon: 18, battleLost: 22, upgrading: true, upgradingStat: 1, timeRemaining: 16400},
-  {id: '', image: 'adult2', name: 'Ugly Maiden', attributes: { animalAge: 3, animalType: 7, attack: 30, defense: 25, vitality: 28, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 27, battleWon: 17, battleLost: 10, upgrading: true, upgradingStat: 2, timeRemaining: 26400},
-  {id: '', image: 'adult3', name: 'Uncommunicative Troublemaker', attributes: { animalAge: 3, animalType: 6, attack: 20, defense: 29, vitality: 15, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult4', name: 'Bizarre Comrade', attributes: { animalAge: 3, animalType: 4, attack: 0, defense: 0, vitality: 0, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult5', name: 'Odorous Butcher', attributes: { animalAge: 3, animalType: 3, attack: 20, defense: 14, vitality: 25, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 46, battleWon: 13, battleLost: 33, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult6', name: 'The Nightmare', attributes: { animalAge: 3, animalType: 0, attack: 25, defense: 22, vitality: 27, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 42, battleWon: 39, battleLost: 3, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult7', name: 'Flammable Anarchist', attributes: { animalAge: 3, animalType: 3, attack: 10, defense: 21, vitality: 9, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 103, battleWon: 75, battleLost: 28, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult8', name: 'Abandoned Pet', attributes: { animalAge: 3, animalType: 1, attack: 4, defense: 15, vitality: 23, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 99, battleWon: 68, battleLost: 31, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult9', name: 'Viscous Nudist', attributes: { animalAge: 3, animalType: 5, attack: 22, defense: 17, vitality: 11, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 4, battleWon: 0, battleLost: 4, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult10', name: 'Questionable Proffesional', attributes: { animalAge: 3, animalType: 2, attack: 30, defense: 0, vitality: 15, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 12, battleWon: 3, battleLost: 9, upgrading: false, upgradingStat: null, timeRemaining: null},
-  {id: '', image: 'adult11', name: 'Neurotic Villain', attributes: { animalAge: 3, animalType: 0, attack: 0, defense: 30, vitality: 30, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 39, battleWon: 22, battleLost: 17, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult0', name: 'Macabre Pacifist', attributes: { animalAge: 3, animalType: 4, attack: 25, defense: 19, vitality: 20, maxAttack: 35, maxDefense: 22, maxVitality: 21, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 129, battleWon: 97, battleLost: 32, upgrading: true, upgradingStat: 0, timeRemaining: 0},
+  {id: '', image: 'adult1', name: 'Dandy Sleepwalker', attributes: { animalAge: 3, animalType: 5, attack: 4, defense: 15, vitality: 22, maxAttack: 14, maxDefense: 20, maxVitality: 31, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 40, battleWon: 18, battleLost: 22, upgrading: true, upgradingStat: 1, timeRemaining: 16400},
+  {id: '', image: 'adult2', name: 'Ugly Maiden', attributes: { animalAge: 3, animalType: 7, attack: 30, defense: 25, vitality: 28, maxAttack: 35, maxDefense: 31, maxVitality: 36, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 27, battleWon: 17, battleLost: 10, upgrading: true, upgradingStat: 2, timeRemaining: 26400},
+  {id: '', image: 'adult3', name: 'Uncommunicative Troublemaker', attributes: { animalAge: 3, animalType: 6, attack: 20, defense: 29, vitality: 15, maxAttack: 30, maxDefense: 36, maxVitality: 24, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult4', name: 'Bizarre Comrade', attributes: { animalAge: 3, animalType: 4, attack: 0, defense: 0, vitality: 0, maxAttack: 10, maxDefense: 10, maxVitality: 10, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 88, battleWon: 59, battleLost: 29, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult5', name: 'Odorous Butcher', attributes: { animalAge: 3, animalType: 3, attack: 20, defense: 14, vitality: 25, maxAttack: 23, maxDefense: 19, maxVitality: 29, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 46, battleWon: 13, battleLost: 33, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult6', name: 'The Nightmare', attributes: { animalAge: 3, animalType: 0, attack: 25, defense: 22, vitality: 27, maxAttack: 30, maxDefense: 28, maxVitality: 35, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 42, battleWon: 39, battleLost: 3, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult7', name: 'Flammable Anarchist', attributes: { animalAge: 3, animalType: 3, attack: 10, defense: 21, vitality: 9, maxAttack: 20, maxDefense: 28, maxVitality: 17, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 103, battleWon: 75, battleLost: 28, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult8', name: 'Abandoned Pet', attributes: { animalAge: 3, animalType: 1, attack: 4, defense: 15, vitality: 23, maxAttack: 14, maxDefense: 25, maxVitality: 33, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 99, battleWon: 68, battleLost: 31, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult9', name: 'Viscous Nudist', attributes: { animalAge: 3, animalType: 5, attack: 22, defense: 17, vitality: 11, maxAttack: 29, maxDefense: 23, maxVitality: 19, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 4, battleWon: 0, battleLost: 4, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult10', name: 'Questionable Proffesional', attributes: { animalAge: 3, animalType: 2, attack: 30, defense: 0, vitality: 15, maxAttack: 33, maxDefense: 10, maxVitality: 19, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 12, battleWon: 3, battleLost: 9, upgrading: false, upgradingStat: null, timeRemaining: null},
+  {id: '', image: 'adult11', name: 'Neurotic Villain', attributes: { animalAge: 3, animalType: 0, attack: 0, defense: 30, vitality: 30, maxAttack: 10, maxDefense: 32, maxVitality: 33, experience: 22, gender: 0, experienceTotal: 74 }, battleTotal: 39, battleWon: 22, battleLost: 17, upgrading: false, upgradingStat: null, timeRemaining: null},
 ];
