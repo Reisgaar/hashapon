@@ -21,4 +21,8 @@ export class GachaponComponent implements OnInit {
     this.utilsService.changeActiveButton('button-gachapon');
   }
 
+  async buyGacha(): Promise<void> {
+    await this.buyService.buyGachapon();
+  }
+
 }
