@@ -78,7 +78,7 @@ export class UtilsService {
 
   // Waiting for gachapon buy process
   public openWaitForGachapon(): void {
-    const dialogRef = this.dialog.open(WaitingGachaponComponent, { panelClass: 'stat-dialog-container', disableClose: true});
+    const dialogRef = this.dialog.open(WaitingGachaponComponent, { panelClass: 'buy-gachapon-dialog-container', disableClose: true});
     dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 
