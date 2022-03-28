@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { egg, baby, young, adult } from '../../../shared/data/animal-data';
+import { types, egg, baby, young, adult } from '../../../shared/data/animal-data';
 import { UtilsService } from 'src/app/shared/services/utils.service';
 import { UpgradeService } from 'src/app/shared/services/contracts/upgrade.service';
 import { BattleService } from 'src/app/shared/services/contracts/battle.service';
@@ -18,6 +18,7 @@ export class AnimalListComponent implements OnInit {
   baby: Array<any> = baby;
   young: Array<any> = young;
   adult: Array<any> = adult;
+  types: Array<string> = types;
   refreshing: boolean = false;
 
   constructor(
