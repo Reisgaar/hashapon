@@ -22,9 +22,9 @@
 
       <div class="data">
         <div class="stats">
-          <span class="stats-name">ATK {{a.stats.atk}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.stats.atk, a.maxStats.atk, 'red')}"></div></span>
-          <span class="stats-name">DEF {{a.stats.def}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.stats.def, a.maxStats.def, 'blue')}"></div></span>
-          <span class="stats-name">VIT {{a.stats.vit}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.stats.vit, a.maxStats.vit, 'green')}"></div></span>
+          <span class="stats-name">ATK {{a.attributes.attack}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.attack, a.attributes.maxAttack, 'red')}"></div></span>
+          <span class="stats-name">DEF {{a.attributes.defense}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.defense, a.attributes.maxDefense, 'blue')}"></div></span>
+          <span class="stats-name">VIT {{a.attributes.vitality}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.vitality, a.attributes.maxVitality, 'green')}"></div></span>
           <p>{{'Battles: ' + a.battleTotal}}</p>
         </div>
       </div>
