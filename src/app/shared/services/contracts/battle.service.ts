@@ -12,14 +12,17 @@ export class BattleService {
     private matDialog: MatDialog
   ) { }
 
-  sendToFight(animal: any): void {
-    console.log('Start battle with: ' + animal.name);
+  watchBattle(animal: any): void {
     let navigationExtras: NavigationExtras = {
       state: {
         data: animal
       }
     };
     this.router.navigate(['/pages/battle'], navigationExtras);
+  }
+
+  sendToFight(animal: any): void {
+    console.log('Start battle with: ' + animal.name);
   }
 
   public sendFighterToLobby(event: any, animal: any): void {

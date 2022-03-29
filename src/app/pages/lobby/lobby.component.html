@@ -1,27 +1,45 @@
 <div class="lobby background">
-  <div class="fighter" id="selectFighter">
-    <p *ngIf="!fighter" style="font-size: 2rem;">Fighter not found, <span (click)="openFighterDialog()" style="cursor: pointer; color: blue;">please choose your fighter.</span></p>
-    <div *ngIf="fighter" class="data">
-      <div class="image">
-        <img src="../../../assets/images/panda/{{fighter.image}}.png" />
+
+  <div class="selector">
+
+    <div class="fighter-item" *ngFor="let a of adults" (click)="utilsService.openStats(a)">
+
+      <div class="card card-front {{a.type}}">
+        <img src="../../../assets/images/card.png" />
       </div>
-      <div class="options">
-        <p>{{fighter.name}}</p>
-        <img class="button" src="../../../assets/images/buttons/lobby_change.png" (click)="openFighterDialog()" />
-        <img class="button" src="../../../assets/images/buttons/lobby_leave.png" routerLink="/home" />
-        <img class="button" src="../../../assets/images/buttons/lobby_fight.png" (click)="battleService.sendToFight(fighter)" />
+
+      <div class="card card-background">
+        <img src="../../../assets/images/card_back.png" />
       </div>
+
+      <div class="name">
+        <p>{{a.name}}</p>
+      </div>
+
+      <img src="../../../assets/images/panda/{{a.image}}.png" class="image" />
+
+      <div class="data">
+        <div class="stats" *ngIf="!a.lookingOponent">
+          <span class="stats-name">ATK {{a.attributes.attack}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.attack, a.attributes.maxAttack, 'red')}"></div></span>
+          <span class="stats-name">DEF {{a.attributes.defense}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.defense, a.attributes.maxDefense, 'blue')}"></div></span>
+          <span class="stats-name">VIT {{a.attributes.vitality}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.vitality, a.attributes.maxVitality, 'green')}"></div></span>
+        </div>
+        <div class="waiting" *ngIf="a.lookingOponent">
+          <p>Waiting for an oponent</p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <div class="fight" *ngIf="!a.lookingOponent" (click)="battleService.sendToFight(a)">
+          <p>Let's Fight</p>
+        </div>
+
+        <div class="last-battle" *ngIf="a.lastBattleData" (click)="battleService.watchBattle(a)">
+          <p>Last battle</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
-</div>
-
-<div class="nav-bottomright">
-  <div class="nav-button" (click)="openFighterDialog()">
-    <img class="location desktop" src="../../../assets/images/buttons/battle.png" />
-    <img class="location desktop active" src="../../../assets/images/buttons/battle_active.png" />
-
-    <img class="location mobile" src="../../../assets/images/buttons/battle_mobile.png" />
-    <img class="location mobile active" src="../../../assets/images/buttons/battle_mobile_active.png" />
-  </div>
 </div>

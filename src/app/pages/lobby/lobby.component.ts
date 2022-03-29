@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Component, Inject, OnInit } from '@angular/core';
+import { adult } from 'src/app/shared/data/animal-data';
 import { BattleService } from 'src/app/shared/services/contracts/battle.service';
 import { UtilsService } from 'src/app/shared/services/utils.service';
-import { DialogService } from 'src/app/shared/services/dialog.service';
-import { FighterSelectorComponent } from '../popUp/fighter-selector/fighter-selector.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lobby',
@@ -13,43 +11,26 @@ import { FighterSelectorComponent } from '../popUp/fighter-selector/fighter-sele
 })
 export class LobbyComponent implements OnInit {
 
-  fighter: any;
+  adults = adult;
 
   constructor(
-    private router: Router,
+    public battleService: BattleService,
     private utilsService: UtilsService,
-    public dialog: MatDialog,
-    public battleService: BattleService
+    private router: Router
   ) {
     if (!this.utilsService.walletIsConnected) {
       this.router.navigate(['home']);
     }
-    console.log('init lobby');
-    let navigation = this.router.getCurrentNavigation();
-    if (navigation.extras.state) {
-      this.fighter = navigation.extras.state.data;
-    } else {
-      this.fighter = null;
-    }
+    this.adults.sort( (a, b) => {
+      return b.battleTotal - a.battleTotal;
+    });
   }
 
   ngOnInit(): void {
-    this.utilsService.changeActiveButton('');
-    if (!this.fighter) {
-      this.openFighterDialog();
-    }
   }
 
-  openFighterDialog(): void {
-    const dialogRef = this.dialog.open(FighterSelectorComponent, { panelClass: 'fighter-dialog-container'});
-    document.getElementById('selectFighter').style.visibility = 'hidden';
-    document.getElementById('gamescreen').style.filter = 'blur(5px)';
-
-    dialogRef.afterClosed().subscribe(result => {
-      document.getElementById('selectFighter').style.visibility = 'visible';
-      document.getElementById('gamescreen').style.filter = 'unset';
-      this.fighter = result;
-    });
+  createStyleForProgressBar(stat: number, maxStat: number, color: string): string {
+    return 'linear-gradient(90deg, ' + color+ ' 0%, ' + color + ' ' + (stat * 100 / 40) + '%, white ' + (stat * 100 / 40) + '%, white ' + (maxStat * 100 / 40) + '%, black ' + (maxStat * 100 / 40) + '%, black 100%)';
   }
 
 }
