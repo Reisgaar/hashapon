@@ -19,10 +19,10 @@ export class PairingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.simulateOpponentSearch();
+    this.delay();
   }
 
-  async simulateOpponentSearch(): Promise<void> {
+  async delay(): Promise<void> {
     await this.getOpponent(5000).then(() => {
       this.dialogRef.close();
     });
