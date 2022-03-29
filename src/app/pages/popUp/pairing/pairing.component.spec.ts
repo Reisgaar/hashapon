@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchingOpponentComponent } from './searching-opponent.component';
+import { PairingComponent } from './pairing.component';
 
-describe('SearchingOpponentComponent', () => {
-  let component: SearchingOpponentComponent;
-  let fixture: ComponentFixture<SearchingOpponentComponent>;
+describe('PairingComponent', () => {
+  let component: PairingComponent;
+  let fixture: ComponentFixture<PairingComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchingOpponentComponent ]
+      declarations: [ PairingComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchingOpponentComponent);
+    fixture = TestBed.createComponent(PairingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

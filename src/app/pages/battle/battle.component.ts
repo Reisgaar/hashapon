@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { UtilsService } from 'src/app/shared/services/utils.service';
-import { SearchingOpponentComponent } from '../popUp/searching-opponent/searching-opponent.component';
 import { adult } from 'src/app/shared/data/animal-data';
+import { PairingComponent } from '../popUp/pairing/pairing.component';
 
 @Component({
   selector: 'app-battle',
@@ -38,7 +38,7 @@ export class BattleComponent implements OnInit {
   }
 
   openSearchDialog(): void {
-    const dialogRef = this.dialog.open(SearchingOpponentComponent, {
+    const dialogRef = this.dialog.open(PairingComponent, {
       panelClass: 'waiting-opponent-dialog-container',
       disableClose: true,
       data: { animal: this.fighter }

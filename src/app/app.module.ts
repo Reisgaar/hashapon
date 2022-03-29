@@ -28,10 +28,10 @@ import { TimerComponent } from './pages/timer/timer.component';
 import { InteractionComponent } from './pages/interaction/interaction.component';
 import { WaitingGachaponComponent } from './pages/popUp/waiting-gachapon/waiting-gachapon.component';
 import { IncubationSelectorComponent } from './pages/popUp/incubation-selector/incubation-selector.component';
-import { SearchingOpponentComponent } from './pages/popUp/searching-opponent/searching-opponent.component';
 import { ErrorComponent } from './pages/popUp/error/error.component';
 import { NewEggComponent } from './pages/popUp/new-egg/new-egg.component';
 import { BattleStatisticsComponent } from './pages/popUp/battle-statistics/battle-statistics.component';
+import { PairingComponent } from './pages/popUp/pairing/pairing.component';
 
 
 @NgModule({
@@ -54,7 +54,7 @@ import { BattleStatisticsComponent } from './pages/popUp/battle-statistics/battl
     InteractionComponent,
     WaitingGachaponComponent,
     IncubationSelectorComponent,
-    SearchingOpponentComponent,
+    PairingComponent,
     ErrorComponent,
     NewEggComponent,
     BattleStatisticsComponent,
