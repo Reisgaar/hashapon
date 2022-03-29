@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ConnectionService } from './connection.service';
-const GachaponERC721Abi = require('../contracts/abi/GachaponERC721.json');
+const GachaponERC721ProxyAbi = require('../contracts/abi/GachaponERC721Proxy.json');
 import { egg } from '../../data/animal-data';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class NftService {
 
   async getWalletNft(): Promise<any> {
     const wallet = this.connectionService.getWalletAddress();
-    const contract = new this.connectionService.web3js.eth.Contract(GachaponERC721Abi.abi, GachaponERC721Abi.address);
+    const contract = new this.connectionService.web3js.eth.Contract(GachaponERC721ProxyAbi.abi, GachaponERC721ProxyAbi.address);
     contract.defaultAccount = wallet;
     const nftBalance = await contract.methods.balanceOf(wallet).call();
 
@@ -25,6 +25,8 @@ export class NftService {
       try {
         const tokenId = await contract.methods.tokenOfOwnerByIndex(wallet, i).call();
         let tokenMetadataURI = await contract.methods.tokenURI(tokenId).call();
+        console.log(tokenId);
+        console.log(tokenMetadataURI);
         tokenMetadataURI = this.setUrlIfIpfs(tokenMetadataURI);
         tokenMetadata = await fetch(tokenMetadataURI).then ((response) => response.json());
       } catch (error) {

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { egg } from '../../data/animal-data';
 import { ConnectionService } from '../connection/connection.service';
 import { UtilsService } from './../utils.service';
-const GachaponERC721Abi = require('./abi/GachaponERC721.json');
+const GachaponERC721ProxyAbi = require('./abi/GachaponERC721Proxy.json');
 
 
 @Injectable({
@@ -41,7 +41,7 @@ export class BuyService {
   // Function to get a pair of tokens
   public async mintAndPay(): Promise<any>{
     await this.connectionService.syncAccount();
-    const nftFactory = new this.connectionService.web3js.eth.Contract(GachaponERC721Abi.abi, GachaponERC721Abi.address);
+    const nftFactory = new this.connectionService.web3js.eth.Contract(GachaponERC721ProxyAbi.abi, GachaponERC721ProxyAbi.address);
     const userAddr = this.connectionService.accounts[0];
     try {
       return await nftFactory.methods.mintAndPay().send({from: userAddr});
