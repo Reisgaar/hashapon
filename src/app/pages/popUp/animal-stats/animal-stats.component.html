@@ -26,7 +26,7 @@
     <div *ngIf="data.attributes.animalAge === 3" class="info">
       <p>{{'EXP: ' + data.attributes.experience + ' (total exp: ' + data.attributes.experienceTotal + ')'}}</p>
       <p>{{'Battles: ' + data.battleTotal + ' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</p>
-      <img src="../../../assets/images/fight.png" (click)="battleService.sendFighterToLobby($event, data)" />
+      <img *ngIf="!data.lookingOpponent" src="../../../assets/images/fight.png" (click)="battleService.sendToFight($event, data)" />
     </div>
 
     <app-interaction [data]="data" type="big"></app-interaction>
