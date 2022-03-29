@@ -4,9 +4,74 @@
 
   #battle {
     visibility: visible;
-    text-align: center;
     position: relative;
-    transform: translateY(-50%);
-    top: 50%;
+    height: 100vh;
+    width: 100vw;
+
+    .fighter {
+      position: absolute;
+      top: 50%;
+      right: 100%;
+    }
+
+    .opponent {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+    }
+
+    .brawl-ball {
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+
+    &.animate{
+
+      .fighter {
+        animation: fighter-battle 5s ease-in-out forwards;
+
+        @keyframes fighter-battle {
+          0%   { right: 100%; opacity: 1; transform: translate(0%, -50%); }
+          50%  { right: 50%; opacity: 1; transform: translate(50%, -50%); }
+          51%  { right: 50%; opacity: 0; transform: translate(50%, -50%); }
+          100% { right: 50%; opacity: 0; transform: translate(50%, -50%); }
+        }
+      }
+
+      .opponent {
+        animation: opponent-battle 5s ease-in-out forwards;
+
+        @keyframes opponent-battle {
+          0%   { left: 100%; opacity: 1; transform: translate(0%, -50%); }
+          50%  { left: 50%; opacity: 1; transform: translate(-50%, -50%); }
+          51%  { left: 50%; opacity: 0; transform: translate(-50%, -50%); }
+          100% { left: 50%; opacity: 0; transform: translate(-50%, -50%); }
+        }
+      }
+
+      .brawl-ball {
+        animation: brawl-battle 5s ease-in-out forwards;
+
+          @keyframes brawl-battle {
+            0%   { opacity: 0; transform: rotateZ(0deg) translate(-50%, -50%); }
+            49%  { opacity: 0; transform: rotateZ(0deg) translate(-50%, -50%); }
+            50%  { opacity: 1; transform: rotateZ(0deg) translate(-50%, -50%); }
+            55%  { opacity: 1; transform: rotate(9deg) translate(-52%, -49%); }
+            60%  { opacity: 1; transform: rotate(-6deg) translate(-48%, -53%); }
+            65%  { opacity: 1; transform: rotate(5deg) translate(-54%, -46%); }
+            60%  { opacity: 1; transform: rotate(13deg) translate(-46%, -51%); }
+            75%  { opacity: 1; transform: rotate(0deg) translate(-53%, -49%); }
+            70%  { opacity: 1; transform: rotate(7deg) translate(-49%, -54%); }
+            85%  { opacity: 1; transform: rotate(-4deg) translate(-55%, -45%); }
+            80%  { opacity: 1; transform: rotate(11deg) translate(-47%, -52%); }
+            95%  { opacity: 1; transform: rotate(-5deg) translate(-52%, -47%); }
+            100% { opacity: 1; transform: rotate(0deg) translate(-50%, -50%); }
+          }
+      }
+    }
   }
 }

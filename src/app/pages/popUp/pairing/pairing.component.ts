@@ -15,7 +15,8 @@ export class PairingComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private dialogRef: MatDialogRef<PairingComponent>
   ) {
-    this.fighter = data.animal;
+    this.fighter = data.fighter;
+    this.opponent = data.opponent;
   }
 
   ngOnInit(): void {

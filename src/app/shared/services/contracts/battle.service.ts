@@ -25,7 +25,6 @@ export class BattleService {
   sendToFight(event: any, animal: any): void {
     event.stopPropagation();
     console.log('Start battle with: ' + animal.name);
-    console.log(adult);
     adult.find( index => index.name === animal.name).lookingOpponent = true;
   }
 

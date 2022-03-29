@@ -13,7 +13,7 @@ import { PairingComponent } from '../popUp/pairing/pairing.component';
 export class BattleComponent implements OnInit {
 
   fighter: any;
-  opponent = adult[Math.floor(Math.random() * 8)];
+  opponent = adult[Math.floor(Math.random() * adult.length)];
 
   constructor(
     public dialogRef: MatDialogRef<BattleComponent>,
@@ -33,21 +33,23 @@ export class BattleComponent implements OnInit {
     if (!this.utilsService.walletIsConnected || this.fighter === null) {
       this.router.navigate(['home']);
     } else {
-      this.openSearchDialog();
+      this.openPairingDialog();
     }
   }
 
-  openSearchDialog(): void {
+  openPairingDialog(): void {
     const dialogRef = this.dialog.open(PairingComponent, {
       panelClass: 'waiting-opponent-dialog-container',
       disableClose: true,
-      data: { animal: this.fighter }
+      data: { fighter: this.fighter, opponent: this.opponent }
     });
     document.getElementById('battle').style.visibility = 'hidden';
     document.getElementById('gamescreen').style.filter = 'blur(5px)';
 
     dialogRef.afterClosed().subscribe(result => {
-      document.getElementById('battle').style.visibility = 'visible';
+      const battle = document.getElementById('battle');
+      battle.style.visibility = 'visible';
+      battle.classList.add('animate');
       document.getElementById('gamescreen').style.filter = 'unset';
       this.startBattle();
     });
