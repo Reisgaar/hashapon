@@ -19,18 +19,18 @@
       <img src="../../../assets/images/panda/{{a.image}}.png" class="image" />
 
       <div class="data">
-        <div class="stats" *ngIf="!a.lookingOponent">
+        <div class="stats" *ngIf="!a.lookingOpponent">
           <span class="stats-name">ATK {{a.attributes.attack}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.attack, a.attributes.maxAttack, 'red')}"></div></span>
           <span class="stats-name">DEF {{a.attributes.defense}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.defense, a.attributes.maxDefense, 'blue')}"></div></span>
           <span class="stats-name">VIT {{a.attributes.vitality}}<div class="progress-bar" [ngStyle]="{'background': createStyleForProgressBar(a.attributes.vitality, a.attributes.maxVitality, 'green')}"></div></span>
         </div>
-        <div class="waiting" *ngIf="a.lookingOponent">
+        <div class="waiting" *ngIf="a.lookingOpponent">
           <p>Waiting for an oponent</p>
         </div>
       </div>
 
       <div class="buttons">
-        <div class="fight" *ngIf="!a.lookingOponent" (click)="battleService.sendToFight(a)">
+        <div class="fight" *ngIf="!a.lookingOpponent" (click)="battleService.sendToFight($event, a)">
           <p>Let's Fight</p>
         </div>
 
