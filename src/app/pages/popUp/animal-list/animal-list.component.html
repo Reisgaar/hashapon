@@ -20,11 +20,16 @@
 
   <div class="list">
     <div class="list-category eggs hidden" id="cat-eggs">
-      <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}" (click)="utilsService.openStats(e)">
-        <h2>{{types[e.attributes.animalType] + ' egg'}}</h2>
-        <img *ngIf="e.image !== 'waiting'" src="{{e.image}}" />
-        <img *ngIf="e.image === 'waiting'" src="../../../../assets/images/eggs/waiting.png" />
-        <app-interaction [data]="e" type="mini"></app-interaction>
+      <div *ngFor="let e of egg; let i = index" class="item egg" id="egg-{{i}}">
+        <div *ngIf="e.image !== 'waiting'" (click)="utilsService.openStats(e)">
+          <h2>{{types[e.attributes.animalType] + ' egg'}}</h2>
+          <img src="{{e.image}}" />
+          <app-interaction [data]="e" type="mini"></app-interaction>
+        </div>
+        <div *ngIf="e.image === 'waiting'">
+          <h2>{{'New egg'}}</h2>
+          <img src="../../../../assets/images/eggs/waiting.png" />
+        </div>
       </div>
     </div>
 
