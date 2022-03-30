@@ -64,6 +64,13 @@ body, h1, h2, h3, h4, h5, h6 {
   padding: 0;
 }
 
+.stat-dialog-container .mat-dialog-container {
+  position: relative;
+  overflow: visible;
+  border: 3px solid black;
+  padding: 0;
+}
+
 // Background images style
 
 .gamescreen,
@@ -96,6 +103,50 @@ body, h1, h2, h3, h4, h5, h6 {
   &.gym { background-image: url('./assets/images/backgrounds/gym.png'); }
   &.lobby { background-image: url('./assets/images/backgrounds/lobby.png'); }
   &.battle { background-image: url('./assets/images/backgrounds/battle.png'); }
+}
+
+
+/*
+ *  PopUp close and refresh buttons
+ */
+
+.list-buttons {
+  position: absolute;
+  top: -60px;
+  width: 100%;
+
+  .refresh {
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+
+    img {
+      cursor: pointer;
+      height: 50px;
+    }
+
+    .disabled {
+      cursor: default;
+      filter: saturate(0);
+      animation: rotate-refresh 2s ease-in-out infinite;
+
+      @keyframes rotate-refresh {
+        0%   {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+      }
+    }
+  }
+
+  .close {
+    display: inline-block;
+    width: 50%;
+    text-align: right;
+
+    img {
+    cursor: pointer;
+      height: 50px;
+    }
+  }
 }
 
 
