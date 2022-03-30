@@ -1,4 +1,5 @@
-<div class="list-buttons">
+
+<div class="list-buttons" id="list-buttons">
   <div class="refresh">
     <img *ngIf="!refreshing" src="../../../assets/images/refresh.png" (click)="refreshList()" />
     <img *ngIf="refreshing" class="disabled" src="../../../assets/images/refresh.png" />
@@ -9,7 +10,7 @@
   </div>
 </div>
 
-<div class="lists">
+<div class="lists" id="lists">
 
   <div class="tabs">
     <div class="tab tab-1" id="tab-eggs" (click)="changeTab($event)">Egg</div>

@@ -54,7 +54,13 @@ export class UtilsService {
       panelClass: 'stat-dialog-container',
       data: animal
     });
-    dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
+    document.getElementById('list-buttons').style.filter = 'blur(5px)';
+    document.getElementById('lists').style.filter = 'blur(5px)';
+    dialogRef.afterClosed().subscribe(result => {
+      document.getElementById('list-buttons').style.filter = 'unset';
+      document.getElementById('lists').style.filter = 'unset';
+      console.log('The dialog was closed');
+    });
   }
 
   // Obtained new Egg
