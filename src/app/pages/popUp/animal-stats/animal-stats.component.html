@@ -1,3 +1,14 @@
+<div class="list-buttons" id="list-buttons">
+  <div class="refresh">
+    <img *ngIf="!refreshing" src="../../../assets/images/refresh.png" (click)="refreshList()" />
+    <img *ngIf="refreshing" class="disabled" src="../../../assets/images/refresh.png" />
+  </div>
+
+  <div class="close">
+    <img class="close-button" src="../../../assets/images/close.png" (click)="closeDialog()">
+  </div>
+</div>
+
 <div class="animal-detail">
 
   <h2>{{data.name}}</h2>
@@ -10,16 +21,25 @@
 
     <div class="stats" *ngIf="data.attributes.animalAge !== 0">
       <div class="stat stat-atk">
-        <p>{{'ATK: ' + data.attributes.attack}}</p>
-        <img *ngIf="data.attributes.animalAge === 3" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
+        <div class="stat-info">
+          <img class="stat-info-image" src="../../../../assets/images/attack.png" />
+          <p>{{data.attributes.attack}}</p>
+        </div>
+        <img *ngIf="data.attributes.animalAge === 3" class="stat-upgrade" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
       </div>
       <div class="stat stat-def">
-        <p>{{'DEF: ' + data.attributes.defense}}</p>
-        <img *ngIf="data.attributes.animalAge === 3" src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
+        <div class="stat-info">
+          <img class="stat-info-image" src="../../../../assets/images/defense.png" />
+          <p>{{data.attributes.defense}}</p>
+        </div>
+        <img *ngIf="data.attributes.animalAge === 3" class="stat-upgrade" src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
       </div>
       <div class="stat stat-vit">
-        <p>{{'VIT: ' + data.attributes.vitality}}</p>
-        <img *ngIf="data.attributes.animalAge === 3" src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
+        <div class="stat-info">
+          <img class="stat-info-image" src="../../../../assets/images/vitality.png" />
+          <p>{{data.attributes.vitality}}</p>
+        </div>
+        <img *ngIf="data.attributes.animalAge === 3" class="stat-upgrade" src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
       </div>
     </div>
 
