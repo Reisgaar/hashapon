@@ -21,7 +21,8 @@
       padding: 1% 0 1%;
 
       &.active {
-        background-color: $white;
+        background-color: $black;
+        color: $white;
         border-bottom-width: 0;
         padding: calc(1% + 2px) 0 calc(1% + 2px);
       }
@@ -32,7 +33,7 @@
     overflow: hidden;
     height: 91%;
     padding-right: 3px;
-    background-color: $white;
+    background-image: url('../../../../assets/images/background_pattern.png');
     border-radius: 0 0 15px 15px;
     border: 2px solid $black;
     border-top-width: 0;
@@ -90,8 +91,9 @@
             width: 40%;
             margin: 0 5%;
 
-            &:hover {
-              filter: drop-shadow(5px 5px 5px #222) hue-rotate(-100deg);
+            &.disabled {
+              cursor: default;
+              filter: saturate(0) brightness(1.5) contrast(1.5);
             }
           }
         }

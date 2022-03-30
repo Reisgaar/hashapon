@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { NftService } from 'src/app/shared/services/connection/nft.service';
+import { BattleService } from 'src/app/shared/services/contracts/battle.service';
 import { UpgradeService } from 'src/app/shared/services/contracts/upgrade.service';
 
 @Component({
@@ -16,6 +17,7 @@ export class AnimalStatsComponent implements OnInit {
     public dialogRef: MatDialogRef<AnimalStatsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
     public upgradeService: UpgradeService,
+    public battleService: BattleService,
     private nftService: NftService
   ) { }
 

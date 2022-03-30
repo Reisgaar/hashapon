@@ -57,6 +57,7 @@
         <div class="adult-buttons">
           <img src="../../../assets/images/stats.png" />
           <img *ngIf="!a.lookingOpponent" src="../../../assets/images/fight.png" (click)="battleService.sendToFight($event, a)" />
+          <img *ngIf="a.lookingOpponent" src="../../../assets/images/fight.png" class="disabled" />
         </div>
       </div>
     </div>

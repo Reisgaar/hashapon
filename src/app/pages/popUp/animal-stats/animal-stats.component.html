@@ -14,9 +14,18 @@
   <h2>{{data.name}}</h2>
 
   <div class="data">
+
+    <div *ngIf="data.attributes.animalAge === 3" class="info battles">
+      <p>{{'Battles: ' + data.battleTotal}}<span>{{' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</span></p>
+    </div>
+
     <div class="image">
       <img *ngIf="data.attributes.animalAge !== 0" src="../../../assets/images/panda/{{data.image}}.png" >
       <img *ngIf="data.attributes.animalAge === 0" src="{{data.image}}" >
+    </div>
+
+    <div *ngIf="data.attributes.animalAge === 3" class="info experience">
+      <p>{{'Experience: ' + data.attributes.experience}}</p>
     </div>
 
     <div class="stats" *ngIf="data.attributes.animalAge !== 0">
@@ -46,10 +55,9 @@
       </div>
     </div>
 
-    <div *ngIf="data.attributes.animalAge === 3" class="info">
-      <p>{{'EXP: ' + data.attributes.experience + ' (total exp: ' + data.attributes.experienceTotal + ')'}}</p>
-      <p>{{'Battles: ' + data.battleTotal + ' (' + data.battleWon + ' won - ' + data.battleLost + ' lost)'}}</p>
-      <img *ngIf="!data.lookingOpponent" src="../../../assets/images/fight.png" (click)="battleService.sendToFight($event, data)" />
+    <div *ngIf="data.attributes.animalAge === 3" class="info fight">
+      <img *ngIf="!data.lookingOpponent" src="../../../assets/images/fight_stat_card.png" (click)="battleService.sendToFight($event, data)" />
+      <img *ngIf="data.lookingOpponent" src="../../../assets/images/fight_stat_card.png" class="disabled" />
     </div>
 
     <app-interaction *ngIf="data.attributes.animalAge !== 3" [data]="data" type="big"></app-interaction>
