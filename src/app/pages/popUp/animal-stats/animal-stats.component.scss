@@ -3,14 +3,18 @@
 .animal-detail {
 
   h2 {
+    background: black;
+    color: white;
+    padding: 10px 5px;
+    margin: 0;
     text-align: center;
     font-family: $main-font;
     font-size: 2rem;
-    margin-bottom: 30px;
   }
 
   .data {
     text-align: center;
+    padding: 25px;
 
     .image {
       display: inline-block;
@@ -25,18 +29,30 @@
     .stats {
       display: inline-block;
       vertical-align: top;
-      margin: 0 30px;
+      margin: 0 0 0 30px;
       font-size: 1.8rem;
 
       .stat {
+        position: relative;
         text-align: right;
 
-        img {
+        &-info {
+          position: relative;
+          display: inline-block;
+
+          &-image {
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+          }
+        }
+
+        &-upgrade {
           cursor: pointer;
           display: inline-block;
-          height: 40px;
+          height: 50px;
           margin-left: 15px;
-          vertical-align: text-bottom;
+          vertical-align: super;
 
           &:hover {
             filter: hue-rotate(45deg);
@@ -45,7 +61,13 @@
 
         p {
           display: inline-block;
-          margin: 30px 0;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          text-shadow: 2px 2px 1px black;
+          font-size: 1.6rem;
         }
       }
     }
