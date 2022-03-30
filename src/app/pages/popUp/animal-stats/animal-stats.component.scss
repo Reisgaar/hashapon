@@ -17,7 +17,6 @@
     padding: 25px;
 
     .image {
-      display: inline-block;
 
       img {
         -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -27,14 +26,15 @@
     }
 
     .stats {
-      display: inline-block;
       vertical-align: top;
-      margin: 0 0 0 30px;
       font-size: 1.8rem;
 
       .stat {
         position: relative;
-        text-align: right;
+        display: inline-block;
+        text-align: center;
+        width: 33%;
+        vertical-align: top;
 
         &-info {
           position: relative;
@@ -43,16 +43,14 @@
           &-image {
             height: 50px;
             width: 50px;
-            margin: 10px;
           }
         }
 
         &-upgrade {
           cursor: pointer;
           display: inline-block;
-          height: 50px;
-          margin-left: 15px;
-          vertical-align: super;
+          margin: 0px;
+          width: 70px;
 
           &:hover {
             filter: hue-rotate(45deg);

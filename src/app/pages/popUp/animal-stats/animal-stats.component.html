@@ -25,21 +25,24 @@
           <img class="stat-info-image" src="../../../../assets/images/attack.png" />
           <p>{{data.attributes.attack}}</p>
         </div>
-        <img *ngIf="data.attributes.animalAge === 3" class="stat-upgrade" src="../../../assets/images/stat_atk_up.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
+        <img *ngIf="data.attributes.animalAge === 3 && data.upgradingStat !== 0" class="stat-upgrade" src="../../../assets/images/train_skill.png" (click)="upgradeService.upgradeStat($event, data, 'ATK')" />
+        <app-interaction *ngIf="data.attributes.animalAge === 3 && data.upgradingStat === 0" [data]="data" type="mini"></app-interaction>
       </div>
       <div class="stat stat-def">
         <div class="stat-info">
           <img class="stat-info-image" src="../../../../assets/images/defense.png" />
           <p>{{data.attributes.defense}}</p>
         </div>
-        <img *ngIf="data.attributes.animalAge === 3" class="stat-upgrade" src="../../../assets/images/stat_def_up.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
+        <img *ngIf="data.attributes.animalAge === 3 && data.upgradingStat !== 1" class="stat-upgrade" src="../../../assets/images/train_skill.png" (click)="upgradeService.upgradeStat($event, data, 'DEF')" />
+        <app-interaction *ngIf="data.attributes.animalAge === 3 && data.upgradingStat === 1" [data]="data" type="mini"></app-interaction>
       </div>
       <div class="stat stat-vit">
         <div class="stat-info">
           <img class="stat-info-image" src="../../../../assets/images/vitality.png" />
           <p>{{data.attributes.vitality}}</p>
         </div>
-        <img *ngIf="data.attributes.animalAge === 3" class="stat-upgrade" src="../../../assets/images/stat_vit_up.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
+        <img *ngIf="data.attributes.animalAge === 3 && data.upgradingStat !== 2" class="stat-upgrade" src="../../../assets/images/train_skill.png" (click)="upgradeService.upgradeStat($event, data, 'VIT')" />
+        <app-interaction *ngIf="data.attributes.animalAge === 3 && data.upgradingStat === 2" [data]="data" type="mini"></app-interaction>
       </div>
     </div>
 
@@ -49,7 +52,7 @@
       <img *ngIf="!data.lookingOpponent" src="../../../assets/images/fight.png" (click)="battleService.sendToFight($event, data)" />
     </div>
 
-    <app-interaction [data]="data" type="big"></app-interaction>
+    <app-interaction *ngIf="data.attributes.animalAge !== 3" [data]="data" type="big"></app-interaction>
 
   </div>
 

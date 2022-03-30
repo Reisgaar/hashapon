@@ -25,7 +25,7 @@
         <div *ngIf="e.image !== 'waiting'" (click)="utilsService.openStats(e)">
           <h2>{{types[e.attributes.animalType] + ' egg'}}</h2>
           <img src="{{e.image}}" />
-          <app-interaction [data]="e" type="mini"></app-interaction>
+          <app-interaction [data]="e" type="small"></app-interaction>
         </div>
         <div *ngIf="e.image === 'waiting'">
           <h2>{{'New egg'}}</h2>
@@ -38,7 +38,7 @@
       <div *ngFor="let b of baby; let i = index" class="item baby" id="baby-{{i}}" (click)="utilsService.openStats(b)">
         <h2>{{b.name}}</h2>
         <img src="../../../assets/images/panda/{{b.image}}.png" />
-        <app-interaction [data]="b" type="mini"></app-interaction>
+        <app-interaction [data]="b" type="small"></app-interaction>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
       <div *ngFor="let y of young; let i = index" class="item young" id="young-{{i}}" (click)="utilsService.openStats(y)">
         <h2>{{y.name}}</h2>
         <img src="../../../assets/images/panda/{{y.image}}.png" />
-        <app-interaction [data]="y" type="mini"></app-interaction>
+        <app-interaction [data]="y" type="small"></app-interaction>
       </div>
     </div>
 

@@ -3,6 +3,39 @@
 .interaction {
 
   &.mini {
+    position: relative;
+
+    .upgrade, .upgrading, .upgraded {
+      margin: 5px auto 0;
+      width: 60px;
+      text-shadow: 1px 1px 4px $black;
+      padding: 1px 10px;
+      font-size: 1rem;
+    }
+
+    .upgrading {
+
+      .accelerate {
+        right: -10px;
+
+        .mat-icon {
+          margin: 1px;
+          font-size: 15px;
+        }
+      }
+
+      .accelerated {
+        right: -10px;
+
+        .mat-icon {
+          margin: 1px;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &.small {
     position: absolute;
     bottom: 15px;
     left: 50%;
