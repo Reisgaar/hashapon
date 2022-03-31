@@ -14,7 +14,7 @@ export class TimerComponent implements OnInit {
 
   ngOnInit(): void {
     this.interval = setInterval(() => {
-      this.time--;
+      if (this.time > 0) { this.time--; }
     }, 1000);
   }
 
