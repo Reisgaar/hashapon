@@ -75,7 +75,6 @@ export class IncubatorsComponent implements OnInit {
   // SLIDER CLICK AND TOUCH MOVEMENT
 
   mouseStartSlider(e: any, position: number): void {
-    e.preventDefault();
     this.movingInitPosition = position;
   }
 
