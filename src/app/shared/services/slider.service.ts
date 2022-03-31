@@ -16,7 +16,6 @@ export class SliderService {
     } else {
       position = actualPosition + 100;
     }
-    console.log(position);
     // Check if first or last
     if (position <= ((items * -100) + 5)) {
       position = 5;
@@ -39,9 +38,9 @@ export class SliderService {
     }
     // Check if first or last i on set
     console.log(position);
-    if (position === ( ( (items - itemsShown + 1) * (movement * -1) ) + 5) ) {
+    if (position <= ( ( (items - itemsShown + 1) * (movement * -1) ) + 5) ) {
       position = 5;
-    } else if (position === 5 + movement) {
+    } else if (position >= 5) {
       position = ( ( (items - itemsShown) * (movement * -1) ) + 5);
     }
     // Update position
