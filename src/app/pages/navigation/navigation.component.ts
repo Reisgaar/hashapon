@@ -29,6 +29,9 @@ export class NavigationComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    // Only for testing on mobile
+    this.walletIsConnected = true;
+    this.utilsService.walletIsConnected = true;
   }
 
   public connectWallet(): void {
