@@ -1,4 +1,4 @@
-<div class="school background">
+<div class="school background" (mousedown)="mouseStartSlider($event, $event.clientX)" (mouseup)="mouseStopSlider($event.clientX)" (touchstart)="mouseStartSlider($event, $event.changedTouches[0].screenX)" (touchend)="mouseStopSlider($event.changedTouches[0].screenX)">
   <div class="youngs-shown">
     <div *ngFor="let young of data; let i = index" class="young" id="young-{{i}}">
       <div class="young-img-container">

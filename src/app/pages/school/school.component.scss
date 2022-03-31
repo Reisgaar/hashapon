@@ -1,6 +1,9 @@
 @import '../../../style-variables.scss';
 
 .school{
+  user-select: none;
+  -moz-user-select: none;
+
   .youngs {
 
     &-shown{

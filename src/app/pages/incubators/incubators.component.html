@@ -1,4 +1,4 @@
-<div class="incubators background">
+<div class="incubators background" (mousedown)="mouseStartSlider($event, $event.clientX)" (mouseup)="mouseStopSlider($event.clientX)" (touchstart)="mouseStartSlider($event, $event.changedTouches[0].screenX)" (touchend)="mouseStopSlider($event.changedTouches[0].screenX)">
 
   <div class="incubators-container">
 

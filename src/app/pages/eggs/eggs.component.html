@@ -1,4 +1,4 @@
-<div class="eggcare background">
+<div class="eggcare background" (mousedown)="mouseStartSlider($event, $event.clientX)" (mouseup)="mouseStopSlider($event.clientX)" (touchstart)="mouseStartSlider($event, $event.changedTouches[0].screenX)" (touchend)="mouseStopSlider($event.changedTouches[0].screenX)">
   <div class="eggs-shown">
     <div *ngFor="let egg of data; let i = index" class="egg" id="egg-{{i}}" (click)="utilsService.openStats(egg)">
       <img src="{{egg.image}}" >

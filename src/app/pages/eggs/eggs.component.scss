@@ -1,6 +1,8 @@
 @import '../../../style-variables.scss';
 
 .eggcare {
+  user-select: none;
+  -moz-user-select: none;
 
   .eggs {
 

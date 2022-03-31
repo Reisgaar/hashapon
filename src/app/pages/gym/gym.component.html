@@ -1,4 +1,4 @@
-<div class="gym background">
+<div class="gym background" (mousedown)="mouseStartSlider($event, $event.clientX)" (mouseup)="mouseStopSlider($event.clientX)" (touchstart)="mouseStartSlider($event, $event.changedTouches[0].screenX)" (touchend)="mouseStopSlider($event.changedTouches[0].screenX)">
 
   <div  class="machines">
     <div class="machine machine-height" id="first-machine">

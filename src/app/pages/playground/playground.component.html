@@ -1,4 +1,4 @@
-<div class="playground background">
+<div class="playground background" (mousedown)="mouseStartSlider($event, $event.clientX)" (mouseup)="mouseStopSlider($event.clientX)" (touchstart)="mouseStartSlider($event, $event.changedTouches[0].screenX)" (touchend)="mouseStopSlider($event.changedTouches[0].screenX)">
   <div class="babies-shown">
     <div *ngFor="let baby of data; let i = index" class="baby" id="baby-{{i}}">
       <img src="../../../assets/images/panda/{{baby.image}}.png" (click)="utilsService.openStats(baby)">

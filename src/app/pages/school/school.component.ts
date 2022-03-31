@@ -14,6 +14,7 @@ export class SchoolComponent implements OnInit {
   actualPosition: number = 5;
   data: Array<any> = [];
   mobileSchool: boolean;
+  movingInitPosition: number;
 
   @HostListener('window:resize', ['$event'])
 
@@ -62,6 +63,19 @@ export class SchoolComponent implements OnInit {
     else if (n % 2 === 0) { return 1; }
     else if (n % 3 === 0) { return 0; }
     else { return 0; }
+  }
+
+
+  // SLIDER CLICK AND TOUCH MOVEMENT
+
+  mouseStartSlider(e: any, position: number): void {
+    e.preventDefault();
+    this.movingInitPosition = position;
+  }
+
+  mouseStopSlider(position: number): void {
+    if (this.movingInitPosition < position) { this.moveSlider(false); }
+    else if (this.movingInitPosition > position) { this.moveSlider(true); }
   }
 
 }

@@ -13,6 +13,7 @@ export class PlaygroundComponent implements OnInit {
 
   actualPosition: number = 5;
   data: Array<any> = [];
+  movingInitPosition: number;
 
   @HostListener('window:resize', ['$event'])
 
@@ -44,6 +45,19 @@ export class PlaygroundComponent implements OnInit {
 
   public moveSlider(next: boolean): void {
     this.actualPosition = this.sliderService.moveSlider(next, this.actualPosition, 'baby-0', this.data.length);
+  }
+
+
+  // SLIDER CLICK AND TOUCH MOVEMENT
+
+  mouseStartSlider(e: any, position: number): void {
+    e.preventDefault();
+    this.movingInitPosition = position;
+  }
+
+  mouseStopSlider(position: number): void {
+    if (this.movingInitPosition < position) { this.moveSlider(false); }
+    else if (this.movingInitPosition > position) { this.moveSlider(true); }
   }
 
 }

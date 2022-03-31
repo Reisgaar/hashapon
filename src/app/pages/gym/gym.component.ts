@@ -15,6 +15,7 @@ export class GymComponent implements OnInit {
   machineBoxingAnimal: any;
   machineRunningAnimal: any;
   actualPosition: number = 5;
+  movingInitPosition: number;
 
   @HostListener('window:resize', ['$event'])
 
@@ -54,6 +55,19 @@ export class GymComponent implements OnInit {
         case(2): this.machineRunningAnimal = a; break;
       }
     }
+  }
+
+
+  // SLIDER CLICK AND TOUCH MOVEMENT
+
+  mouseStartSlider(e: any, position: number): void {
+    e.preventDefault();
+    this.movingInitPosition = position;
+  }
+
+  mouseStopSlider(position: number): void {
+    if (this.movingInitPosition < position) { this.moveSlider(false); }
+    else if (this.movingInitPosition > position) { this.moveSlider(true); }
   }
 
 }

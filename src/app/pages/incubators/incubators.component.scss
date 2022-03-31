@@ -2,6 +2,8 @@
 @import '../../../styles.scss';
 
 .incubators {
+  user-select: none;
+  -moz-user-select: none;
 
   &-container {
     position: relative;

@@ -18,6 +18,7 @@ export class IncubatorsComponent implements OnInit {
   actualPosition: number = 5;
   sliderItemSize: number;
   sliderItemAmount: number;
+  movingInitPosition: number;
 
   constructor(
     private router: Router,
@@ -68,6 +69,19 @@ export class IncubatorsComponent implements OnInit {
       document.getElementById('gamescreen').style.filter = 'unset';
       console.log(result);
     });
+  }
+
+
+  // SLIDER CLICK AND TOUCH MOVEMENT
+
+  mouseStartSlider(e: any, position: number): void {
+    e.preventDefault();
+    this.movingInitPosition = position;
+  }
+
+  mouseStopSlider(position: number): void {
+    if (this.movingInitPosition < position) { this.moveSlider(false); }
+    else if (this.movingInitPosition > position) { this.moveSlider(true); }
   }
 
 }

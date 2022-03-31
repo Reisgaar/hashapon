@@ -1,6 +1,8 @@
 @import '../../../style-variables.scss';
 
 .gym {
+  user-select: none;
+  -moz-user-select: none;
 
   .machines {
     position: relative;
