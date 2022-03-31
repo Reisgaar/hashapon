@@ -15,7 +15,7 @@ export let egg: Array<any> = [];
 
 export let baby: Array<any> = [
   {id: '', image: 'baby1', description: 'animal description', name: 'Homeless Goddess', attributes: { animalAge: 1, animalType: 0, attack: 1, defense: 4, vitality: 2, experience: 0, gender: 0 }, upgrading: true, timeRemaining: 0, timeForwarded: false},
-  {id: '', image: 'baby2', description: 'animal description', name: 'Lucky Tsunami', attributes: { animalAge: 1, animalType: 0, attack: 5, defense: 4, vitality: 5, experience: 0, gender: 0 }, upgrading: true, timeRemaining: 16400, timeForwarded: true},
+  {id: '', image: 'baby2', description: 'animal description', name: 'Lucky Tsunami', attributes: { animalAge: 1, animalType: 0, attack: 5, defense: 4, vitality: 5, experience: 0, gender: 0 }, upgrading: true, timeRemaining: 7, timeForwarded: true},
   {id: '', image: 'baby3', description: 'animal description', name: 'Zonked Unicorn', attributes: { animalAge: 1, animalType: 0, attack: 0, defense: 0, vitality: 1, experience: 0, gender: 0 }, upgrading: true, timeRemaining: 26400, timeForwarded: false},
   {id: '', image: 'baby4', description: 'animal description', name: 'Sensible Gangster', attributes: { animalAge: 1, animalType: 0, attack: 5, defense: 0, vitality: 3, experience: 0, gender: 0 }, upgrading: false, timeRemaining: null, timeForwarded: false},
 ];
