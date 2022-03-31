@@ -1,9 +1,15 @@
 <div class="interaction {{type}}" *ngIf="data.attributes.animalAge !== 3">
 
-  <div *ngIf="!data.upgrading" class="upgrade" (click)="upgradeService.startUpgrade($event, data)">
-    <span *ngIf="data.attributes.animalAge === 0">INCUBATE</span>
-    <span *ngIf="data.attributes.animalAge === 1">TO SCHOOL</span>
-    <span *ngIf="data.attributes.animalAge === 2">STUDY</span>
+  <div *ngIf="data.attributes.animalAge === 0 && !data.upgrading" class="upgrade" (click)="upgradeService.upgradeEggToChild($event, data)">
+    <span>INCUBATE</span>
+  </div>
+
+  <div *ngIf="data.attributes.animalAge === 1 && !data.upgrading" class="upgrade" (click)="upgradeService.upgradeChildToYoung($event, data)">
+    <span>TO SCHOOL</span>
+  </div>
+
+  <div *ngIf="data.attributes.animalAge === 2 && !data.upgrading" class="upgrade" (click)="upgradeService.upgradeYoungToAdult($event, data)">
+    <span>STUDY</span>
   </div>
 
   <div *ngIf="data.upgrading && data.timeRemaining > 0" class="upgrading" >
