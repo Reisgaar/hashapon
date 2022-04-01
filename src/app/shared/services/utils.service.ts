@@ -64,11 +64,8 @@ export class UtilsService {
   }
 
   // Obtained new Egg
-  public openNewEgg(animal: any): void {
-    const dialogRef = this.dialog.open(NewEggComponent, {
-      panelClass: 'stat-dialog-container',
-      data: animal
-    });
+  public openNewEgg(): void {
+    const dialogRef = this.dialog.open(NewEggComponent, { panelClass: 'stat-dialog-container' });
     dialogRef.afterClosed().subscribe(result => { console.log('The dialog was closed'); });
   }
 

@@ -22,11 +22,9 @@ export class BuyService {
     // Add functionality to buy egg
     try {
       await this.mintAndPay();
-      // Get new egg
-      let newEgg = egg[Math.floor(Math.random() * egg.length)];
       // Close dialog and open detail
       this.matDialog.closeAll();
-      this.utilsService.openNewEgg(newEgg);
+      this.utilsService.openNewEgg();
     } catch (error) {
       console.log('error');
       this.matDialog.closeAll();
