@@ -5,7 +5,6 @@ import { ConnectionService } from '../connection/connection.service';
 import { UtilsService } from './../utils.service';
 const GachaponERC721ProxyAbi = require('./abi/GachaponERC721Proxy.json');
 
-
 @Injectable({
   providedIn: 'root'
 })
